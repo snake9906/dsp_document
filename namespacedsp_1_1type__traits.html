@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: dsp::type_traits 命名空间参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>dsp</b></li><li class="navelem"><a class="el" href="namespacedsp_1_1type__traits.html">type_traits</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a>  </div>
+  <div class="headertitle"><div class="title">dsp::type_traits 命名空间参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>类型萃取命名空间。 在C++11基础上扩展实现C++14/17/20的部分功能  
+<a href="namespacedsp_1_1type__traits.html#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1conjunction_3_01_b1_00_01_bn_8_8_8_01_4.html">conjunction&lt; B1, Bn... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">meta函数，返回B1...Bn中首个value为false的类型, since C++ 17  <a href="structdsp_1_1type__traits_1_1conjunction_3_01_b1_00_01_bn_8_8_8_01_4.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1disjunction_3_01_b1_00_01_bn_8_8_8_01_4.html">disjunction&lt; B1, Bn... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">meta函数，返回B1...Bn中首个value为true的类型, since C++ 17  <a href="structdsp_1_1type__traits_1_1disjunction_3_01_b1_00_01_bn_8_8_8_01_4.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1is__bound__array_3_01_t_0f_n_0e_4.html">is_bound_array&lt; T[N]&gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断入参是否为有界数组, since C++ 20  <a href="structdsp_1_1type__traits_1_1is__bound__array_3_01_t_0f_n_0e_4.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1is__char__array.html">is_char_array</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">入参是否为char数组(一维数组)  <a href="structdsp_1_1type__traits_1_1is__char__array.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1is__char__pointer.html">is_char_pointer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">入参是否为char*  <a href="structdsp_1_1type__traits_1_1is__char__pointer.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1is__iterable_3_01_t_00_01dsp_1_1void__t_3_01decltype_07std_1_1declv28b3a8957ee6fb1200a35a82e46e55f7.html">is_iterable&lt; T, dsp::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end())&gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">入参是否可迭代  <a href="structdsp_1_1type__traits_1_1is__iterable_3_01_t_00_01dsp_1_1void__t_3_01decltype_07std_1_1declv28b3a8957ee6fb1200a35a82e46e55f7.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1is__unbound__array_3_01_t_0f_0e_4.html">is_unbound_array&lt; T[]&gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断入参是否为无界数组, since C++ 20  <a href="structdsp_1_1type__traits_1_1is__unbound__array_3_01_t_0f_0e_4.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1negation.html">negation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">meta函数，返回入参value取反, since C++ 17  <a href="structdsp_1_1type__traits_1_1negation.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdsp_1_1type__traits_1_1remove__cvref.html">remove_cvref</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除入参的const volatile reference描述, since C++ 20  <a href="structdsp_1_1type__traits_1_1remove__cvref.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a878e832dcd6d114dcd0b268b215d528a"><td class="memTemplParams" colspan="2"><a id="a878e832dcd6d114dcd0b268b215d528a" name="a878e832dcd6d114dcd0b268b215d528a"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a878e832dcd6d114dcd0b268b215d528a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_extent_t</b> = typename std::remove_extent&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a878e832dcd6d114dcd0b268b215d528a"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::remove_extent&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a878e832dcd6d114dcd0b268b215d528a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94444abd4b0829bf423af5defe918cdc"><td class="memTemplParams" colspan="2"><a id="a94444abd4b0829bf423af5defe918cdc" name="a94444abd4b0829bf423af5defe918cdc"></a>
+template&lt;bool B, typename T  = void&gt; </td></tr>
+<tr class="memitem:a94444abd4b0829bf423af5defe918cdc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>enable_if_t</b> = typename std::enable_if&lt; B, T &gt;::type</td></tr>
+<tr class="memdesc:a94444abd4b0829bf423af5defe918cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::enable_if&lt;B, T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a94444abd4b0829bf423af5defe918cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b6d8d7ae467e7a021e4405ef272acf"><td class="memTemplParams" colspan="2"><a id="a36b6d8d7ae467e7a021e4405ef272acf" name="a36b6d8d7ae467e7a021e4405ef272acf"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a36b6d8d7ae467e7a021e4405ef272acf"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_const_t</b> = typename std::remove_const&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a36b6d8d7ae467e7a021e4405ef272acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::remove_const&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a36b6d8d7ae467e7a021e4405ef272acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62fa97ef922ae33846c389dbcd79a20f"><td class="memTemplParams" colspan="2"><a id="a62fa97ef922ae33846c389dbcd79a20f" name="a62fa97ef922ae33846c389dbcd79a20f"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a62fa97ef922ae33846c389dbcd79a20f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_reference_t</b> = typename std::remove_reference&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a62fa97ef922ae33846c389dbcd79a20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::remove_reference&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a62fa97ef922ae33846c389dbcd79a20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3862775b56b622ad18c0cbabde69954e"><td class="memTemplParams" colspan="2"><a id="a3862775b56b622ad18c0cbabde69954e" name="a3862775b56b622ad18c0cbabde69954e"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3862775b56b622ad18c0cbabde69954e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_pointer_t</b> = typename std::remove_pointer&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a3862775b56b622ad18c0cbabde69954e"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::remove_pointer&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a3862775b56b622ad18c0cbabde69954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91dc75b2235bcea6e4e45b78612a06fe"><td class="memTemplParams" colspan="2"><a id="a91dc75b2235bcea6e4e45b78612a06fe" name="a91dc75b2235bcea6e4e45b78612a06fe"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a91dc75b2235bcea6e4e45b78612a06fe"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>decay_t</b> = typename std::decay&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a91dc75b2235bcea6e4e45b78612a06fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::decay&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a91dc75b2235bcea6e4e45b78612a06fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c24f860c232eaad3f1e84952b7b9c46"><td class="memTemplParams" colspan="2"><a id="a4c24f860c232eaad3f1e84952b7b9c46" name="a4c24f860c232eaad3f1e84952b7b9c46"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4c24f860c232eaad3f1e84952b7b9c46"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_unsigned_t</b> = typename std::make_unsigned&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a4c24f860c232eaad3f1e84952b7b9c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::make_unsigned&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a4c24f860c232eaad3f1e84952b7b9c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9241021d4a5ea7fbee515401816ce630"><td class="memTemplParams" colspan="2"><a id="a9241021d4a5ea7fbee515401816ce630" name="a9241021d4a5ea7fbee515401816ce630"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9241021d4a5ea7fbee515401816ce630"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_cv_t</b> = typename std::remove_cv&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a9241021d4a5ea7fbee515401816ce630"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::remove_cv&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a9241021d4a5ea7fbee515401816ce630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ad18cece0fff0566986db86a74623a"><td class="memTemplParams" colspan="2"><a id="a86ad18cece0fff0566986db86a74623a" name="a86ad18cece0fff0566986db86a74623a"></a>
+template&lt;bool B, typename T , typename F &gt; </td></tr>
+<tr class="memitem:a86ad18cece0fff0566986db86a74623a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>conditional_t</b> = typename std::conditional&lt; B, T, F &gt;::type</td></tr>
+<tr class="memdesc:a86ad18cece0fff0566986db86a74623a"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::conditional&lt;B, T, F&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:a86ad18cece0fff0566986db86a74623a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75dcad1b3ea3d9043d65b77e023b7dc"><td class="memTemplParams" colspan="2"><a id="aa75dcad1b3ea3d9043d65b77e023b7dc" name="aa75dcad1b3ea3d9043d65b77e023b7dc"></a>
+template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:aa75dcad1b3ea3d9043d65b77e023b7dc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_same_t</b> = typename std::is_same&lt; T, U &gt;::type</td></tr>
+<tr class="memdesc:aa75dcad1b3ea3d9043d65b77e023b7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::is_same&lt;T, U&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:aa75dcad1b3ea3d9043d65b77e023b7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2e782c4f19fbc23df0d381febb1371"><td class="memTemplParams" colspan="2"><a id="aeb2e782c4f19fbc23df0d381febb1371" name="aeb2e782c4f19fbc23df0d381febb1371"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aeb2e782c4f19fbc23df0d381febb1371"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_all_extents_t</b> = typename std::remove_all_extents&lt; T &gt;::type</td></tr>
+<tr class="memdesc:aeb2e782c4f19fbc23df0d381febb1371"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::remove_all_extents&lt;T&gt;::type, since C++ 14 <br /></td></tr>
+<tr class="separator:aeb2e782c4f19fbc23df0d381febb1371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87ce2904af8e83567cf23a046ac92d4"><td class="memTemplParams" colspan="2"><a id="aa87ce2904af8e83567cf23a046ac92d4" name="aa87ce2904af8e83567cf23a046ac92d4"></a>
+template&lt;bool B&gt; </td></tr>
+<tr class="memitem:aa87ce2904af8e83567cf23a046ac92d4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>bool_constant</b> = std::integral_constant&lt; bool, B &gt;</td></tr>
+<tr class="memdesc:aa87ce2904af8e83567cf23a046ac92d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool类型对象, since C++ 17 <br /></td></tr>
+<tr class="separator:aa87ce2904af8e83567cf23a046ac92d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecffe64f4344490cc0e71cef5447e94"><td class="memTemplParams" colspan="2"><a id="afecffe64f4344490cc0e71cef5447e94" name="afecffe64f4344490cc0e71cef5447e94"></a>
+template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:afecffe64f4344490cc0e71cef5447e94"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>void_t</b> = typename make_void&lt; Ts... &gt;::type</td></tr>
+<tr class="memdesc:afecffe64f4344490cc0e71cef5447e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">void类型定义, since C++ 17 <br /></td></tr>
+<tr class="separator:afecffe64f4344490cc0e71cef5447e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1f0c5e10f163ff6d3c86ac4515c287"><td class="memTemplParams" colspan="2"><a id="a7e1f0c5e10f163ff6d3c86ac4515c287" name="a7e1f0c5e10f163ff6d3c86ac4515c287"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7e1f0c5e10f163ff6d3c86ac4515c287"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_cvref_t</b> = typename <a class="el" href="structdsp_1_1type__traits_1_1remove__cvref.html">remove_cvref</a>&lt; T &gt;::type</td></tr>
+<tr class="memdesc:a7e1f0c5e10f163ff6d3c86ac4515c287"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove_cvref&lt;T&gt;::type, since C++ 20 <br /></td></tr>
+<tr class="separator:a7e1f0c5e10f163ff6d3c86ac4515c287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >类型萃取命名空间。 在C++11基础上扩展实现C++14/17/20的部分功能 </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

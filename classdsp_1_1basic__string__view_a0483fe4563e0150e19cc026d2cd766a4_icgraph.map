@@ -1,0 +1,4 @@
+<map id="dsp::basic_string_view::back" name="dsp::basic_string_view::back">
+<area shape="rect" id="node1" title="获取视图最后字符" alt="" coords="205,5,357,46"/>
+<area shape="rect" id="node3" href="$classdsp_1_1basic__string__view.html#aa0132991ce52eb324bcd25f24b37efe1" title="判断视图的结束字符是否与给定字符相同" alt="" coords="5,5,157,46"/>
+</map>

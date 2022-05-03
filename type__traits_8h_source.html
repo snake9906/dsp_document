@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: D:/project/Aux2022/vobs/include/app/scada/dsp/type_traits.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8858cb3708c0c816fb8de7080655568f.html">Aux2022</a></li><li class="navelem"><a class="el" href="dir_15679b3e902361c6de501cff170c1797.html">vobs</a></li><li class="navelem"><a class="el" href="dir_eee0fc127c0c833bb5b114755c6c2b22.html">include</a></li><li class="navelem"><a class="el" href="dir_5ab65f0e40140b552956b9b63d828025.html">app</a></li><li class="navelem"><a class="el" href="dir_b2e6e9ae5b9ee69a98bac5e188765ebc.html">scada</a></li><li class="navelem"><a class="el" href="dir_25115c0ce1ecb40939d30dc1be04dfcd.html">dsp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">type_traits.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="type__traits_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>dsp {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html">   20</a></span><span class="keyword">namespace </span>type_traits {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a878e832dcd6d114dcd0b268b215d528a">   26</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a878e832dcd6d114dcd0b268b215d528a">remove_extent_t</a> = <span class="keyword">typename</span> std::remove_extent&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">typename</span> T = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">   32</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">enable_if_t</a> = <span class="keyword">typename</span> std::enable_if&lt;B, T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a36b6d8d7ae467e7a021e4405ef272acf">   38</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a36b6d8d7ae467e7a021e4405ef272acf">remove_const_t</a> = <span class="keyword">typename</span> std::remove_const&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a62fa97ef922ae33846c389dbcd79a20f">   44</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a62fa97ef922ae33846c389dbcd79a20f">remove_reference_t</a> = <span class="keyword">typename</span> std::remove_reference&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a3862775b56b622ad18c0cbabde69954e">   50</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a3862775b56b622ad18c0cbabde69954e">remove_pointer_t</a> = <span class="keyword">typename</span> std::remove_pointer&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a91dc75b2235bcea6e4e45b78612a06fe">   56</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a91dc75b2235bcea6e4e45b78612a06fe">decay_t</a> = <span class="keyword">typename</span> std::decay&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a4c24f860c232eaad3f1e84952b7b9c46">   62</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a4c24f860c232eaad3f1e84952b7b9c46">make_unsigned_t</a> = <span class="keyword">typename</span> std::make_unsigned&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a9241021d4a5ea7fbee515401816ce630">   68</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a9241021d4a5ea7fbee515401816ce630">remove_cv_t</a> = <span class="keyword">typename</span> std::remove_cv&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">   74</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">conditional_t</a> = <span class="keyword">typename</span> std::conditional&lt;B, T, F&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#aa75dcad1b3ea3d9043d65b77e023b7dc">   80</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#aa75dcad1b3ea3d9043d65b77e023b7dc">is_same_t</a> = <span class="keyword">typename</span> std::is_same&lt;T, U&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#aeb2e782c4f19fbc23df0d381febb1371">   86</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#aeb2e782c4f19fbc23df0d381febb1371">remove_all_extents_t</a> = <span class="keyword">typename</span> std::remove_all_extents&lt;T&gt;::type;<span class="comment">// since C++ 14</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>...&gt;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">struct </span>disjunction : std::false_type {};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> B&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">struct </span>disjunction&lt;B&gt; : B {};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> B1, <span class="keyword">typename</span>... Bn&gt;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1disjunction_3_01_b1_00_01_bn_8_8_8_01_4.html">   99</a></span><span class="keyword">struct </span>disjunction&lt;B1, Bn...&gt; : <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">conditional_t</a>&lt;bool(B1::value), B1, disjunction&lt;Bn...&gt;&gt; {};<span class="comment">// since C++ 17</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>...&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">struct </span>conjunction : std::true_type {};</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> B1&gt;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">struct </span>conjunction&lt;B1&gt; : B1 {};</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> B1, <span class="keyword">typename</span>... Bn&gt;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1conjunction_3_01_b1_00_01_bn_8_8_8_01_4.html">  113</a></span><span class="keyword">struct </span>conjunction&lt;B1, Bn...&gt; : <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">conditional_t</a>&lt;bool(B1::value), conjunction&lt;Bn...&gt;, B1&gt; {};<span class="comment">// since C++ 17</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B&gt;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#aa87ce2904af8e83567cf23a046ac92d4">  119</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#aa87ce2904af8e83567cf23a046ac92d4">bool_constant</a> = std::integral_constant&lt;bool, B&gt;;<span class="comment">// since C++ 17</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> B&gt;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1negation.html">  126</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structdsp_1_1type__traits_1_1negation.html">negation</a> : <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#aa87ce2904af8e83567cf23a046ac92d4">bool_constant</a>&lt;!bool(B::value)&gt; {};<span class="comment">// since C++ 17</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">struct </span>make_void {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">using</span> type = void;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">  137</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">void_t</a> = <span class="keyword">typename</span> make_void&lt;Ts...&gt;::type;<span class="comment">// since C++17</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">struct </span>is_unbound_array {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> value = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>};<span class="comment">// since C++ 20</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1is__unbound__array_3_01_t_0f_0e_4.html">  149</a></span><span class="keyword">struct </span>is_unbound_array&lt;T[]&gt; {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> value = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>};<span class="comment">// since C++ 20</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">struct </span>is_bound_array {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> value = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>};<span class="comment">// since C++ 20</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1is__bound__array_3_01_t_0f_n_0e_4.html">  164</a></span><span class="keyword">struct </span>is_bound_array&lt;T[N]&gt; {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> value = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>};<span class="comment">// since C++ 20</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1remove__cvref.html">  173</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structdsp_1_1type__traits_1_1remove__cvref.html">remove_cvref</a> {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keyword">using</span> type = <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a9241021d4a5ea7fbee515401816ce630">remove_cv_t&lt;remove_reference_t&lt;T&gt;</a>&gt;;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>};<span class="comment">// since C++ 20</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="namespacedsp_1_1type__traits.html#a7e1f0c5e10f163ff6d3c86ac4515c287">  181</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a7e1f0c5e10f163ff6d3c86ac4515c287">remove_cvref_t</a> = <span class="keyword">typename</span> remove_cvref&lt;T&gt;::type;<span class="comment">// since C++ 20</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment"></span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}<span class="comment">// namespace type_traits</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">using namespace </span>type_traits;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}<span class="comment">// namespace dsp</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">// self define type traits</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">namespace </span>dsp {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">namespace </span>type_traits {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1is__char__array.html">  197</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structdsp_1_1type__traits_1_1is__char__array.html">is_char_array</a> : <span class="keyword">public</span> conjunction&lt;std::is_array&lt;T&gt;, dsp::is_same_t&lt;char, dsp::remove_extent_t&lt;T&gt;&gt;&gt; {};</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1is__char__pointer.html">  204</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structdsp_1_1type__traits_1_1is__char__pointer.html">is_char_pointer</a> : <span class="keyword">public</span> std::is_same&lt;char, dsp::remove_cv_t&lt;dsp::remove_pointer_t&lt;T&gt;&gt;&gt; {};</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keyword">struct </span>is_iterable : std::false_type {};</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="structdsp_1_1type__traits_1_1is__iterable_3_01_t_00_01dsp_1_1void__t_3_01decltype_07std_1_1declv28b3a8957ee6fb1200a35a82e46e55f7.html">  214</a></span><span class="keyword">struct </span>is_iterable&lt;T, dsp::<a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">void_t</a>&lt;decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end())&gt;&gt;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    : std::true_type {};</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}<span class="comment">// namespace type_traits</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>}<span class="comment">// namespace dsp</span></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a36b6d8d7ae467e7a021e4405ef272acf"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a36b6d8d7ae467e7a021e4405ef272acf">dsp::type_traits::remove_const_t</a></div><div class="ttdeci">typename std::remove_const&lt; T &gt;::type remove_const_t</div><div class="ttdoc">std::remove_const&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:38</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a3862775b56b622ad18c0cbabde69954e"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a3862775b56b622ad18c0cbabde69954e">dsp::type_traits::remove_pointer_t</a></div><div class="ttdeci">typename std::remove_pointer&lt; T &gt;::type remove_pointer_t</div><div class="ttdoc">std::remove_pointer&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:50</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a4c24f860c232eaad3f1e84952b7b9c46"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a4c24f860c232eaad3f1e84952b7b9c46">dsp::type_traits::make_unsigned_t</a></div><div class="ttdeci">typename std::make_unsigned&lt; T &gt;::type make_unsigned_t</div><div class="ttdoc">std::make_unsigned&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:62</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a62fa97ef922ae33846c389dbcd79a20f"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a62fa97ef922ae33846c389dbcd79a20f">dsp::type_traits::remove_reference_t</a></div><div class="ttdeci">typename std::remove_reference&lt; T &gt;::type remove_reference_t</div><div class="ttdoc">std::remove_reference&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:44</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a7e1f0c5e10f163ff6d3c86ac4515c287"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a7e1f0c5e10f163ff6d3c86ac4515c287">dsp::type_traits::remove_cvref_t</a></div><div class="ttdeci">typename remove_cvref&lt; T &gt;::type remove_cvref_t</div><div class="ttdoc">remove_cvref&lt;T&gt;::type, since C++ 20</div><div class="ttdef"><b>Definition:</b> type_traits.h:181</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a86ad18cece0fff0566986db86a74623a"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">dsp::type_traits::conditional_t</a></div><div class="ttdeci">typename std::conditional&lt; B, T, F &gt;::type conditional_t</div><div class="ttdoc">std::conditional&lt;B, T, F&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:74</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a878e832dcd6d114dcd0b268b215d528a"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a878e832dcd6d114dcd0b268b215d528a">dsp::type_traits::remove_extent_t</a></div><div class="ttdeci">typename std::remove_extent&lt; T &gt;::type remove_extent_t</div><div class="ttdoc">std::remove_extent&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:26</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a91dc75b2235bcea6e4e45b78612a06fe"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a91dc75b2235bcea6e4e45b78612a06fe">dsp::type_traits::decay_t</a></div><div class="ttdeci">typename std::decay&lt; T &gt;::type decay_t</div><div class="ttdoc">std::decay&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:56</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a9241021d4a5ea7fbee515401816ce630"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a9241021d4a5ea7fbee515401816ce630">dsp::type_traits::remove_cv_t</a></div><div class="ttdeci">typename std::remove_cv&lt; T &gt;::type remove_cv_t</div><div class="ttdoc">std::remove_cv&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:68</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a94444abd4b0829bf423af5defe918cdc"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::type_traits::enable_if_t</a></div><div class="ttdeci">typename std::enable_if&lt; B, T &gt;::type enable_if_t</div><div class="ttdoc">std::enable_if&lt;B, T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:32</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_aa75dcad1b3ea3d9043d65b77e023b7dc"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#aa75dcad1b3ea3d9043d65b77e023b7dc">dsp::type_traits::is_same_t</a></div><div class="ttdeci">typename std::is_same&lt; T, U &gt;::type is_same_t</div><div class="ttdoc">std::is_same&lt;T, U&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:80</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_aa87ce2904af8e83567cf23a046ac92d4"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#aa87ce2904af8e83567cf23a046ac92d4">dsp::type_traits::bool_constant</a></div><div class="ttdeci">std::integral_constant&lt; bool, B &gt; bool_constant</div><div class="ttdoc">bool类型对象, since C++ 17</div><div class="ttdef"><b>Definition:</b> type_traits.h:119</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_aeb2e782c4f19fbc23df0d381febb1371"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#aeb2e782c4f19fbc23df0d381febb1371">dsp::type_traits::remove_all_extents_t</a></div><div class="ttdeci">typename std::remove_all_extents&lt; T &gt;::type remove_all_extents_t</div><div class="ttdoc">std::remove_all_extents&lt;T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:86</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_afecffe64f4344490cc0e71cef5447e94"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">dsp::type_traits::void_t</a></div><div class="ttdeci">typename make_void&lt; Ts... &gt;::type void_t</div><div class="ttdoc">void类型定义, since C++ 17</div><div class="ttdef"><b>Definition:</b> type_traits.h:137</div></div>
+<div class="ttc" id="astructdsp_1_1type__traits_1_1is__char__array_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::type_traits::is_char_array</a></div><div class="ttdoc">入参是否为char数组(一维数组)</div><div class="ttdef"><b>Definition:</b> type_traits.h:197</div></div>
+<div class="ttc" id="astructdsp_1_1type__traits_1_1is__char__pointer_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::type_traits::is_char_pointer</a></div><div class="ttdoc">入参是否为char*</div><div class="ttdef"><b>Definition:</b> type_traits.h:204</div></div>
+<div class="ttc" id="astructdsp_1_1type__traits_1_1negation_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1negation.html">dsp::type_traits::negation</a></div><div class="ttdoc">meta函数，返回入参value取反, since C++ 17</div><div class="ttdef"><b>Definition:</b> type_traits.h:126</div></div>
+<div class="ttc" id="astructdsp_1_1type__traits_1_1remove__cvref_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1remove__cvref.html">dsp::type_traits::remove_cvref</a></div><div class="ttdoc">删除入参的const volatile reference描述, since C++ 20</div><div class="ttdef"><b>Definition:</b> type_traits.h:173</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

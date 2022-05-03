@@ -1,0 +1,4 @@
+<map id="dsp::span&lt; T, E &gt;" name="dsp::span&lt; T, E &gt;">
+<area shape="rect" id="node1" title="内存连续数据的访问视图，支持C&#45;Style数组，array，range。本实现参考Boost::Core::Span" alt="" coords="5,6,192,245"/>
+<area shape="rect" id="node3" href="$classdsp_1_1span.html" title=" " alt="" coords="5,310,192,549"/>
+</map>

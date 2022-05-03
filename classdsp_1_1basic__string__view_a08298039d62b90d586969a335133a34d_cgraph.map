@@ -1,0 +1,5 @@
+<map id="dsp::basic_string_view::basic_string&lt; charT, traits, Allocator &gt;" name="dsp::basic_string_view::basic_string&lt; charT, traits, Allocator &gt;">
+<area shape="rect" id="node1" title="按照指定内存分配器生成字符串" alt="" coords="5,27,157,83"/>
+<area shape="rect" id="node3" href="$classdsp_1_1basic__string__view.html#a04223d59ef1c6c0ac1a1acd9ba65a03c" title="禁止move。string_view极其轻量，传值拷贝即可没必要move" alt="" coords="220,5,372,46"/>
+<area shape="rect" id="node5" href="$classdsp_1_1basic__string__view.html#a842f2b20f27bc9b82a327dcf255be578" title="获取指向视图最后一个字符之后数据的迭代器" alt="" coords="205,71,387,97"/>
+</map>

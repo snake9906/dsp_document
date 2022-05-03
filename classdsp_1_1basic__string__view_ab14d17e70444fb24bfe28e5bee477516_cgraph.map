@@ -1,0 +1,5 @@
+<map id="dsp::basic_string_view::starts_with" name="dsp::basic_string_view::starts_with">
+<area shape="rect" id="node1" title="判断视图的起始字符是否与给定字符相同" alt="" coords="5,38,157,79"/>
+<area shape="rect" id="node3" href="$classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="205,5,357,46"/>
+<area shape="rect" id="node5" href="$classdsp_1_1basic__string__view.html#a8c8bae35b340fcf198a4b9d32c93081b" title="获取视图第一个字符" alt="" coords="205,70,357,111"/>
+</map>

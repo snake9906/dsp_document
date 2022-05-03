@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: dsp::span&lt; T, E &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>dsp</b></li><li class="navelem"><a class="el" href="classdsp_1_1span.html">span</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="classdsp_1_1span-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">dsp::span&lt; T, E &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>内存连续数据的访问视图，支持C-Style数组，array，range。本实现参考Boost::Core::Span  
+ <a href="classdsp_1_1span.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="span_8h_source.html">span.h</a>&gt;</code></p>
+<div class="dynheader">
+类 dsp::span&lt; T, E &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1span__inherit__graph.png" border="0" usemap="#adsp_1_1span_3_01_t_00_01_e_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="adsp_1_1span_3_01_t_00_01_e_01_4_inherit__map" id="adsp_1_1span_3_01_t_00_01_e_01_4_inherit__map">
+<area shape="rect" title="内存连续数据的访问视图，支持C&#45;Style数组，array，range。本实现参考Boost::Core::Span" alt="" coords="5,6,192,245"/>
+<area shape="rect" href="classdsp_1_1span.html" title=" " alt="" coords="5,310,192,549"/>
+</map>
+</div>
+<div class="dynheader">
+dsp::span&lt; T, E &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1span__coll__graph.png" border="0" usemap="#adsp_1_1span_3_01_t_00_01_e_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="adsp_1_1span_3_01_t_00_01_e_01_4_coll__map" id="adsp_1_1span_3_01_t_00_01_e_01_4_coll__map">
+<area shape="rect" title="内存连续数据的访问视图，支持C&#45;Style数组，array，range。本实现参考Boost::Core::Span" alt="" coords="5,6,192,245"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae022130df0d954ae77c0d509e123478e"><td class="memTemplParams" colspan="2">template&lt;std::size_t N = E, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; N==dynamic_extent||N==0, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae022130df0d954ae77c0d509e123478e"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#ae022130df0d954ae77c0d509e123478e">span</a> () noexcept</td></tr>
+<tr class="memdesc:ae022130df0d954ae77c0d509e123478e"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数  <a href="classdsp_1_1span.html#ae022130df0d954ae77c0d509e123478e">更多...</a><br /></td></tr>
+<tr class="separator:ae022130df0d954ae77c0d509e123478e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7dab13ce344bb2848a96ce40a809e64"><td class="memTemplParams" colspan="2">template&lt;typename I , typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; E==dynamic_extent &amp;&amp;detail::span_convertible&lt; I, T &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae7dab13ce344bb2848a96ce40a809e64"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#ae7dab13ce344bb2848a96ce40a809e64">span</a> (I *f, size_type c)</td></tr>
+<tr class="memdesc:ae7dab13ce344bb2848a96ce40a809e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数组生成视图  <a href="classdsp_1_1span.html#ae7dab13ce344bb2848a96ce40a809e64">更多...</a><br /></td></tr>
+<tr class="separator:ae7dab13ce344bb2848a96ce40a809e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe71df08f5cefa0c9ccf33450af0ad91"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_capacity&lt; E, N &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:afe71df08f5cefa0c9ccf33450af0ad91"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#afe71df08f5cefa0c9ccf33450af0ad91">span</a> (typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; true, T &gt;(&amp;a)[N]) noexcept</td></tr>
+<tr class="memdesc:afe71df08f5cefa0c9ccf33450af0ad91"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数组生成视图  <a href="classdsp_1_1span.html#afe71df08f5cefa0c9ccf33450af0ad91">更多...</a><br /></td></tr>
+<tr class="separator:afe71df08f5cefa0c9ccf33450af0ad91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d2f01785cd28b170746d1800ff382d"><td class="memTemplParams" colspan="2">template&lt;typename U , std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_compatible&lt; T, E, U, N &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a30d2f01785cd28b170746d1800ff382d"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a30d2f01785cd28b170746d1800ff382d">span</a> (std::array&lt; U, N &gt; &amp;a) noexcept</td></tr>
+<tr class="memdesc:a30d2f01785cd28b170746d1800ff382d"><td class="mdescLeft">&#160;</td><td class="mdescRight">从array生成视图  <a href="classdsp_1_1span.html#a30d2f01785cd28b170746d1800ff382d">更多...</a><br /></td></tr>
+<tr class="separator:a30d2f01785cd28b170746d1800ff382d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb2a02cca994ead3f8e521a78325106"><td class="memTemplParams" colspan="2">template&lt;typename U , std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_compatible&lt; T, E, const U, N &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aecb2a02cca994ead3f8e521a78325106"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#aecb2a02cca994ead3f8e521a78325106">span</a> (const std::array&lt; U, N &gt; &amp;a) noexcept</td></tr>
+<tr class="memdesc:aecb2a02cca994ead3f8e521a78325106"><td class="mdescLeft">&#160;</td><td class="mdescRight">从const array生成视图  <a href="classdsp_1_1span.html#aecb2a02cca994ead3f8e521a78325106">更多...</a><br /></td></tr>
+<tr class="separator:aecb2a02cca994ead3f8e521a78325106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefd84768e83b64b89499a20e0289359"><td class="memTemplParams" colspan="2">template&lt;typename R , typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; E !=dynamic_extent &amp;&amp;detail::span_is_range&lt; R, T &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:adefd84768e83b64b89499a20e0289359"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#adefd84768e83b64b89499a20e0289359">span</a> (R &amp;&amp;r) noexcept(noexcept(r.m_data()) &amp;&amp;noexcept(r.size()))</td></tr>
+<tr class="memdesc:adefd84768e83b64b89499a20e0289359"><td class="mdescLeft">&#160;</td><td class="mdescRight">从range生成视图  <a href="classdsp_1_1span.html#adefd84768e83b64b89499a20e0289359">更多...</a><br /></td></tr>
+<tr class="separator:adefd84768e83b64b89499a20e0289359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22702b015399bea3c235f52c077d6201"><td class="memTemplParams" colspan="2">template&lt;typename U , std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_implicit&lt; E, N &gt;::value &amp;&amp;detail::span_copyable&lt; T, E, U, N &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a22702b015399bea3c235f52c077d6201"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a22702b015399bea3c235f52c077d6201">span</a> (const <a class="el" href="classdsp_1_1span.html">span</a>&lt; U, N &gt; &amp;s) noexcept</td></tr>
+<tr class="memdesc:a22702b015399bea3c235f52c077d6201"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造函数  <a href="classdsp_1_1span.html#a22702b015399bea3c235f52c077d6201">更多...</a><br /></td></tr>
+<tr class="separator:a22702b015399bea3c235f52c077d6201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca4e454f394efd4b83335f117a9e05a7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#aca4e454f394efd4b83335f117a9e05a7">empty</a> () -&gt; bool</td></tr>
+<tr class="memdesc:aca4e454f394efd4b83335f117a9e05a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">视图是否为空  <a href="classdsp_1_1span.html#aca4e454f394efd4b83335f117a9e05a7">更多...</a><br /></td></tr>
+<tr class="separator:aca4e454f394efd4b83335f117a9e05a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d9f66cfb789ccc9ae3f7cc7a887498"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a33d9f66cfb789ccc9ae3f7cc7a887498">size</a> () -&gt; std::size_t</td></tr>
+<tr class="memdesc:a33d9f66cfb789ccc9ae3f7cc7a887498"><td class="mdescLeft">&#160;</td><td class="mdescRight">视图内数据个数  <a href="classdsp_1_1span.html#a33d9f66cfb789ccc9ae3f7cc7a887498">更多...</a><br /></td></tr>
+<tr class="separator:a33d9f66cfb789ccc9ae3f7cc7a887498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3573d92ef789c0670807eb464cab672"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#ac3573d92ef789c0670807eb464cab672">begin</a> () -&gt; iterator</td></tr>
+<tr class="memdesc:ac3573d92ef789c0670807eb464cab672"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回首个数据的指针  <a href="classdsp_1_1span.html#ac3573d92ef789c0670807eb464cab672">更多...</a><br /></td></tr>
+<tr class="separator:ac3573d92ef789c0670807eb464cab672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b054a929a76c8473772a825233269d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a02b054a929a76c8473772a825233269d">end</a> () -&gt; iterator</td></tr>
+<tr class="memdesc:a02b054a929a76c8473772a825233269d"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回最后数据之后的指针  <a href="classdsp_1_1span.html#a02b054a929a76c8473772a825233269d">更多...</a><br /></td></tr>
+<tr class="separator:a02b054a929a76c8473772a825233269d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4554af5f7e6675fa15fe8e751af9af0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a4554af5f7e6675fa15fe8e751af9af0a">at</a> (std::size_t i) -&gt; pointer</td></tr>
+<tr class="memdesc:a4554af5f7e6675fa15fe8e751af9af0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">按下标随机访问数据  <a href="classdsp_1_1span.html#a4554af5f7e6675fa15fe8e751af9af0a">更多...</a><br /></td></tr>
+<tr class="separator:a4554af5f7e6675fa15fe8e751af9af0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a714860a309e0d8ab6b58668cc9f72bed"><td class="memTemplParams" colspan="2">template&lt;std::size_t C&gt; </td></tr>
+<tr class="memitem:a714860a309e0d8ab6b58668cc9f72bed"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a714860a309e0d8ab6b58668cc9f72bed">first</a> () const -&gt; <a class="el" href="classdsp_1_1span.html">span</a>&lt; T, C &gt;</td></tr>
+<tr class="memdesc:a714860a309e0d8ab6b58668cc9f72bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成前C个数据的子视图  <a href="classdsp_1_1span.html#a714860a309e0d8ab6b58668cc9f72bed">更多...</a><br /></td></tr>
+<tr class="separator:a714860a309e0d8ab6b58668cc9f72bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1beb05d9dc81ce6f2579fb92cc44f9f3"><td class="memTemplParams" colspan="2">template&lt;std::size_t C&gt; </td></tr>
+<tr class="memitem:a1beb05d9dc81ce6f2579fb92cc44f9f3"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a1beb05d9dc81ce6f2579fb92cc44f9f3">last</a> () const -&gt; <a class="el" href="classdsp_1_1span.html">span</a>&lt; T, C &gt;</td></tr>
+<tr class="memdesc:a1beb05d9dc81ce6f2579fb92cc44f9f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成后C个数据的子视图  <a href="classdsp_1_1span.html#a1beb05d9dc81ce6f2579fb92cc44f9f3">更多...</a><br /></td></tr>
+<tr class="separator:a1beb05d9dc81ce6f2579fb92cc44f9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a383857938003700749bc0aa0efabf957"><td class="memTemplParams" colspan="2">template&lt;std::size_t O, std::size_t C = dynamic_extent&gt; </td></tr>
+<tr class="memitem:a383857938003700749bc0aa0efabf957"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1span.html#a383857938003700749bc0aa0efabf957">subspan</a> () const -&gt; typename std::enable_if&lt; C==dynamic_extent, <a class="el" href="classdsp_1_1span.html">span</a>&lt; T, detail::span_sub&lt; E, O &gt;::value &gt; &gt;::type</td></tr>
+<tr class="memdesc:a383857938003700749bc0aa0efabf957"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定位置和长度的子视图  <a href="classdsp_1_1span.html#a383857938003700749bc0aa0efabf957">更多...</a><br /></td></tr>
+<tr class="separator:a383857938003700749bc0aa0efabf957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:ab5c954ac45752936d3599f691f8eb862"><td class="memItemLeft" align="right" valign="top"><a id="ab5c954ac45752936d3599f691f8eb862" name="ab5c954ac45752936d3599f691f8eb862"></a>
+static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>extent</b> = E</td></tr>
+<tr class="memdesc:ab5c954ac45752936d3599f691f8eb862"><td class="mdescLeft">&#160;</td><td class="mdescRight">对象个数 <br /></td></tr>
+<tr class="separator:ab5c954ac45752936d3599f691f8eb862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, std::size_t E&gt;<br />
+class dsp::span&lt; T, E &gt;</div><p >内存连续数据的访问视图，支持C-Style数组，array，range。本实现参考Boost::Core::Span </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据对象类型 </td></tr>
+    <tr><td class="paramname">E</td><td>数据对象个数 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae022130df0d954ae77c0d509e123478e" name="ae022130df0d954ae77c0d509e123478e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae022130df0d954ae77c0d509e123478e">&#9670;&nbsp;</a></span>span() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t N = E, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; N==dynamic_extent||N==0, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认构造函数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae7dab13ce344bb2848a96ce40a809e64" name="ae7dab13ce344bb2848a96ce40a809e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7dab13ce344bb2848a96ce40a809e64">&#9670;&nbsp;</a></span>span() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;typename I , typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; E==dynamic_extent &amp;&amp;detail::span_convertible&lt; I, T &gt;::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">I *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从数组生成视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">I</td><td>数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>数组首地址 </td></tr>
+    <tr><td class="paramname">c</td><td>数组长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afe71df08f5cefa0c9ccf33450af0ad91" name="afe71df08f5cefa0c9ccf33450af0ad91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe71df08f5cefa0c9ccf33450af0ad91">&#9670;&nbsp;</a></span>span() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_capacity&lt; E, N &gt;::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; true, T &gt;(&amp;)&#160;</td>
+          <td class="paramname"><em>a</em>[N]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从数组生成视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>数组长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>数组对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a30d2f01785cd28b170746d1800ff382d" name="a30d2f01785cd28b170746d1800ff382d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d2f01785cd28b170746d1800ff382d">&#9670;&nbsp;</a></span>span() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_compatible&lt; T, E, U, N &gt;::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">std::array&lt; U, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从array生成视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">U</td><td>数据类型 </td></tr>
+    <tr><td class="paramname">N</td><td>array长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>array对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aecb2a02cca994ead3f8e521a78325106" name="aecb2a02cca994ead3f8e521a78325106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb2a02cca994ead3f8e521a78325106">&#9670;&nbsp;</a></span>span() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_compatible&lt; T, E, const U, N &gt;::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; U, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从const array生成视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">U</td><td>数据类型 </td></tr>
+    <tr><td class="paramname">N</td><td>array长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>array对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adefd84768e83b64b89499a20e0289359" name="adefd84768e83b64b89499a20e0289359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefd84768e83b64b89499a20e0289359">&#9670;&nbsp;</a></span>span() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;typename R , typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; E !=dynamic_extent &amp;&amp;detail::span_is_range&lt; R, T &gt;::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">R &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从range生成视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">R</td><td>range类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>range对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22702b015399bea3c235f52c077d6201" name="a22702b015399bea3c235f52c077d6201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22702b015399bea3c235f52c077d6201">&#9670;&nbsp;</a></span>span() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , std::size_t N, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; detail::span_implicit&lt; E, N &gt;::value &amp;&amp;detail::span_copyable&lt; T, E, U, N &gt;::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdsp_1_1span.html">span</a>&lt; U, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>拷贝构造函数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">U</td><td>数据类型 </td></tr>
+    <tr><td class="paramname">N</td><td>数据个数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>待拷贝的视图 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a4554af5f7e6675fa15fe8e751af9af0a" name="a4554af5f7e6675fa15fe8e751af9af0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4554af5f7e6675fa15fe8e751af9af0a">&#9670;&nbsp;</a></span>at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> -&gt; pointer </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按下标随机访问数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>下标 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回指定下标对应的数据指针 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph.png" border="0" usemap="#aclassdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph" alt=""/></div>
+<map name="aclassdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph" id="aclassdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph">
+<area shape="rect" title="按下标随机访问数据" alt="" coords="165,5,264,32"/>
+<area shape="rect" href="classdb_obj_visitor.html#aedca4ed88d43ba52b8b7b1c149becbef" title="随机访问对象" alt="" coords="5,5,117,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac3573d92ef789c0670807eb464cab672" name="ac3573d92ef789c0670807eb464cab672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3573d92ef789c0670807eb464cab672">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; iterator </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回首个数据的指针 </p>
+<dl class="section return"><dt>返回</dt><dd>数据迭代器 </dd></dl>
+
+</div>
+</div>
+<a id="aca4e454f394efd4b83335f117a9e05a7" name="aca4e454f394efd4b83335f117a9e05a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca4e454f394efd4b83335f117a9e05a7">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视图是否为空 </p>
+<dl class="section return"><dt>返回</dt><dd>是否为空 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph.png" border="0" usemap="#aclassdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph" alt=""/></div>
+<map name="aclassdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph" id="aclassdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph">
+<area shape="rect" title="视图是否为空" alt="" coords="192,5,315,32"/>
+<area shape="rect" href="classdb_obj_visitor.html#a17f6fd776d1fd9f93ce8d4221beb384e" title="访问器是否为空" alt="" coords="6,5,143,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02b054a929a76c8473772a825233269d" name="a02b054a929a76c8473772a825233269d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b054a929a76c8473772a825233269d">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; iterator </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回最后数据之后的指针 </p>
+<dl class="section return"><dt>返回</dt><dd>数据迭代器 </dd></dl>
+
+</div>
+</div>
+<a id="a714860a309e0d8ab6b58668cc9f72bed" name="a714860a309e0d8ab6b58668cc9f72bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714860a309e0d8ab6b58668cc9f72bed">&#9670;&nbsp;</a></span>first()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t C&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classdsp_1_1span.html">span</a>&lt;T, C&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成前C个数据的子视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>指定子视图长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>子视图 </dd></dl>
+
+</div>
+</div>
+<a id="a1beb05d9dc81ce6f2579fb92cc44f9f3" name="a1beb05d9dc81ce6f2579fb92cc44f9f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1beb05d9dc81ce6f2579fb92cc44f9f3">&#9670;&nbsp;</a></span>last()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t C&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classdsp_1_1span.html">span</a>&lt;T, C&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成后C个数据的子视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>指定子视图长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>子视图 </dd></dl>
+
+</div>
+</div>
+<a id="a33d9f66cfb789ccc9ae3f7cc7a887498" name="a33d9f66cfb789ccc9ae3f7cc7a887498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d9f66cfb789ccc9ae3f7cc7a887498">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; std::size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>视图内数据个数 </p>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph.png" border="0" usemap="#aclassdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph" alt=""/></div>
+<map name="aclassdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph" id="aclassdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph">
+<area shape="rect" title="视图内数据个数" alt="" coords="350,5,461,32"/>
+<area shape="rect" href="classdb_obj_visitor.html#a06273f22275653f033685e5662ca30d5" title="返回对象个数" alt="" coords="176,5,301,32"/>
+<area shape="rect" href="classdb_obj_visitor.html#a890483784279592dbbac671c55c1c2e0" title="获取最后一个对象之后数据的迭代器" alt="" coords="5,5,128,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a383857938003700749bc0aa0efabf957" name="a383857938003700749bc0aa0efabf957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a383857938003700749bc0aa0efabf957">&#9670;&nbsp;</a></span>subspan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t E&gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t O, std::size_t C = dynamic_extent&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="classdsp_1_1span.html">dsp::span</a>&lt; T, E &gt;::subspan </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; typename std::enable_if&lt;C == dynamic_extent, <a class="el" href="classdsp_1_1span.html">span</a>&lt;T, detail::span_sub&lt;E, O&gt;::value&gt;&gt;::type </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取指定位置和长度的子视图 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">O</td><td>子视图起始位置 </td></tr>
+    <tr><td class="paramname">C</td><td>子视图长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>子视图 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/project/Aux2022/vobs/include/app/scada/dsp/<a class="el" href="span_8h_source.html">span.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
