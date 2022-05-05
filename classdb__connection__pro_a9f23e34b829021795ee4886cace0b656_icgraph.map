@@ -1,4 +1,4 @@
 <map id="db_connection_pro::get_single_class_addr" name="db_connection_pro::get_single_class_addr">
-<area shape="rect" id="node1" title="获取单表紧耦合指针首地址" alt="" coords="227,5,378,46"/>
-<area shape="rect" id="node3" href="$classdb_obj_visitor.html#ab898e5aa9d3843b41ac8ae76e605b45a" title="单表对象访问器" alt="" coords="6,12,178,39"/>
+<area shape="rect" id="node1" title="获取单表紧耦合指针首地址" alt="" coords="177,5,327,46"/>
+<area shape="rect" id="node3" href="$classdb__obj__visitor.html#a368e164e1e658fb96736270c57f707b3" title="单表对象访问器" alt="" coords="5,5,128,46"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DSP接口文档: 首页</title>
+<title>DSP接口文档: DSP接口文档</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -39,14 +40,60 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div class="header">
-  <div class="headertitle"><div class="title">DSP接口文档 文档</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">DSP接口文档 </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>目录</h3>
+<ul><li class="level1"><a href="#section1">基本概念</a></li>
+<li class="level1"><a href="#section2">编程范式</a></li>
+<li class="level1"><a href="#section3">设计开发原则</a></li>
+<li class="level1"><a href="#section4">测试框架</a></li>
+<li class="level1"><a href="#section5">参考资料</a></li>
+<li class="level1"><a href="#section6">关键知识点</a><ul><li class="level2"><a href="#section6subsection1">Modern C++</a><ul><li class="level3"><a href="#section6subsection1subsubsection1">类型萃取</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p >此文档是DSP基础模块的设计、开发与使用手册。</p>
+<h1><a class="anchor" id="section1"></a>
+基本概念</h1>
+<p >由于平台需要兼容凝思80系统，C++版本暂时无法使用高于C++11的语言特性。为了方便平台及应用开发，有必要实现或引入合适的第三方库来形成一套较为完善的C++基础模块。 模块接口统一使用命名空间dsp来对外提供，更换内部实现时不应影响应用调用。</p>
+<h1><a class="anchor" id="section2"></a>
+编程范式</h1>
+<p >基础模块的编程范式与std及boost保持一致，采用泛型编程及函数式编程结合的方式。优势是可以兼容使用std或boost的算法，包括boost-range库提供的算法， 提高代码质量及可读性；劣势是头文件臃肿编译速度慢。</p>
+<h1><a class="anchor" id="section3"></a>
+设计开发原则</h1>
+<p >限于水平及时间，尽量从boost库(基于1.75版本)移植 <span class="emoji">&#x1f622;</span> ，不好单独剥离的模块(如range，system)可直接引用boost，用dsp命名空间进行封装以隐藏内部实现。 某些boost实现欠佳的库，例如format, log, coroutine，可引入其他口碑较好且轻量的第三方库。 优先考虑gcc编译器，msvc、clang先无视。要求gcc版本不低于4.9。 少量参考facebook的folly库，google的abseil库。</p>
+<h1><a class="anchor" id="section4"></a>
+测试框架</h1>
+<p >基础模块是应用开发的基础，必须要经过严格的单元测试。原则上每个模块自行编写单元测试用例并保证足够的覆盖率。可统一使用googletest框架。</p>
+<h1><a class="anchor" id="section5"></a>
+参考资料</h1>
+<p ><a href="https://en.cppreference.com/w/">cppreference网站</a>, 最新的C++标准文档、std模块接口说明、编译器支持情况应有尽有，学习C++必备网站 <br  />
+<a href="https://www.boost.org/">Boost官网</a>, Boost官网文档非常齐全，一站式服务 <br  />
+<a href="https://github.com/facebook/folly">Folly库</a>, Facebook的C++基础库 <br  />
+<a href="https://github.com/abseil/abseil-cpp">Abseil库</a>, Google的C++基础库 <br  />
+ </p>
+<h1><a class="anchor" id="section6"></a>
+关键知识点</h1>
+<h2><a class="anchor" id="section6subsection1"></a>
+Modern C++</h2>
+<h3><a class="anchor" id="section6subsection1subsubsection1"></a>
+类型萃取</h3>
+<p ><a class="el" href="page1.html">Type Traits 类型萃取</a></p>
+<dl class="section author"><dt>作者</dt><dd>yangmn </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>v0.1 <pre class="fragment">2022/05/01 建立文档，编写string_view/span接口说明
+2022/05/04 添加memory_iostream接口说明
+2022/05/05 添加主页、类型萃取子页面
+</pre> </dd></dl>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

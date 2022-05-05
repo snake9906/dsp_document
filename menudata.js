@@ -49,6 +49,7 @@ var menudata={children:[
 {text:"m",url:"functions.html#index_m"},
 {text:"n",url:"functions.html#index_n"},
 {text:"o",url:"functions.html#index_o"},
+{text:"p",url:"functions.html#index_p"},
 {text:"r",url:"functions.html#index_r"},
 {text:"s",url:"functions.html#index_s"},
 {text:"t",url:"functions.html#index_t"},
@@ -68,14 +69,10 @@ var menudata={children:[
 {text:"l",url:"functions_func.html#index_l"},
 {text:"m",url:"functions_func.html#index_m"},
 {text:"o",url:"functions_func.html#index_o"},
+{text:"p",url:"functions_func.html#index_p"},
 {text:"r",url:"functions_func.html#index_r"},
 {text:"s",url:"functions_func.html#index_s"},
 {text:"t",url:"functions_func.html#index_t"},
 {text:"u",url:"functions_func.html#index_u"},
 {text:"~",url:"functions_func.html#index__7E"}]},
-{text:"变量",url:"functions_vars.html"}]}]},
-{text:"文件",url:"files.html",children:[
-{text:"文件列表",url:"files.html"},
-{text:"文件成员",url:"globals.html",children:[
-{text:"全部",url:"globals.html"},
-{text:"宏定义",url:"globals_defs.html"}]}]}]}
+{text:"变量",url:"functions_vars.html"}]}]}]}

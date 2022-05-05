@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -53,16 +54,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>字符串视图类。考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QString风格的接口包括：contains，split，replace，remove，join，starts_with，ends_with，to_double，to_int等  
+<p>字符串视图类。  
  <a href="classdsp_1_1basic__string__view.html#details">更多...</a></p>
-
-<p><code>#include &lt;<a class="el" href="string__view_8h_source.html">string_view.h</a>&gt;</code></p>
 <div class="dynheader">
 dsp::basic_string_view&lt; charT, traits &gt; 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view__coll__graph.png" border="0" usemap="#adsp_1_1basic__string__view_3_01char_t_00_01traits_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="adsp_1_1basic__string__view_3_01char_t_00_01traits_01_4_coll__map" id="adsp_1_1basic__string__view_3_01char_t_00_01traits_01_4_coll__map">
-<area shape="rect" title="字符串视图类。考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QS..." alt="" coords="5,5,213,787"/>
+<area shape="rect" title="字符串视图类。" alt="" coords="5,5,213,787"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -276,8 +275,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> () noexcept
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename charT, typename traits&gt;<br />
-class dsp::basic_string_view&lt; charT, traits &gt;</div><p >字符串视图类。考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QString风格的接口包括：contains，split，replace，remove，join，starts_with，ends_with，to_double，to_int等 </p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+class dsp::basic_string_view&lt; charT, traits &gt;</div><p >字符串视图类。 </p>
+<p >考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QString风格的接口包括：contains，split，replace，remove，join，starts_with，ends_with，to_double，to_int等 </p><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">charT</td><td>字符类型 </td></tr>
     <tr><td class="paramname">traits</td><td>字符类型萃取器 </td></tr>
@@ -499,14 +498,15 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_ae2895cd62c56d380154b7016ed10c2af_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_ae2895cd62c56d380154b7016ed10c2af_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_ae2895cd62c56d380154b7016ed10c2af_cgraph" id="aclassdsp_1_1basic__string__view_ae2895cd62c56d380154b7016ed10c2af_cgraph">
-<area shape="rect" title="将本视图以指定视图进行分割" alt="" coords="5,135,157,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="205,70,357,111"/>
+<area shape="rect" title="将本视图以指定视图进行分割" alt="" coords="5,266,157,307"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,331,557,373"/>
 <area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="205,135,357,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,201,357,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="405,5,557,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="405,70,557,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="405,135,557,177"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,266,357,307"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="405,135,557,177"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="405,5,557,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="405,70,557,111"/>
 <area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,201,557,242"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="405,266,557,307"/>
 </map>
 </div>
 <div class="dynheader">
@@ -906,9 +906,11 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_aadc6cea1eda849fe3fe49f307c9feddf_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_aadc6cea1eda849fe3fe49f307c9feddf_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_aadc6cea1eda849fe3fe49f307c9feddf_cgraph" id="aclassdsp_1_1basic__string__view_aadc6cea1eda849fe3fe49f307c9feddf_cgraph">
-<area shape="rect" title="根据参数pos1和n1生成子视图与x进行比较" alt="" coords="5,5,157,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,5,357,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,5,557,46"/>
+<area shape="rect" title="根据参数pos1和n1生成子视图与x进行比较" alt="" coords="5,70,157,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,70,357,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="405,5,557,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,70,557,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,135,557,177"/>
 </map>
 </div>
 
@@ -990,9 +992,11 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_a59ec9386c5e03c1abfc832f13cfa77db_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_a59ec9386c5e03c1abfc832f13cfa77db_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_a59ec9386c5e03c1abfc832f13cfa77db_cgraph" id="aclassdsp_1_1basic__string__view_a59ec9386c5e03c1abfc832f13cfa77db_cgraph">
-<area shape="rect" title="比较两个视图的子视图是否相同" alt="" coords="5,5,157,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,5,357,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,5,557,46"/>
+<area shape="rect" title="比较两个视图的子视图是否相同" alt="" coords="5,70,157,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,70,357,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="405,5,557,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,70,557,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,135,557,177"/>
 </map>
 </div>
 
@@ -1068,9 +1072,10 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="center"><img src="classdsp_1_1basic__string__view_aed7205da50f8b7f34628c392ac99e504_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_aed7205da50f8b7f34628c392ac99e504_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_aed7205da50f8b7f34628c392ac99e504_cgraph" id="aclassdsp_1_1basic__string__view_aed7205da50f8b7f34628c392ac99e504_cgraph">
 <area shape="rect" title="比较子视图与字符串是否相同" alt="" coords="5,38,157,79"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="205,5,357,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,70,357,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,70,557,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="405,5,557,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,69,357,110"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,70,557,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,135,557,177"/>
 </map>
 </div>
 
@@ -1185,8 +1190,8 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="line"><a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>{<span class="stringliteral">&quot;less than 20&quot;</span>}.<a class="code hl_function" href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">copy</a>(cstr, 19);</div>
 <div class="line">std::cout &lt;&lt; cstr &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: less than 20</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html"><div class="ttname"><a href="classdsp_1_1basic__string__view.html">dsp::basic_string_view</a></div><div class="ttdoc">字符串视图类。考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QS...</div><div class="ttdef"><b>Definition:</b> string_view.h:45</div></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aedbc5598c1475e6477177b07555380dc"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">dsp::basic_string_view::copy</a></div><div class="ttdeci">auto copy(charT *s, size_type n, size_type pos=0) const -&gt; size_type</div><div class="ttdoc">将视图(从起始位置开始)拷贝(指定长度)至指定字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:302</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html"><div class="ttname"><a href="classdsp_1_1basic__string__view.html">dsp::basic_string_view</a></div><div class="ttdoc">字符串视图类。</div><div class="ttdef"><b>Definition:</b> string_view.h:47</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aedbc5598c1475e6477177b07555380dc"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">dsp::basic_string_view::copy</a></div><div class="ttdeci">auto copy(charT *s, size_type n, size_type pos=0) const -&gt; size_type</div><div class="ttdoc">将视图(从起始位置开始)拷贝(指定长度)至指定字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:304</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>字符串 </td></tr>
@@ -1207,8 +1212,9 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_aedbc5598c1475e6477177b07555380dc_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_aedbc5598c1475e6477177b07555380dc_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_aedbc5598c1475e6477177b07555380dc_cgraph" id="aclassdsp_1_1basic__string__view_aedbc5598c1475e6477177b07555380dc_cgraph">
-<area shape="rect" title="将视图(从起始位置开始)拷贝(指定长度)至指定字符串" alt="" coords="5,5,157,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="205,5,357,46"/>
+<area shape="rect" title="将视图(从起始位置开始)拷贝(指定长度)至指定字符串" alt="" coords="5,38,157,79"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="205,5,357,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="205,70,357,111"/>
 </map>
 </div>
 
@@ -1299,8 +1305,9 @@ template&lt;typename T &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_a39078fd9a0862925b5fdad7f3367939d_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_a39078fd9a0862925b5fdad7f3367939d_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_a39078fd9a0862925b5fdad7f3367939d_cgraph" id="aclassdsp_1_1basic__string__view_a39078fd9a0862925b5fdad7f3367939d_cgraph">
-<area shape="rect" title="将视图(从起始位置开始)拷贝(指定长度)至指定字符数组(C&#45;Style风格)" alt="" coords="5,5,157,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="205,5,357,46"/>
+<area shape="rect" title="将视图(从起始位置开始)拷贝(指定长度)至指定字符数组(C&#45;Style风格)" alt="" coords="5,38,157,79"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="205,5,357,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="205,70,357,111"/>
 </map>
 </div>
 
@@ -1417,13 +1424,16 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_a9d8df713efecb3b36853af72fa7d3cfe_icgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_a9d8df713efecb3b36853af72fa7d3cfe_icgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_a9d8df713efecb3b36853af72fa7d3cfe_icgraph" id="aclassdsp_1_1basic__string__view_a9d8df713efecb3b36853af72fa7d3cfe_icgraph">
-<area shape="rect" title="获取视图内部字符串指针" alt="" coords="605,70,757,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="405,5,557,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="405,70,557,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577" title="返回当前视图重复num次的字符串。num为0时返回空字符串。" alt="" coords="405,135,557,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547" title="将str 对象中的 before 替换为 after" alt="" coords="205,5,357,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569" title="删除str中的所有bsv子字符串" alt="" coords="5,5,157,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad45d102949a38263ab593afc2db7f804" title="将字符串数组以指定连接字符串拼接成新字符串" alt="" coords="205,70,357,111"/>
+<area shape="rect" title="获取视图内部字符串指针" alt="" coords="805,129,957,170"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="405,129,557,170"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc" title="将视图(从起始位置开始)拷贝(指定长度)至指定字符串" alt="" coords="605,70,757,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="605,5,757,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577" title="返回当前视图重复num次的字符串。num为0时返回空字符串。" alt="" coords="605,187,757,229"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="605,253,757,294"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547" title="将str 对象中的 before 替换为 after" alt="" coords="205,98,357,139"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569" title="删除str中的所有bsv子字符串" alt="" coords="5,98,157,139"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad45d102949a38263ab593afc2db7f804" title="将字符串数组以指定连接字符串拼接成新字符串" alt="" coords="405,5,557,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#aadc6cea1eda849fe3fe49f307c9feddf" title="根据参数pos1和n1生成子视图与x进行比较" alt="" coords="405,253,557,294"/>
 </map>
 </div>
 
@@ -2028,7 +2038,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="fragment"><div class="line">vector&lt;string&gt; strings{<span class="stringliteral">&quot;this&quot;</span>,<span class="stringliteral">&quot;is&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;test&quot;</span>,<span class="stringliteral">&quot;string.&quot;</span>};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334">join</a>(strings, <span class="stringliteral">&quot; &quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: this is a test string</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad32efd036311d736b0138a0930604334"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334">dsp::basic_string_view::join</a></div><div class="ttdeci">static auto join(const std::vector&lt; basic_string_view &gt; &amp;string_views, const std::basic_string&lt; charT, traits &gt; &amp;sep=&quot;&quot;) -&gt; std::basic_string&lt; charT, traits &gt;</div><div class="ttdoc">将视图数组以指定连接字符串拼接成新字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:554</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad32efd036311d736b0138a0930604334"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334">dsp::basic_string_view::join</a></div><div class="ttdeci">static auto join(const std::vector&lt; basic_string_view &gt; &amp;string_views, const std::basic_string&lt; charT, traits &gt; &amp;sep=&quot;&quot;) -&gt; std::basic_string&lt; charT, traits &gt;</div><div class="ttdoc">将视图数组以指定连接字符串拼接成新字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:556</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">strings</td><td>待拼接的字符串数组 </td></tr>
@@ -2305,7 +2315,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <p>生成字符串，删除本视图中的str子视图 </p>
 <div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>(<span class="stringliteral">&quot;abcd&quot;</span>).<a class="code hl_function" href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569">remove</a>(<span class="stringliteral">&quot;abc&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: d</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_adf114aca631a5a83ccff624d604d3569"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569">dsp::basic_string_view::remove</a></div><div class="ttdeci">static auto remove(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view bsv) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">删除str中的所有bsv子字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:640</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_adf114aca631a5a83ccff624d604d3569"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569">dsp::basic_string_view::remove</a></div><div class="ttdeci">static auto remove(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view bsv) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">删除str中的所有bsv子字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:642</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>子视图 </td></tr>
@@ -2318,17 +2328,18 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_a12d7f6c56641020a297c1a8220475b6b_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_a12d7f6c56641020a297c1a8220475b6b_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_a12d7f6c56641020a297c1a8220475b6b_cgraph" id="aclassdsp_1_1basic__string__view_a12d7f6c56641020a297c1a8220475b6b_cgraph">
-<area shape="rect" title="生成字符串，删除本视图中的str子视图" alt="" coords="5,201,157,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547" title="将str 对象中的 before 替换为 after" alt="" coords="205,201,357,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="405,167,557,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="405,233,557,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="605,233,757,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="605,102,757,143"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="605,167,757,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="805,5,957,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="805,70,957,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="805,135,957,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="805,201,957,242"/>
+<area shape="rect" title="生成字符串，删除本视图中的str子视图" alt="" coords="5,65,157,106"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547" title="将str 对象中的 before 替换为 after" alt="" coords="205,65,357,106"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="405,109,557,150"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="605,6,757,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="805,6,957,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="605,202,757,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="605,123,757,165"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="805,267,957,309"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="805,333,957,374"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="805,202,957,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="805,71,957,113"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="805,137,957,178"/>
 </map>
 </div>
 
@@ -2387,17 +2398,18 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_adf114aca631a5a83ccff624d604d3569_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_adf114aca631a5a83ccff624d604d3569_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_adf114aca631a5a83ccff624d604d3569_cgraph" id="aclassdsp_1_1basic__string__view_adf114aca631a5a83ccff624d604d3569_cgraph">
-<area shape="rect" title="删除str中的所有bsv子字符串" alt="" coords="5,201,157,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547" title="将str 对象中的 before 替换为 after" alt="" coords="205,201,357,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="405,167,557,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="405,233,557,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="605,233,757,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="605,102,757,143"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="605,167,757,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="805,5,957,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="805,70,957,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="805,135,957,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="805,201,957,242"/>
+<area shape="rect" title="删除str中的所有bsv子字符串" alt="" coords="5,65,157,106"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547" title="将str 对象中的 before 替换为 after" alt="" coords="205,65,357,106"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="405,109,557,150"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="605,6,757,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="805,6,957,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="605,202,757,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="605,123,757,165"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="805,267,957,309"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="805,333,957,374"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="805,202,957,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="805,71,957,113"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="805,137,957,178"/>
 </map>
 </div>
 
@@ -2543,7 +2555,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <p>返回当前视图重复num次的字符串。num为0时返回空字符串。 </p>
 <div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>(<span class="stringliteral">&quot;1234&quot;</span>).<a class="code hl_function" href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577">repeat</a>(4) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: 1234123412341234</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad1d0ee2c4789bf41b8c9e649a5564577"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577">dsp::basic_string_view::repeat</a></div><div class="ttdeci">auto repeat(uint32_t num) -&gt; std::string</div><div class="ttdoc">返回当前视图重复num次的字符串。num为0时返回空字符串。</div><div class="ttdef"><b>Definition:</b> string_view.h:665</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad1d0ee2c4789bf41b8c9e649a5564577"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577">dsp::basic_string_view::repeat</a></div><div class="ttdeci">auto repeat(uint32_t num) -&gt; std::string</div><div class="ttdoc">返回当前视图重复num次的字符串。num为0时返回空字符串。</div><div class="ttdef"><b>Definition:</b> string_view.h:667</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">num</td><td>重复次数 </td></tr>
@@ -2614,16 +2626,17 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_a8abfb474737f0dce1328be03de9bce5a_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_a8abfb474737f0dce1328be03de9bce5a_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_a8abfb474737f0dce1328be03de9bce5a_cgraph" id="aclassdsp_1_1basic__string__view_a8abfb474737f0dce1328be03de9bce5a_cgraph">
-<area shape="rect" title="生成字符串，将本视图中的 before 替换为 after" alt="" coords="5,201,157,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="205,167,357,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="205,233,357,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,233,557,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="405,102,557,143"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="405,167,557,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="605,5,757,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="605,70,757,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="605,135,757,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="605,201,757,242"/>
+<area shape="rect" title="生成字符串，将本视图中的 before 替换为 after" alt="" coords="5,65,157,106"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="205,109,357,150"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="405,6,557,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="605,6,757,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="405,202,557,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="405,123,557,165"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="605,267,757,309"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="605,333,757,374"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="605,202,757,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="605,71,757,113"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="605,137,757,178"/>
 </map>
 </div>
 
@@ -2675,7 +2688,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="fragment"><div class="line">std::string str{<span class="stringliteral">&quot;hello world&quot;</span>};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547">replace</a>(str, <span class="stringliteral">&quot;l&quot;</span>, <span class="stringliteral">&quot;a&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: heaao worad</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_abaf0ed6706d1f29497b3b64cedcb6547"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547">dsp::basic_string_view::replace</a></div><div class="ttdeci">static auto replace(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view before, basic_string_view after) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">将str 对象中的 before 替换为 after</div><div class="ttdef"><b>Definition:</b> string_view.h:612</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_abaf0ed6706d1f29497b3b64cedcb6547"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547">dsp::basic_string_view::replace</a></div><div class="ttdeci">static auto replace(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view before, basic_string_view after) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">将str 对象中的 before 替换为 after</div><div class="ttdef"><b>Definition:</b> string_view.h:614</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>给定的字符串 </td></tr>
@@ -2690,16 +2703,17 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_abaf0ed6706d1f29497b3b64cedcb6547_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_abaf0ed6706d1f29497b3b64cedcb6547_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_abaf0ed6706d1f29497b3b64cedcb6547_cgraph" id="aclassdsp_1_1basic__string__view_abaf0ed6706d1f29497b3b64cedcb6547_cgraph">
-<area shape="rect" title="将str 对象中的 before 替换为 after" alt="" coords="5,201,157,242"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="205,167,357,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="205,233,357,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,233,557,274"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="405,102,557,143"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="405,167,557,209"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="605,5,757,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="605,70,757,111"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="605,135,757,177"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="605,201,757,242"/>
+<area shape="rect" title="将str 对象中的 before 替换为 after" alt="" coords="5,65,157,106"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae2895cd62c56d380154b7016ed10c2af" title="将本视图以指定视图进行分割" alt="" coords="205,109,357,150"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334" title="将视图数组以指定连接字符串拼接成新字符串" alt="" coords="405,6,557,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="605,6,757,47"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#aea75640f72ad55e4f435fba7c4dbca81" title="从指定位置开始查找给定视图" alt="" coords="405,202,557,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="405,123,557,165"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a8d1a023aa6ee1364d8d6f14d6451408d" title="获取指向视图第一个字符的const迭代器" alt="" coords="605,267,757,309"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ab5f60e7a8d531441060d796ce8046a58" title="获取指向视图最后一个字符之后数据的const迭代器" alt="" coords="605,333,757,374"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#ae1801eccb3827060e3909b3bc70c02b8" title="视图是否为空" alt="" coords="605,202,757,243"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="605,71,757,113"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="605,137,757,178"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3011,8 +3025,10 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1basic__string__view_a577fd78e36e0c082aab9cc4d76e65e4e_cgraph.png" border="0" usemap="#aclassdsp_1_1basic__string__view_a577fd78e36e0c082aab9cc4d76e65e4e_cgraph" alt=""/></div>
 <map name="aclassdsp_1_1basic__string__view_a577fd78e36e0c082aab9cc4d76e65e4e_cgraph" id="aclassdsp_1_1basic__string__view_a577fd78e36e0c082aab9cc4d76e65e4e_cgraph">
-<area shape="rect" title="获取子视图" alt="" coords="5,5,157,46"/>
-<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="205,5,357,46"/>
+<area shape="rect" title="获取子视图" alt="" coords="5,70,157,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="205,5,357,46"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="205,70,357,111"/>
+<area shape="rect" href="classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="205,135,357,177"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3149,7 +3165,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="line"> </div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>{<span class="stringliteral">&quot;abcd&quot;</span>}.<a class="code hl_function" href="classdsp_1_1basic__string__view.html#aa2fca51591fb970efb8e7d10cc9f9790">to_double</a>(&amp;ok) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ok &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: 0 true</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aa2fca51591fb970efb8e7d10cc9f9790"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aa2fca51591fb970efb8e7d10cc9f9790">dsp::basic_string_view::to_double</a></div><div class="ttdeci">auto to_double(bool *ok=nullptr) const noexcept -&gt; double</div><div class="ttdoc">将视图转换为double类型</div><div class="ttdef"><b>Definition:</b> string_view.h:691</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aa2fca51591fb970efb8e7d10cc9f9790"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aa2fca51591fb970efb8e7d10cc9f9790">dsp::basic_string_view::to_double</a></div><div class="ttdeci">auto to_double(bool *ok=nullptr) const noexcept -&gt; double</div><div class="ttdoc">将视图转换为double类型</div><div class="ttdef"><b>Definition:</b> string_view.h:693</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">ok</td><td>当ok不为空指针且转换double失败时，ok将置为false </td></tr>
@@ -3473,13 +3489,10 @@ template&lt;typename charT , typename traits &gt; </div>
 
 </div>
 </div>
-<hr/>该类的文档由以下文件生成:<ul>
-<li>D:/project/Aux2022/vobs/include/app/scada/dsp/string/<a class="el" href="string__view_8h_source.html">string_view.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

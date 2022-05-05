@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -56,17 +57,18 @@ $(function() {
 <tr id="row_0_0_6_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structdsp_1_1type__traits_1_1is__unbound__array_3_01_t_0f_0e_4.html" target="_self">is_unbound_array&lt; T[]&gt;</a></td><td class="desc">判断入参是否为无界数组, since C++ 20 </td></tr>
 <tr id="row_0_0_7_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structdsp_1_1type__traits_1_1negation.html" target="_self">negation</a></td><td class="desc">Meta函数，返回入参value取反, since C++ 17 </td></tr>
 <tr id="row_0_0_8_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structdsp_1_1type__traits_1_1remove__cvref.html" target="_self">remove_cvref</a></td><td class="desc">删除入参的const volatile reference描述, since C++ 20 </td></tr>
-<tr id="row_0_1_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdsp_1_1basic__string__view.html" target="_self">basic_string_view</a></td><td class="desc">字符串视图类。考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QString风格的接口包括：contains，split，replace，remove，join，starts_with，ends_with，to_double，to_int等 </td></tr>
-<tr id="row_0_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdsp_1_1span.html" target="_self">span</a></td><td class="desc">内存连续数据的访问视图，支持C-Style数组，array，range。本实现参考Boost::Core::Span </td></tr>
+<tr id="row_0_1_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdsp_1_1basic__string__view.html" target="_self">basic_string_view</a></td><td class="desc">字符串视图类。 </td></tr>
+<tr id="row_0_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdsp_1_1span.html" target="_self">span</a></td><td class="desc">内存连续数据的访问视图 </td></tr>
 <tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdb__connection__pro.html" target="_self">db_connection_pro</a></td><td class="desc">对db_connection进行二次封装 </td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdb_obj_iterator.html" target="_self">dbObjIterator</a></td><td class="desc">对象访问器的迭代器 </td></tr>
-<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdb_obj_visitor.html" target="_self">dbObjVisitor</a></td><td class="desc">数据库对象访问器 </td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdb__obj__iterator.html" target="_self">db_obj_iterator</a></td><td class="desc">对象访问器的迭代器 </td></tr>
+<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classdb__obj__visitor.html" target="_self">db_obj_visitor</a></td><td class="desc">数据库对象访问器 </td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classmemory__iostream.html" target="_self">memory_iostream</a></td><td class="desc">简单的数据序列化/反序列化类。常用于构造内部网络报文的data。 </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

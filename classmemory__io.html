@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: memory_io类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmemory__io-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">memory_io类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>简单的数据序列化/反序列化类。常用于构造内部网络报文的data。可以使用pop/push函数或者使用&gt;&gt;/&lt;&lt;操作符来进行数据存取，数据先进先出 且连续存放，可以通过<a class="el" href="classmemory__io.html#a7c6f4f4501d2d9d2c0987dea24c034f9">data()</a> 获取数据首地址，通过<a class="el" href="classmemory__io.html#a62b57f9e79054fc8a4c168ee32a840f1">size()</a> 获取数据总长度。自定义类型可以通过声明友元函数来支持memory_io的操作，下面是一个示例：  
+ <a href="classmemory__io.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="memory__io_8h_source.html">memory_io.h</a>&gt;</code></p>
+<div class="dynheader">
+memory_io 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmemory__io__coll__graph.png" border="0" usemap="#amemory__io_coll__map" alt="Collaboration graph"/></div>
+<map name="amemory__io_coll__map" id="amemory__io_coll__map">
+<area shape="rect" title="简单的数据序列化/反序列化类。常用于构造内部网络报文的data。可以使用pop/push函数或者使用&gt;&gt;/&lt;&lt;操作符来进行数据存取，数据先进先出 且连续存放，可以通过data() 获取数据首地址，通过s..." alt="" coords="5,5,181,347"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ad6e56bf75c8b90c8e36ba9016e71819e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad6e56bf75c8b90c8e36ba9016e71819e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmemory__io.html#ad6e56bf75c8b90c8e36ba9016e71819e">pop</a> (T &amp;t, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; std::is_arithmetic&lt; T &gt;::value &gt; *=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:ad6e56bf75c8b90c8e36ba9016e71819e"><td class="mdescLeft">&#160;</td><td class="mdescRight">数值型pop函数。尝试取出T类型的数据。  <a href="classmemory__io.html#ad6e56bf75c8b90c8e36ba9016e71819e">更多...</a><br /></td></tr>
+<tr class="separator:ad6e56bf75c8b90c8e36ba9016e71819e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87eee6936048d503c587315a3e96eab6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a87eee6936048d503c587315a3e96eab6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a87eee6936048d503c587315a3e96eab6">pop</a> (T &amp;t, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::is_char_array</a>&lt; T &gt;::value &gt; *=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a87eee6936048d503c587315a3e96eab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">char数组pop函数。尝试取出char数组类型的数据。  <a href="classmemory__io.html#a87eee6936048d503c587315a3e96eab6">更多...</a><br /></td></tr>
+<tr class="separator:a87eee6936048d503c587315a3e96eab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e7abf87e53af2f327790f03ed7dace"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a02e7abf87e53af2f327790f03ed7dace">pop</a> (std::string &amp;des) -&gt; bool</td></tr>
+<tr class="memdesc:a02e7abf87e53af2f327790f03ed7dace"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串pop函数。  <a href="classmemory__io.html#a02e7abf87e53af2f327790f03ed7dace">更多...</a><br /></td></tr>
+<tr class="separator:a02e7abf87e53af2f327790f03ed7dace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f7b09f036fb01eb20fc478f81a7e16"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad9f7b09f036fb01eb20fc478f81a7e16"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmemory__io.html#ad9f7b09f036fb01eb20fc478f81a7e16">push</a> (T t, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; std::is_arithmetic&lt; T &gt;::value &gt; *=nullptr)</td></tr>
+<tr class="memdesc:ad9f7b09f036fb01eb20fc478f81a7e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">数值型push函数。尝试存入数值型数据。  <a href="classmemory__io.html#ad9f7b09f036fb01eb20fc478f81a7e16">更多...</a><br /></td></tr>
+<tr class="separator:ad9f7b09f036fb01eb20fc478f81a7e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09abfdb07b326d98e558f7b0c7f0ad35"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a09abfdb07b326d98e558f7b0c7f0ad35"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a09abfdb07b326d98e558f7b0c7f0ad35">push</a> (T t, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::is_char_pointer</a>&lt; T &gt;::value &gt; *=nullptr)</td></tr>
+<tr class="memdesc:a09abfdb07b326d98e558f7b0c7f0ad35"><td class="mdescLeft">&#160;</td><td class="mdescRight">char*push函数。尝试存入字符串数据。  <a href="classmemory__io.html#a09abfdb07b326d98e558f7b0c7f0ad35">更多...</a><br /></td></tr>
+<tr class="separator:a09abfdb07b326d98e558f7b0c7f0ad35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95988f7afa9ced19b6653d47b819f3c5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a95988f7afa9ced19b6653d47b819f3c5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a95988f7afa9ced19b6653d47b819f3c5">push</a> (T t, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::is_char_array</a>&lt; T &gt;::value &gt; *=nullptr)</td></tr>
+<tr class="memdesc:a95988f7afa9ced19b6653d47b819f3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">char数组push函数。尝试存入char数组数据。(char数组不能保证一定是字符串)  <a href="classmemory__io.html#a95988f7afa9ced19b6653d47b819f3c5">更多...</a><br /></td></tr>
+<tr class="separator:a95988f7afa9ced19b6653d47b819f3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d62a085b52bc338970cf8411d7390c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a63d62a085b52bc338970cf8411d7390c">push</a> (const std::string &amp;src)</td></tr>
+<tr class="memdesc:a63d62a085b52bc338970cf8411d7390c"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入string数据。  <a href="classmemory__io.html#a63d62a085b52bc338970cf8411d7390c">更多...</a><br /></td></tr>
+<tr class="separator:a63d62a085b52bc338970cf8411d7390c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6f4f4501d2d9d2c0987dea24c034f9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a7c6f4f4501d2d9d2c0987dea24c034f9">data</a> () -&gt; const char *</td></tr>
+<tr class="memdesc:a7c6f4f4501d2d9d2c0987dea24c034f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取memory首地址  <a href="classmemory__io.html#a7c6f4f4501d2d9d2c0987dea24c034f9">更多...</a><br /></td></tr>
+<tr class="separator:a7c6f4f4501d2d9d2c0987dea24c034f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b57f9e79054fc8a4c168ee32a840f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemory__io.html#a62b57f9e79054fc8a4c168ee32a840f1">size</a> () const noexcept -&gt; size_t</td></tr>
+<tr class="memdesc:a62b57f9e79054fc8a4c168ee32a840f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取memory长度  <a href="classmemory__io.html#a62b57f9e79054fc8a4c168ee32a840f1">更多...</a><br /></td></tr>
+<tr class="separator:a62b57f9e79054fc8a4c168ee32a840f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >简单的数据序列化/反序列化类。常用于构造内部网络报文的data。可以使用pop/push函数或者使用&gt;&gt;/&lt;&lt;操作符来进行数据存取，数据先进先出 且连续存放，可以通过<a class="el" href="classmemory__io.html#a7c6f4f4501d2d9d2c0987dea24c034f9">data()</a> 获取数据首地址，通过<a class="el" href="classmemory__io.html#a62b57f9e79054fc8a4c168ee32a840f1">size()</a> 获取数据总长度。自定义类型可以通过声明友元函数来支持memory_io的操作，下面是一个示例： </p>
+<div class="fragment"><div class="line"> <span class="keyword">struct </span>foo {</div>
+<div class="line"> foo(<span class="keywordtype">int</span> _x = 0, <span class="keywordtype">int</span> _y = 0, <span class="keywordtype">float</span> _z = 0.) : x(_x), y(_y), z(_z) {}</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">friend</span> <a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;operator&lt;&lt;(<a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;, <span class="keyword">const</span> foo &amp;);</div>
+<div class="line"> <span class="keyword">friend</span> <a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;operator&gt;&gt;(<a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;, foo &amp;);</div>
+<div class="line"> <span class="keyword">friend</span> std::ostream &amp;operator&lt;&lt;(std::ostream &amp;, <span class="keyword">const</span> foo &amp;);</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">   <span class="keywordtype">int</span> x{0};</div>
+<div class="line">   <span class="keywordtype">int</span> y{0};</div>
+<div class="line">   <span class="keywordtype">float</span> z{0};</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">inline</span> <a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;operator&lt;&lt;(<a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;mio, <span class="keyword">const</span> foo &amp;f) {</div>
+<div class="line"> mio &lt;&lt; f.x &lt;&lt; f.y &lt;&lt; f.z;</div>
+<div class="line"> <span class="keywordflow">return</span> mio;</div>
+<div class="line"> }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">inline</span> <a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;operator&gt;&gt;(<a class="code hl_class" href="classmemory__io.html">memory_io</a> &amp;mio, foo &amp;f) {</div>
+<div class="line"> mio &gt;&gt; f.x &gt;&gt; f.y &gt;&gt; f.z;</div>
+<div class="line"> <span class="keywordflow">return</span> mio;</div>
+<div class="line"> }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">inline</span> std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> foo &amp;f) { os &lt;&lt; f.x &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; f.y &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; f.z; }</div>
+<div class="line"> </div>
+<div class="line"> <a class="code hl_class" href="classmemory__io.html">memory_io</a> mio{};</div>
+<div class="line"> foo f1{1, 2, 3.5};</div>
+<div class="line"> foo f2{};</div>
+<div class="line"> mio &lt;&lt; f1;</div>
+<div class="line"> mio &gt;&gt; f2;</div>
+<div class="line"> std::cout &lt;&lt; f2 &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// Output: 1 2 3.5</span></div>
+<div class="ttc" id="aclassmemory__io_html"><div class="ttname"><a href="classmemory__io.html">memory_io</a></div><div class="ttdoc">简单的数据序列化/反序列化类。常用于构造内部网络报文的data。可以使用pop/push函数或者使用&gt;&gt;/&lt;&lt;操作符来进行数据存取，数据先进先出 且连续存放，可以通过data() 获取数据首地址，通过s...</div><div class="ttdef"><b>Definition:</b> memory_io.h:66</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">成员函数说明</h2>
+<a id="a7c6f4f4501d2d9d2c0987dea24c034f9" name="a7c6f4f4501d2d9d2c0987dea24c034f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6f4f4501d2d9d2c0987dea24c034f9">&#9670;&nbsp;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto memory_io::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; const char * </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取memory首地址 </p>
+<dl class="section return"><dt>返回</dt><dd>char*类型的memory首地址 </dd></dl>
+
+</div>
+</div>
+<a id="a02e7abf87e53af2f327790f03ed7dace" name="a02e7abf87e53af2f327790f03ed7dace"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e7abf87e53af2f327790f03ed7dace">&#9670;&nbsp;</a></span>pop() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto memory_io::pop </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>des</em></td><td>)</td>
+          <td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>字符串pop函数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">des</td><td>返回的字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>获取成功返回<code>true，反之返回<code>false</code> </code> </dd></dl>
+
+</div>
+</div>
+<a id="a87eee6936048d503c587315a3e96eab6" name="a87eee6936048d503c587315a3e96eab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87eee6936048d503c587315a3e96eab6">&#9670;&nbsp;</a></span>pop() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto memory_io::pop </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::is_char_array</a>&lt; T &gt;::value &gt; *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>char数组pop函数。尝试取出char数组类型的数据。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>待取出的数据类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>返回的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>获取成功返回<code>true，反之返回<code>false</code> </code> </dd></dl>
+
+</div>
+</div>
+<a id="ad6e56bf75c8b90c8e36ba9016e71819e" name="ad6e56bf75c8b90c8e36ba9016e71819e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e56bf75c8b90c8e36ba9016e71819e">&#9670;&nbsp;</a></span>pop() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto memory_io::pop </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; std::is_arithmetic&lt; T &gt;::value &gt; *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>数值型pop函数。尝试取出T类型的数据。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>待取出的数据类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>返回的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>获取成功返回<code>true，反之返回<code>false</code> </code> </dd></dl>
+
+</div>
+</div>
+<a id="a63d62a085b52bc338970cf8411d7390c" name="a63d62a085b52bc338970cf8411d7390c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d62a085b52bc338970cf8411d7390c">&#9670;&nbsp;</a></span>push() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void memory_io::push </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>存入string数据。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>string数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a95988f7afa9ced19b6653d47b819f3c5" name="a95988f7afa9ced19b6653d47b819f3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95988f7afa9ced19b6653d47b819f3c5">&#9670;&nbsp;</a></span>push() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void memory_io::push </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::is_char_array</a>&lt; T &gt;::value &gt; *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>char数组push函数。尝试存入char数组数据。(char数组不能保证一定是字符串) </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>存入的数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>存入的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a09abfdb07b326d98e558f7b0c7f0ad35" name="a09abfdb07b326d98e558f7b0c7f0ad35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09abfdb07b326d98e558f7b0c7f0ad35">&#9670;&nbsp;</a></span>push() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void memory_io::push </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::is_char_pointer</a>&lt; T &gt;::value &gt; *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>char*push函数。尝试存入字符串数据。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>存入的数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>存入的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad9f7b09f036fb01eb20fc478f81a7e16" name="ad9f7b09f036fb01eb20fc478f81a7e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f7b09f036fb01eb20fc478f81a7e16">&#9670;&nbsp;</a></span>push() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void memory_io::push </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; std::is_arithmetic&lt; T &gt;::value &gt; *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>数值型push函数。尝试存入数值型数据。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>存入的数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>存入的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a62b57f9e79054fc8a4c168ee32a840f1" name="a62b57f9e79054fc8a4c168ee32a840f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b57f9e79054fc8a4c168ee32a840f1">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto memory_io::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取memory长度 </p>
+<dl class="section return"><dt>返回</dt><dd>memory长度 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/project/Aux2022/vobs/include/app/scada/dsp/io/<a class="el" href="memory__io_8h_source.html">memory_io.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 4日 星期三 17:43:00 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

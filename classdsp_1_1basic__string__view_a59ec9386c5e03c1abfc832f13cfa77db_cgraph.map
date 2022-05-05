@@ -1,5 +1,7 @@
 <map id="dsp::basic_string_view::compare" name="dsp::basic_string_view::compare">
-<area shape="rect" id="node1" title="比较两个视图的子视图是否相同" alt="" coords="5,5,157,46"/>
-<area shape="rect" id="node3" href="$classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,5,357,46"/>
-<area shape="rect" id="node5" href="$classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,5,557,46"/>
+<area shape="rect" id="node1" title="比较两个视图的子视图是否相同" alt="" coords="5,70,157,111"/>
+<area shape="rect" id="node3" href="$classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e" title="获取子视图" alt="" coords="205,70,357,111"/>
+<area shape="rect" id="node5" href="$classdsp_1_1basic__string__view.html#acdc9e2169a03f98560be22587813c946" title="构造空的字符串视图" alt="" coords="405,5,557,46"/>
+<area shape="rect" id="node7" href="$classdsp_1_1basic__string__view.html#a9d8df713efecb3b36853af72fa7d3cfe" title="获取视图内部字符串指针" alt="" coords="405,70,557,111"/>
+<area shape="rect" id="node9" href="$classdsp_1_1basic__string__view.html#af4216d092fafa0e0d44ad64922ce86ff" title="获取视图长度" alt="" coords="405,135,557,177"/>
 </map>

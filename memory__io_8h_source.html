@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: D:/project/Aux2022/vobs/include/app/scada/dsp/io/memory_io.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8858cb3708c0c816fb8de7080655568f.html">Aux2022</a></li><li class="navelem"><a class="el" href="dir_15679b3e902361c6de501cff170c1797.html">vobs</a></li><li class="navelem"><a class="el" href="dir_eee0fc127c0c833bb5b114755c6c2b22.html">include</a></li><li class="navelem"><a class="el" href="dir_5ab65f0e40140b552956b9b63d828025.html">app</a></li><li class="navelem"><a class="el" href="dir_b2e6e9ae5b9ee69a98bac5e188765ebc.html">scada</a></li><li class="navelem"><a class="el" href="dir_25115c0ce1ecb40939d30dc1be04dfcd.html">dsp</a></li><li class="navelem"><a class="el" href="dir_15b12d11450cc93ff346551bd4055b5d.html">io</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">memory_io.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;dsp/exception/throw_exception.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;dsp/type_traits.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">struct </span>memory_block {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    memory_block(<span class="keywordtype">size_t</span> _pos, <span class="keywordtype">size_t</span> _size) : pos(_pos), size(_size) {}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">size_t</span> pos{0};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">size_t</span> size{0};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classmemory__iostream.html">   68</a></span><span class="keyword">class </span><a class="code hl_class" href="classmemory__iostream.html">memory_iostream</a> {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#adda71ead7c6199659b8f9b660d6e9daf">   88</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#adda71ead7c6199659b8f9b660d6e9daf">pop</a>(T &amp;t, <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt;std::is_arithmetic&lt;T&gt;::value&gt; * = <span class="keyword">nullptr</span>) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> pop_impl(&amp;t, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a8af28cc5a8dc47f85b9b69476ec0a973">  111</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#a8af28cc5a8dc47f85b9b69476ec0a973">pop</a>(T &amp;t, <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt;<a class="code hl_struct" href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::is_char_array&lt;T&gt;::value</a>&gt; * = <span class="keyword">nullptr</span>) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">if</span> (m_memory_blocks.empty()) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keyword">auto</span> sz = m_memory_blocks.front().size;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(T) &lt; sz) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> pop_impl(&amp;t, sz);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a07d28a8f2f7147eb4a135a012768f46d">  137</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#a07d28a8f2f7147eb4a135a012768f46d">pop</a>(std::string &amp;des) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">if</span> (m_memory_blocks.empty()) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keyword">auto</span> sz = m_memory_blocks.front().size;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        des.resize(sz);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">return</span> pop_impl(&amp;des[0], sz);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a46095d97b9a633c0de4ed0afd860b0b9">  161</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmemory__iostream.html#a46095d97b9a633c0de4ed0afd860b0b9">push</a>(T t, <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt;std::is_arithmetic&lt;T&gt;::value&gt; * = <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        push_impl(&amp;t, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a4cbe19601ccfcfa8314f33a838f27189">  176</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmemory__iostream.html#a4cbe19601ccfcfa8314f33a838f27189">push</a>(T t, <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt;<a class="code hl_struct" href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::is_char_pointer&lt;T&gt;::value</a>&gt; * = <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        push_impl(t, strlen(t));</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a7044ebaadb4c4bd9113a6a0a56cf807a">  191</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmemory__iostream.html#a7044ebaadb4c4bd9113a6a0a56cf807a">push</a>(T t, <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt;<a class="code hl_struct" href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::is_char_array&lt;T&gt;::value</a>&gt; * = <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        push_impl(&amp;t, <span class="keyword">sizeof</span>(t));</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a7242aa697bd5adbf7d8362852f04bb95">  204</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmemory__iostream.html#a7242aa697bd5adbf7d8362852f04bb95">push</a>(<span class="keyword">const</span> std::string &amp;src) { push_impl(src.data(), src.size()); }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#add3752397af6950358b4602455d55534">  217</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#add3752397af6950358b4602455d55534">operator&lt;&lt;</a>(T t) -&gt; <a class="code hl_class" href="classmemory__iostream.html">memory_iostream</a> &amp; {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <a class="code hl_function" href="classmemory__iostream.html#a46095d97b9a633c0de4ed0afd860b0b9">push</a>(t);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> dsp::enable_if_t&lt;!std::is_same&lt;<span class="keywordtype">char</span>, std::remove_cv&lt;T&gt;&gt;::value, <span class="keywordtype">int</span>&gt; = 0&gt;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#aa38adbdc3d36d6adc82ca4bea10d6fd3">  234</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#aa38adbdc3d36d6adc82ca4bea10d6fd3">operator&lt;&lt;</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;t) -&gt; <a class="code hl_class" href="classmemory__iostream.html">memory_iostream</a> &amp; {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <a class="code hl_function" href="classmemory__iostream.html#a46095d97b9a633c0de4ed0afd860b0b9">push</a>(t.size());</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        std::for_each(t.begin(), t.end(), [&amp;](<span class="keyword">const</span> T &amp;obj) { push(obj); });</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#ae70e7f9644a752ad7873dc0471cf73bc">  259</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#ae70e7f9644a752ad7873dc0471cf73bc">operator&gt;&gt;</a>(T &amp;t) -&gt; <a class="code hl_class" href="classmemory__iostream.html">memory_iostream</a> &amp; {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmemory__iostream.html#adda71ead7c6199659b8f9b660d6e9daf">pop</a>(t)) { <span class="keywordflow">throw</span> std::length_error(<span class="stringliteral">&quot;dsp::memory_iostream::pop length error&quot;</span>); }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    template&lt;typename T, typename dsp::enable_if_t&lt;!std::is_same&lt;char, T&gt;::value, <span class="keywordtype">int</span>&gt; = 0&gt;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a71b30f0a41cf091ed200acc93f77e048">  282</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#a71b30f0a41cf091ed200acc93f77e048">operator&gt;&gt;</a>(std::vector&lt;T&gt; &amp;t) -&gt; <a class="code hl_class" href="classmemory__iostream.html">memory_iostream</a> &amp; {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        t.clear();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordtype">size_t</span> sz{0};</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmemory__iostream.html#adda71ead7c6199659b8f9b660d6e9daf">pop</a>(sz)) { <span class="keywordflow">throw</span> std::length_error(<span class="stringliteral">&quot;dsp::memory_iostream::pop length error&quot;</span>); }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="keywordflow">if</span> (sz == 0) { <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        t.resize(sz);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        std::for_each(t.begin(), t.end(), [&amp;](T &amp;obj) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            if (!pop(obj)) { throw std::length_error(<span class="stringliteral">&quot;dsp::memory_iostream::pop length error&quot;</span>); };</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        });</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    }</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#ab0486135b5c2289aad29b790d16f9465">  302</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#ab0486135b5c2289aad29b790d16f9465">data</a>() -&gt; <span class="keyword">const</span> <span class="keywordtype">char</span> * { <span class="keywordflow">return</span> m_memory.data(); }</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="classmemory__iostream.html#a47a1bdcc780d25e3cf258976348d9b8c">  308</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmemory__iostream.html#a47a1bdcc780d25e3cf258976348d9b8c">size</a>() const noexcept -&gt; <span class="keywordtype">size_t</span> { <span class="keywordflow">return</span> m_end; }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keyword">static</span> <span class="keyword">auto</span> cal_size(<span class="keywordtype">size_t</span> sz) -&gt; <span class="keywordtype">size_t</span> {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="comment">//todo 优化内存分配逻辑</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keywordtype">size_t</span> res{32};</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">while</span> (res &lt; sz) { res *= 2; }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    }</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    <span class="keyword">auto</span> pop_impl(<span class="keywordtype">void</span> *des, <span class="keywordtype">size_t</span> sz) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">if</span> (m_memory_blocks.empty()) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="keyword">auto</span> block = m_memory_blocks.front();</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="keywordflow">if</span> (block.size != sz) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        m_memory_blocks.pop();</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        memcpy(des, &amp;m_memory[0] + block.pos, sz);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        m_end -= sz;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="keywordtype">void</span> push_impl(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> sz) {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">if</span> (m_memory.size() &lt; sz + m_end) { m_memory.resize(cal_size(sz + m_end)); }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        memcpy(&amp;m_memory[0] + m_end, src, sz);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        m_memory_blocks.emplace(m_end, sz);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;pos = &quot;</span> &lt;&lt; m_end &lt;&lt; <span class="stringliteral">&quot;, sz = &quot;</span> &lt;&lt; sz &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        m_end += sz;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    }</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    std::queue&lt;memory_block&gt; m_memory_blocks{};</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    std::vector&lt;char&gt; m_memory{};</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="keywordtype">size_t</span> m_end{0};</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>};</div>
+<div class="ttc" id="aclassmemory__iostream_html"><div class="ttname"><a href="classmemory__iostream.html">memory_iostream</a></div><div class="ttdoc">简单的数据序列化/反序列化类。常用于构造内部网络报文的data。</div><div class="ttdef"><b>Definition:</b> memory_io.h:68</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a07d28a8f2f7147eb4a135a012768f46d"><div class="ttname"><a href="classmemory__iostream.html#a07d28a8f2f7147eb4a135a012768f46d">memory_iostream::pop</a></div><div class="ttdeci">auto pop(std::string &amp;des) -&gt; bool</div><div class="ttdoc">字符串pop函数。</div><div class="ttdef"><b>Definition:</b> memory_io.h:137</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a46095d97b9a633c0de4ed0afd860b0b9"><div class="ttname"><a href="classmemory__iostream.html#a46095d97b9a633c0de4ed0afd860b0b9">memory_iostream::push</a></div><div class="ttdeci">void push(T t, typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &gt; *=nullptr)</div><div class="ttdoc">数值型push函数。尝试存入数值型数据。</div><div class="ttdef"><b>Definition:</b> memory_io.h:161</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a47a1bdcc780d25e3cf258976348d9b8c"><div class="ttname"><a href="classmemory__iostream.html#a47a1bdcc780d25e3cf258976348d9b8c">memory_iostream::size</a></div><div class="ttdeci">auto size() const noexcept -&gt; size_t</div><div class="ttdoc">获取memory长度</div><div class="ttdef"><b>Definition:</b> memory_io.h:308</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a4cbe19601ccfcfa8314f33a838f27189"><div class="ttname"><a href="classmemory__iostream.html#a4cbe19601ccfcfa8314f33a838f27189">memory_iostream::push</a></div><div class="ttdeci">void push(T t, typename dsp::enable_if_t&lt; dsp::is_char_pointer&lt; T &gt;::value &gt; *=nullptr)</div><div class="ttdoc">char*push函数。尝试存入字符串数据。</div><div class="ttdef"><b>Definition:</b> memory_io.h:176</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a7044ebaadb4c4bd9113a6a0a56cf807a"><div class="ttname"><a href="classmemory__iostream.html#a7044ebaadb4c4bd9113a6a0a56cf807a">memory_iostream::push</a></div><div class="ttdeci">void push(T t, typename dsp::enable_if_t&lt; dsp::is_char_array&lt; T &gt;::value &gt; *=nullptr)</div><div class="ttdoc">char数组push函数。尝试存入char数组数据。(char数组不能保证一定是字符串)</div><div class="ttdef"><b>Definition:</b> memory_io.h:191</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a71b30f0a41cf091ed200acc93f77e048"><div class="ttname"><a href="classmemory__iostream.html#a71b30f0a41cf091ed200acc93f77e048">memory_iostream::operator&gt;&gt;</a></div><div class="ttdeci">auto operator&gt;&gt;(std::vector&lt; T &gt; &amp;t) -&gt; memory_iostream &amp;</div><div class="ttdoc">实现vector取出操作</div><div class="ttdef"><b>Definition:</b> memory_io.h:282</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a7242aa697bd5adbf7d8362852f04bb95"><div class="ttname"><a href="classmemory__iostream.html#a7242aa697bd5adbf7d8362852f04bb95">memory_iostream::push</a></div><div class="ttdeci">void push(const std::string &amp;src)</div><div class="ttdoc">存入string数据。</div><div class="ttdef"><b>Definition:</b> memory_io.h:204</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_a8af28cc5a8dc47f85b9b69476ec0a973"><div class="ttname"><a href="classmemory__iostream.html#a8af28cc5a8dc47f85b9b69476ec0a973">memory_iostream::pop</a></div><div class="ttdeci">auto pop(T &amp;t, typename dsp::enable_if_t&lt; dsp::is_char_array&lt; T &gt;::value &gt; *=nullptr) -&gt; bool</div><div class="ttdoc">char数组pop函数。尝试取出char数组类型的数据。   当数据长度超过char数组长度时，取出失败。  不会管数组最后一位是否为0。</div><div class="ttdef"><b>Definition:</b> memory_io.h:111</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_aa38adbdc3d36d6adc82ca4bea10d6fd3"><div class="ttname"><a href="classmemory__iostream.html#aa38adbdc3d36d6adc82ca4bea10d6fd3">memory_iostream::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(const std::vector&lt; T &gt; &amp;t) -&gt; memory_iostream &amp;</div><div class="ttdoc">实现vector的push操作</div><div class="ttdef"><b>Definition:</b> memory_io.h:234</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_ab0486135b5c2289aad29b790d16f9465"><div class="ttname"><a href="classmemory__iostream.html#ab0486135b5c2289aad29b790d16f9465">memory_iostream::data</a></div><div class="ttdeci">auto data() -&gt; const char *</div><div class="ttdoc">获取memory首地址</div><div class="ttdef"><b>Definition:</b> memory_io.h:302</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_add3752397af6950358b4602455d55534"><div class="ttname"><a href="classmemory__iostream.html#add3752397af6950358b4602455d55534">memory_iostream::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(T t) -&gt; memory_iostream &amp;</div><div class="ttdoc">重载&lt;&lt;操作符实现push操作</div><div class="ttdef"><b>Definition:</b> memory_io.h:217</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_adda71ead7c6199659b8f9b660d6e9daf"><div class="ttname"><a href="classmemory__iostream.html#adda71ead7c6199659b8f9b660d6e9daf">memory_iostream::pop</a></div><div class="ttdeci">auto pop(T &amp;t, typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &gt; *=nullptr) -&gt; bool</div><div class="ttdoc">数值型pop函数。尝试取出T类型的数据</div><div class="ttdef"><b>Definition:</b> memory_io.h:88</div></div>
+<div class="ttc" id="aclassmemory__iostream_html_ae70e7f9644a752ad7873dc0471cf73bc"><div class="ttname"><a href="classmemory__iostream.html#ae70e7f9644a752ad7873dc0471cf73bc">memory_iostream::operator&gt;&gt;</a></div><div class="ttdeci">auto operator&gt;&gt;(T &amp;t) -&gt; memory_iostream &amp;</div><div class="ttdoc">重载&gt;&gt;操作符实现pop操作</div><div class="ttdef"><b>Definition:</b> memory_io.h:259</div></div>
+<div class="ttc" id="anamespacedsp_1_1type__traits_html_a94444abd4b0829bf423af5defe918cdc"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::type_traits::enable_if_t</a></div><div class="ttdeci">typename std::enable_if&lt; B, T &gt;::type enable_if_t</div><div class="ttdoc">std::enable_if&lt;B, T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:32</div></div>
+<div class="ttc" id="astructdsp_1_1type__traits_1_1is__char__array_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1is__char__array.html">dsp::type_traits::is_char_array</a></div><div class="ttdoc">入参是否为char数组(一维数组)</div><div class="ttdef"><b>Definition:</b> type_traits.h:197</div></div>
+<div class="ttc" id="astructdsp_1_1type__traits_1_1is__char__pointer_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::type_traits::is_char_pointer</a></div><div class="ttdoc">入参是否为char*</div><div class="ttdef"><b>Definition:</b> type_traits.h:204</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

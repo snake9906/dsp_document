@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: D:/project/Aux2022/vobs/include/app/scada/dsp/io/memory_io.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8858cb3708c0c816fb8de7080655568f.html">Aux2022</a></li><li class="navelem"><a class="el" href="dir_15679b3e902361c6de501cff170c1797.html">vobs</a></li><li class="navelem"><a class="el" href="dir_eee0fc127c0c833bb5b114755c6c2b22.html">include</a></li><li class="navelem"><a class="el" href="dir_5ab65f0e40140b552956b9b63d828025.html">app</a></li><li class="navelem"><a class="el" href="dir_b2e6e9ae5b9ee69a98bac5e188765ebc.html">scada</a></li><li class="navelem"><a class="el" href="dir_25115c0ce1ecb40939d30dc1be04dfcd.html">dsp</a></li><li class="navelem"><a class="el" href="dir_15b12d11450cc93ff346551bd4055b5d.html">io</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a>  </div>
+  <div class="headertitle"><div class="title">memory_io.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;queue&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="throw__exception_8h_source.html">dsp/exception/throw_exception.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="type__traits_8h_source.html">dsp/type_traits.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+memory_io.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="memory__io_8h__incl.png" border="0" usemap="#a_d_1_2project_2_aux2022_2vobs_2include_2app_2scada_2dsp_2io_2memory__io_8h" alt=""/></div>
+<map name="a_d_1_2project_2_aux2022_2vobs_2include_2app_2scada_2dsp_2io_2memory__io_8h" id="a_d_1_2project_2_aux2022_2vobs_2include_2app_2scada_2dsp_2io_2memory__io_8h">
+<area shape="rect" title=" " alt="" coords="118,5,279,61"/>
+<area shape="rect" title=" " alt="" coords="29,117,85,144"/>
+<area shape="rect" title=" " alt="" coords="111,117,167,144"/>
+<area shape="rect" href="throw__exception_8h.html" title=" " alt="" coords="191,110,329,151"/>
+<area shape="rect" href="type__traits_8h.html" title=" " alt="" coords="433,117,551,144"/>
+<area shape="rect" title=" " alt="" coords="5,208,83,235"/>
+<area shape="rect" href="source__location_8h.html" title=" " alt="" coords="108,201,255,242"/>
+<area shape="rect" href="exception_8h.html" title=" " alt="" coords="279,208,453,235"/>
+<area shape="rect" title=" " alt="" coords="108,291,169,317"/>
+<area shape="rect" title=" " alt="" coords="193,291,252,317"/>
+<area shape="rect" title=" " alt="" coords="448,291,517,317"/>
+<area shape="rect" href="macro_8h.html" title=" " alt="" coords="319,291,413,317"/>
+<area shape="rect" title=" " alt="" coords="340,365,393,392"/>
+<area shape="rect" title=" " alt="" coords="529,208,612,235"/>
+</map>
+</div>
+</div>
+<p><a href="memory__io_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemory__io.html">memory_io</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">简单的数据序列化/反序列化类。常用于构造内部网络报文的data。可以使用pop/push函数或者使用&gt;&gt;/&lt;&lt;操作符来进行数据存取，数据先进先出 且连续存放，可以通过<a class="el" href="classmemory__io.html#a7c6f4f4501d2d9d2c0987dea24c034f9">data()</a> 获取数据首地址，通过<a class="el" href="classmemory__io.html#a62b57f9e79054fc8a4c168ee32a840f1">size()</a> 获取数据总长度。自定义类型可以通过声明友元函数来支持memory_io的操作，下面是一个示例：  <a href="classmemory__io.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>杨梦楠 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2022/5/4 @project dsp </dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>(c) 2007-2022 Sieyuan Hongrui Automation Co., Ltd. All rights reserved. </dd></dl>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 4日 星期三 17:42:59 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

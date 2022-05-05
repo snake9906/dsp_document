@@ -1,0 +1,5 @@
+<map id="db_obj_visitor::db_obj_visitor" name="db_obj_visitor::db_obj_visitor">
+<area shape="rect" id="node1" title="单表对象访问器" alt="" coords="5,38,128,79"/>
+<area shape="rect" id="node3" href="$classdb__connection__pro.html#aa7f8545a532ae89747c66d8db61ec730" title="获取单表全数据。由于单表数据量有可能较多，接口内部可能多次调用底层接口，接口会根据指定的最大字节数自行判断" alt="" coords="183,5,321,46"/>
+<area shape="rect" id="node5" href="$classdb__connection__pro.html#a9f23e34b829021795ee4886cace0b656" title="获取单表紧耦合指针首地址" alt="" coords="177,70,327,111"/>
+</map>

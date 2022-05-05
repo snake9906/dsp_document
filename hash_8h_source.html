@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -47,12 +48,12 @@ $(function() {
   <div class="headertitle"><div class="title">hash.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="hash_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="hash__float_8h.html">dsp/hash/hash_float.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="hash__fwd_8h.html">dsp/hash/hash_fwd.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="string__view_8h.html">string/string_view.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;dsp/hash/hash_float.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;dsp/hash/hash_fwd.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;string/string_view.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define DSP_CHAR_TRAITS char_traits</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
@@ -360,14 +361,11 @@ $(function() {
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>};</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>}<span class="comment">// namespace dsp</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html"><div class="ttname"><a href="classdsp_1_1basic__string__view.html">dsp::basic_string_view</a></div><div class="ttdoc">字符串视图类。考虑到C++17才引入string_view，而QString对于平台层来说有点笨重缺乏效率。本实现参考了boost源码和QString的接口形式，提供字符串高效访问、操作接口。 类似QS...</div><div class="ttdef"><b>Definition:</b> string_view.h:45</div></div>
-<div class="ttc" id="ahash__float_8h_html"><div class="ttname"><a href="hash__float_8h.html">hash_float.h</a></div></div>
-<div class="ttc" id="ahash__fwd_8h_html"><div class="ttname"><a href="hash__fwd_8h.html">hash_fwd.h</a></div></div>
-<div class="ttc" id="astring__view_8h_html"><div class="ttname"><a href="string__view_8h.html">string_view.h</a></div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html"><div class="ttname"><a href="classdsp_1_1basic__string__view.html">dsp::basic_string_view</a></div><div class="ttdoc">字符串视图类。</div><div class="ttdef"><b>Definition:</b> string_view.h:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:51 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

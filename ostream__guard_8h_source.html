@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -47,12 +48,12 @@ $(function() {
   <div class="headertitle"><div class="title">ostream_guard.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="ostream__guard_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="macro_8h.html">dsp/macro.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;dsp/macro.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>dsp {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>io {</div>
@@ -68,9 +69,9 @@ $(function() {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordtype">void</span> release() noexcept { os_ = 0; }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_define" href="macro_8h.html#aeac9b05abf6182b24d0f79fb1f1a7eaa">DISABLE_COPY</a>(ostream_guard)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            DISABLE_COPY(ostream_guard)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_define" href="macro_8h.html#a008ee61e8d6255549a25003737f8c527">DISABLE_MOVE</a>(ostream_guard)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            DISABLE_MOVE(ostream_guard)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            std::basic_ostream&lt;Char, Traits&gt; *os_;</div>
@@ -78,13 +79,10 @@ $(function() {
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }<span class="comment">// namespace detail</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}<span class="comment">// namespace io</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}<span class="comment">// namespace dsp</span></div>
-<div class="ttc" id="amacro_8h_html"><div class="ttname"><a href="macro_8h.html">macro.h</a></div></div>
-<div class="ttc" id="amacro_8h_html_a008ee61e8d6255549a25003737f8c527"><div class="ttname"><a href="macro_8h.html#a008ee61e8d6255549a25003737f8c527">DISABLE_MOVE</a></div><div class="ttdeci">#define DISABLE_MOVE(x)</div><div class="ttdoc">禁止move</div><div class="ttdef"><b>Definition:</b> macro.h:39</div></div>
-<div class="ttc" id="amacro_8h_html_aeac9b05abf6182b24d0f79fb1f1a7eaa"><div class="ttname"><a href="macro_8h.html#aeac9b05abf6182b24d0f79fb1f1a7eaa">DISABLE_COPY</a></div><div class="ttdeci">#define DISABLE_COPY(x)</div><div class="ttdoc">禁止拷贝</div><div class="ttdef"><b>Definition:</b> macro.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:51 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

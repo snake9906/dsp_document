@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -52,16 +53,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>内存连续数据的访问视图，支持C-Style数组，array，range。本实现参考Boost::Core::Span  
+<p>内存连续数据的访问视图  
  <a href="classdsp_1_1span.html#details">更多...</a></p>
-
-<p><code>#include &lt;<a class="el" href="span_8h_source.html">span.h</a>&gt;</code></p>
 <div class="dynheader">
 类 dsp::span&lt; T, E &gt; 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1span__inherit__graph.png" border="0" usemap="#adsp_1_1span_3_01_t_00_01_e_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="adsp_1_1span_3_01_t_00_01_e_01_4_inherit__map" id="adsp_1_1span_3_01_t_00_01_e_01_4_inherit__map">
-<area shape="rect" title="内存连续数据的访问视图，支持C&#45;Style数组，array，range。本实现参考Boost::Core::Span" alt="" coords="5,6,192,245"/>
+<area shape="rect" title="内存连续数据的访问视图" alt="" coords="5,6,192,245"/>
 <area shape="rect" href="classdsp_1_1span.html" title=" " alt="" coords="5,310,192,549"/>
 </map>
 </div>
@@ -70,7 +69,7 @@ dsp::span&lt; T, E &gt; 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1span__coll__graph.png" border="0" usemap="#adsp_1_1span_3_01_t_00_01_e_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="adsp_1_1span_3_01_t_00_01_e_01_4_coll__map" id="adsp_1_1span_3_01_t_00_01_e_01_4_coll__map">
-<area shape="rect" title="内存连续数据的访问视图，支持C&#45;Style数组，array，range。本实现参考Boost::Core::Span" alt="" coords="5,6,192,245"/>
+<area shape="rect" title="内存连续数据的访问视图" alt="" coords="5,6,192,245"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -141,8 +140,8 @@ static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom">
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, std::size_t E&gt;<br />
-class dsp::span&lt; T, E &gt;</div><p >内存连续数据的访问视图，支持C-Style数组，array，range。本实现参考Boost::Core::Span </p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+class dsp::span&lt; T, E &gt;</div><p >内存连续数据的访问视图 </p>
+<p >支持C-Style数组，array，range。本实现参考Boost::Core::Span </p><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>数据对象类型 </td></tr>
     <tr><td class="paramname">E</td><td>数据对象个数 </td></tr>
@@ -505,8 +504,8 @@ template&lt;typename T , std::size_t E&gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph.png" border="0" usemap="#aclassdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph" alt=""/></div>
 <map name="aclassdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph" id="aclassdsp_1_1span_a4554af5f7e6675fa15fe8e751af9af0a_icgraph">
-<area shape="rect" title="按下标随机访问数据" alt="" coords="165,5,264,32"/>
-<area shape="rect" href="classdb_obj_visitor.html#aedca4ed88d43ba52b8b7b1c149becbef" title="随机访问对象" alt="" coords="5,5,117,32"/>
+<area shape="rect" title="按下标随机访问数据" alt="" coords="173,5,272,32"/>
+<area shape="rect" href="classdb__obj__visitor.html#a565884784d963ae3c29d2a45634de245" title="随机访问对象" alt="" coords="6,5,125,32"/>
 </map>
 </div>
 
@@ -574,8 +573,8 @@ template&lt;typename T , std::size_t E&gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph.png" border="0" usemap="#aclassdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph" alt=""/></div>
 <map name="aclassdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph" id="aclassdsp_1_1span_aca4e454f394efd4b83335f117a9e05a7_icgraph">
-<area shape="rect" title="视图是否为空" alt="" coords="192,5,315,32"/>
-<area shape="rect" href="classdb_obj_visitor.html#a17f6fd776d1fd9f93ce8d4221beb384e" title="访问器是否为空" alt="" coords="6,5,143,32"/>
+<area shape="rect" title="视图是否为空" alt="" coords="197,5,320,32"/>
+<area shape="rect" href="classdb__obj__visitor.html#a0f5c9bcd90f59cf87c61a9900f3da4b5" title="访问器是否为空" alt="" coords="5,5,149,32"/>
 </map>
 </div>
 
@@ -719,9 +718,9 @@ template&lt;typename T , std::size_t E&gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph.png" border="0" usemap="#aclassdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph" alt=""/></div>
 <map name="aclassdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph" id="aclassdsp_1_1span_a33d9f66cfb789ccc9ae3f7cc7a887498_icgraph">
-<area shape="rect" title="视图内数据个数" alt="" coords="350,5,461,32"/>
-<area shape="rect" href="classdb_obj_visitor.html#a06273f22275653f033685e5662ca30d5" title="返回对象个数" alt="" coords="176,5,301,32"/>
-<area shape="rect" href="classdb_obj_visitor.html#a890483784279592dbbac671c55c1c2e0" title="获取最后一个对象之后数据的迭代器" alt="" coords="5,5,128,32"/>
+<area shape="rect" title="视图内数据个数" alt="" coords="366,5,477,32"/>
+<area shape="rect" href="classdb__obj__visitor.html#abc793e50cab77b3ebcd148035fb5d642" title="返回对象个数" alt="" coords="185,5,317,32"/>
+<area shape="rect" href="classdb__obj__visitor.html#aaa253ca184956cd31248034168b87825" title="获取最后一个对象之后数据的迭代器" alt="" coords="6,5,135,32"/>
 </map>
 </div>
 
@@ -766,13 +765,10 @@ template&lt;std::size_t O, std::size_t C = dynamic_extent&gt; </div>
 
 </div>
 </div>
-<hr/>该类的文档由以下文件生成:<ul>
-<li>D:/project/Aux2022/vobs/include/app/scada/dsp/<a class="el" href="span_8h_source.html">span.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

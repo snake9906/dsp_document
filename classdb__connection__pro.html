@@ -19,8 +19,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DSP接口文档
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
    </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
   </td>
  </tr>
  </tbody>
@@ -49,8 +50,6 @@ $(function() {
 
 <p>对db_connection进行二次封装  
  <a href="classdb__connection__pro.html#details">更多...</a></p>
-
-<p><code>#include &lt;<a class="el" href="db__connection__pro_8h_source.html">db_connection_pro.h</a>&gt;</code></p>
 <div class="dynheader">
 db_connection_pro 的协作图:</div>
 <div class="dyncontent">
@@ -79,21 +78,21 @@ Public 成员函数</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>DISABLE_MOVE</b> (<a class="el" href="classdb__connection__pro.html">db_connection_pro</a>)</td></tr>
 <tr class="memdesc:acf83fe2ba23e1b38e388f51dbb9cce31"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁止move <br /></td></tr>
 <tr class="separator:acf83fe2ba23e1b38e388f51dbb9cce31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5db5c2e47d8022e1e3fa4fedb0d220a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae5db5c2e47d8022e1e3fa4fedb0d220a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#ae5db5c2e47d8022e1e3fa4fedb0d220a">get_visitor</a> (uint16_t tid) -&gt; <a class="el" href="classdb_obj_visitor.html">dbObjVisitor</a>&lt; T &gt;</td></tr>
-<tr class="memdesc:ae5db5c2e47d8022e1e3fa4fedb0d220a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单表访问器  <a href="classdb__connection__pro.html#ae5db5c2e47d8022e1e3fa4fedb0d220a">更多...</a><br /></td></tr>
-<tr class="separator:ae5db5c2e47d8022e1e3fa4fedb0d220a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b10b142ef3afad992e68095b820a01c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2b10b142ef3afad992e68095b820a01c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a2b10b142ef3afad992e68095b820a01c">get_visitor</a> (const OID &amp;oid, uint16_t fid) -&gt; <a class="el" href="classdb_obj_visitor.html">dbObjVisitor</a>&lt; T &gt;</td></tr>
-<tr class="memdesc:a2b10b142ef3afad992e68095b820a01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据父对象oid和父子关联关系的域id，获取子对象的访问器  <a href="classdb__connection__pro.html#a2b10b142ef3afad992e68095b820a01c">更多...</a><br /></td></tr>
-<tr class="separator:a2b10b142ef3afad992e68095b820a01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1b4459d1b4821db597446b85eb1ffa"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8c1b4459d1b4821db597446b85eb1ffa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a8c1b4459d1b4821db597446b85eb1ffa">get_visitor</a> (uint16_t tid) -&gt; <a class="el" href="classdb__obj__visitor.html">db_obj_visitor</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:a8c1b4459d1b4821db597446b85eb1ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单表访问器  <a href="classdb__connection__pro.html#a8c1b4459d1b4821db597446b85eb1ffa">更多...</a><br /></td></tr>
+<tr class="separator:a8c1b4459d1b4821db597446b85eb1ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a5368cf70193672f18885e933cbb53c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3a5368cf70193672f18885e933cbb53c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a3a5368cf70193672f18885e933cbb53c">get_visitor</a> (const OID &amp;oid, uint16_t fid) -&gt; <a class="el" href="classdb__obj__visitor.html">db_obj_visitor</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:a3a5368cf70193672f18885e933cbb53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据父对象oid和父子关联关系的域id，获取子对象的访问器  <a href="classdb__connection__pro.html#a3a5368cf70193672f18885e933cbb53c">更多...</a><br /></td></tr>
+<tr class="separator:a3a5368cf70193672f18885e933cbb53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b80a06122e657fe2a0adc457aed0521"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8b80a06122e657fe2a0adc457aed0521"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a8b80a06122e657fe2a0adc457aed0521">update_attr_by_oid</a> (const OID &amp;oid, uint16_t fid, const T &amp;attr, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; std::is_arithmetic&lt; T &gt;::value &gt; *=nullptr) -&gt; int32_t</td></tr>
 <tr class="memdesc:a8b80a06122e657fe2a0adc457aed0521"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据oid更新单个域(数值型)  <a href="classdb__connection__pro.html#a8b80a06122e657fe2a0adc457aed0521">更多...</a><br /></td></tr>
 <tr class="separator:a8b80a06122e657fe2a0adc457aed0521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f2bdcff0e93b03da638662ab31aef7f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a7f2bdcff0e93b03da638662ab31aef7f">get_attrs_info_by_id</a> (uint16_t tid, uint16_t fid) -&gt; db_field_info</td></tr>
-<tr class="memdesc:a7f2bdcff0e93b03da638662ab31aef7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询域对象元数据  <a href="classdb__connection__pro.html#a7f2bdcff0e93b03da638662ab31aef7f">更多...</a><br /></td></tr>
-<tr class="separator:a7f2bdcff0e93b03da638662ab31aef7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270b730f2b30eac3361dd3093ff1942a"><td class="memItemLeft" align="right" valign="top">DSP_DEPRECATED auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a270b730f2b30eac3361dd3093ff1942a">get_attrs_info_by_id</a> (uint16_t tid, uint16_t fid) -&gt; db_field_info</td></tr>
+<tr class="memdesc:a270b730f2b30eac3361dd3093ff1942a"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询域对象元数据  <a href="classdb__connection__pro.html#a270b730f2b30eac3361dd3093ff1942a">更多...</a><br /></td></tr>
+<tr class="separator:a270b730f2b30eac3361dd3093ff1942a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d3836a87cbf24b68401580918558a66"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3d3836a87cbf24b68401580918558a66"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdb__connection__pro.html#a3d3836a87cbf24b68401580918558a66">update_attr_by_oid</a> (const OID &amp;oid, uint16_t fid, const T &amp;attr, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; <a class="el" href="namespacedsp_1_1type__traits.html#aa75dcad1b3ea3d9043d65b77e023b7dc">dsp::is_same_t</a>&lt; char *, typename <a class="el" href="namespacedsp_1_1type__traits.html#a91dc75b2235bcea6e4e45b78612a06fe">dsp::decay_t</a>&lt; T &gt; &gt;::value &gt; *=nullptr) -&gt; int32_t</td></tr>
 <tr class="memdesc:a3d3836a87cbf24b68401580918558a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据oid更新单个域(字符型)  <a href="classdb__connection__pro.html#a3d3836a87cbf24b68401580918558a66">更多...</a><br /></td></tr>
@@ -268,6 +267,15 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>单表所有对象 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdb__connection__pro_aa7f8545a532ae89747c66d8db61ec730_icgraph.png" border="0" usemap="#aclassdb__connection__pro_aa7f8545a532ae89747c66d8db61ec730_icgraph" alt=""/></div>
+<map name="aclassdb__connection__pro_aa7f8545a532ae89747c66d8db61ec730_icgraph" id="aclassdb__connection__pro_aa7f8545a532ae89747c66d8db61ec730_icgraph">
+<area shape="rect" title="获取单表全数据。由于单表数据量有可能较多，接口内部可能多次调用底层接口，接口会根据指定的最大字节数自行判断" alt="" coords="176,5,315,46"/>
+<area shape="rect" href="classdb__obj__visitor.html#a368e164e1e658fb96736270c57f707b3" title="单表对象访问器" alt="" coords="5,5,128,46"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -369,7 +377,7 @@ template&lt;typename T &gt; </div>
 <div class="center"><img src="classdb__connection__pro_a32a897add4c333a2c6e86f05996039ac_cgraph.png" border="0" usemap="#aclassdb__connection__pro_a32a897add4c333a2c6e86f05996039ac_cgraph" alt=""/></div>
 <map name="aclassdb__connection__pro_a32a897add4c333a2c6e86f05996039ac_cgraph" id="aclassdb__connection__pro_a32a897add4c333a2c6e86f05996039ac_cgraph">
 <area shape="rect" title="获取对象的单个域(字符型)" alt="" coords="5,5,144,46"/>
-<area shape="rect" href="classdb__connection__pro.html#a7f2bdcff0e93b03da638662ab31aef7f" title="查询域对象元数据" alt="" coords="192,5,331,46"/>
+<area shape="rect" href="classdb__connection__pro.html#a270b730f2b30eac3361dd3093ff1942a" title="查询域对象元数据" alt="" coords="192,5,331,46"/>
 </map>
 </div>
 
@@ -435,8 +443,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a7f2bdcff0e93b03da638662ab31aef7f" name="a7f2bdcff0e93b03da638662ab31aef7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f2bdcff0e93b03da638662ab31aef7f">&#9670;&nbsp;</a></span>get_attrs_info_by_id()</h2>
+<a id="a270b730f2b30eac3361dd3093ff1942a" name="a270b730f2b30eac3361dd3093ff1942a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270b730f2b30eac3361dd3093ff1942a">&#9670;&nbsp;</a></span>get_attrs_info_by_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +453,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto db_connection_pro::get_attrs_info_by_id </td>
+          <td class="memname">DSP_DEPRECATED auto db_connection_pro::get_attrs_info_by_id </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>tid</em>, </td>
@@ -481,12 +489,13 @@ template&lt;typename T &gt; </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classdb__connection__pro_a7f2bdcff0e93b03da638662ab31aef7f_icgraph.png" border="0" usemap="#aclassdb__connection__pro_a7f2bdcff0e93b03da638662ab31aef7f_icgraph" alt=""/></div>
-<map name="aclassdb__connection__pro_a7f2bdcff0e93b03da638662ab31aef7f_icgraph" id="aclassdb__connection__pro_a7f2bdcff0e93b03da638662ab31aef7f_icgraph">
-<area shape="rect" title="查询域对象元数据" alt="" coords="227,57,365,98"/>
-<area shape="rect" href="classdb_obj_visitor.html#ab2d4e190b9196adee7e57d6c826e028b" title="子对象访问器" alt="" coords="6,5,178,32"/>
-<area shape="rect" href="classdb__connection__pro.html#a32a897add4c333a2c6e86f05996039ac" title="获取对象的单个域(字符型)" alt="" coords="23,57,161,98"/>
-<area shape="rect" href="classdb__connection__pro.html#a3d3836a87cbf24b68401580918558a66" title="根据oid更新单个域(字符型)" alt="" coords="23,122,161,163"/>
+<div class="center"><img src="classdb__connection__pro_a270b730f2b30eac3361dd3093ff1942a_icgraph.png" border="0" usemap="#aclassdb__connection__pro_a270b730f2b30eac3361dd3093ff1942a_icgraph" alt=""/></div>
+<map name="aclassdb__connection__pro_a270b730f2b30eac3361dd3093ff1942a_icgraph" id="aclassdb__connection__pro_a270b730f2b30eac3361dd3093ff1942a_icgraph">
+<area shape="rect" title="查询域对象元数据" alt="" coords="192,103,331,145"/>
+<area shape="rect" href="classdb__obj__visitor.html#a997566133e4a2ff8916b52e6e85c5948" title="子对象访问器" alt="" coords="13,5,136,46"/>
+<area shape="rect" href="classdb__connection__pro.html#a32a897add4c333a2c6e86f05996039ac" title="获取对象的单个域(字符型)" alt="" coords="5,70,144,111"/>
+<area shape="rect" href="classdb__connection__pro.html#a1e12b3a5446e777f90674156a3ae14cf" title="根据夫对象oid和父子关系域id，获取所有子对象" alt="" coords="5,135,144,177"/>
+<area shape="rect" href="classdb__connection__pro.html#a3d3836a87cbf24b68401580918558a66" title="根据oid更新单个域(字符型)" alt="" coords="5,201,144,242"/>
 </map>
 </div>
 
@@ -735,6 +744,15 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>所有子对象 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdb__connection__pro_a1e12b3a5446e777f90674156a3ae14cf_cgraph.png" border="0" usemap="#aclassdb__connection__pro_a1e12b3a5446e777f90674156a3ae14cf_cgraph" alt=""/></div>
+<map name="aclassdb__connection__pro_a1e12b3a5446e777f90674156a3ae14cf_cgraph" id="aclassdb__connection__pro_a1e12b3a5446e777f90674156a3ae14cf_cgraph">
+<area shape="rect" title="根据夫对象oid和父子关系域id，获取所有子对象" alt="" coords="5,5,144,46"/>
+<area shape="rect" href="classdb__connection__pro.html#a270b730f2b30eac3361dd3093ff1942a" title="查询域对象元数据" alt="" coords="192,5,331,46"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -775,8 +793,8 @@ template&lt;typename T &gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="classdb__connection__pro_a9f23e34b829021795ee4886cace0b656_icgraph.png" border="0" usemap="#aclassdb__connection__pro_a9f23e34b829021795ee4886cace0b656_icgraph" alt=""/></div>
 <map name="aclassdb__connection__pro_a9f23e34b829021795ee4886cace0b656_icgraph" id="aclassdb__connection__pro_a9f23e34b829021795ee4886cace0b656_icgraph">
-<area shape="rect" title="获取单表紧耦合指针首地址" alt="" coords="227,5,378,46"/>
-<area shape="rect" href="classdb_obj_visitor.html#ab898e5aa9d3843b41ac8ae76e605b45a" title="单表对象访问器" alt="" coords="6,12,178,39"/>
+<area shape="rect" title="获取单表紧耦合指针首地址" alt="" coords="177,5,327,46"/>
+<area shape="rect" href="classdb__obj__visitor.html#a368e164e1e658fb96736270c57f707b3" title="单表对象访问器" alt="" coords="5,5,128,46"/>
 </map>
 </div>
 
@@ -834,8 +852,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a2b10b142ef3afad992e68095b820a01c" name="a2b10b142ef3afad992e68095b820a01c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b10b142ef3afad992e68095b820a01c">&#9670;&nbsp;</a></span>get_visitor() <span class="overload">[1/2]</span></h2>
+<a id="a3a5368cf70193672f18885e933cbb53c" name="a3a5368cf70193672f18885e933cbb53c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a5368cf70193672f18885e933cbb53c">&#9670;&nbsp;</a></span>get_visitor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -860,7 +878,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="classdb_obj_visitor.html">dbObjVisitor</a>&lt;T&gt; </td>
+          <td></td><td> -&gt; <a class="el" href="classdb__obj__visitor.html">db_obj_visitor</a>&lt;T&gt; </td>
         </tr>
       </table>
   </td>
@@ -891,8 +909,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ae5db5c2e47d8022e1e3fa4fedb0d220a" name="ae5db5c2e47d8022e1e3fa4fedb0d220a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5db5c2e47d8022e1e3fa4fedb0d220a">&#9670;&nbsp;</a></span>get_visitor() <span class="overload">[2/2]</span></h2>
+<a id="a8c1b4459d1b4821db597446b85eb1ffa" name="a8c1b4459d1b4821db597446b85eb1ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1b4459d1b4821db597446b85eb1ffa">&#9670;&nbsp;</a></span>get_visitor() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -907,7 +925,7 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>tid</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classdb_obj_visitor.html">dbObjVisitor</a>&lt;T&gt; </td>
+          <td> -&gt; <a class="el" href="classdb__obj__visitor.html">db_obj_visitor</a>&lt;T&gt; </td>
         </tr>
       </table>
   </td>
@@ -932,12 +950,12 @@ template&lt;typename T &gt; </div>
 <div class="line"><span class="comment">// CS_OPEN</span></div>
 <div class="line"><a class="code hl_class" href="classdb__connection__pro.html">db_connection_pro</a> dbp{p_scadamdl};</div>
 <div class="line"><span class="comment">// 网络接口取数</span></div>
-<div class="line"><span class="keyword">auto</span> fac_visitor = dbp.<a class="code hl_function" href="classdb__connection__pro.html#ae5db5c2e47d8022e1e3fa4fedb0d220a">get_visitor</a>&lt;Substation&gt;(tid_Substation);</div>
+<div class="line"><span class="keyword">auto</span> fac_visitor = dbp.<a class="code hl_function" href="classdb__connection__pro.html#a8c1b4459d1b4821db597446b85eb1ffa">get_visitor</a>&lt;Substation&gt;(tid_Substation);</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; fac : fac_visitor) {</div>
 <div class="line">   <span class="comment">// ...</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassdb__connection__pro_html"><div class="ttname"><a href="classdb__connection__pro.html">db_connection_pro</a></div><div class="ttdoc">对db_connection进行二次封装</div><div class="ttdef"><b>Definition:</b> db_connection_pro.h:50</div></div>
-<div class="ttc" id="aclassdb__connection__pro_html_ae5db5c2e47d8022e1e3fa4fedb0d220a"><div class="ttname"><a href="classdb__connection__pro.html#ae5db5c2e47d8022e1e3fa4fedb0d220a">db_connection_pro::get_visitor</a></div><div class="ttdeci">auto get_visitor(uint16_t tid) -&gt; dbObjVisitor&lt; T &gt;</div><div class="ttdoc">获取单表访问器</div><div class="ttdef"><b>Definition:</b> db_connection_pro.h:109</div></div>
+<div class="ttc" id="aclassdb__connection__pro_html"><div class="ttname"><a href="classdb__connection__pro.html">db_connection_pro</a></div><div class="ttdoc">对db_connection进行二次封装</div><div class="ttdef"><b>Definition:</b> db_connection_pro.h:51</div></div>
+<div class="ttc" id="aclassdb__connection__pro_html_a8c1b4459d1b4821db597446b85eb1ffa"><div class="ttname"><a href="classdb__connection__pro.html#a8c1b4459d1b4821db597446b85eb1ffa">db_connection_pro::get_visitor</a></div><div class="ttdeci">auto get_visitor(uint16_t tid) -&gt; db_obj_visitor&lt; T &gt;</div><div class="ttdoc">获取单表访问器</div><div class="ttdef"><b>Definition:</b> db_connection_pro.h:110</div></div>
 </div><!-- fragment --> <dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>表类型 </td></tr>
@@ -1096,7 +1114,7 @@ template&lt;typename T &gt; </div>
 <div class="center"><img src="classdb__connection__pro_a3d3836a87cbf24b68401580918558a66_cgraph.png" border="0" usemap="#aclassdb__connection__pro_a3d3836a87cbf24b68401580918558a66_cgraph" alt=""/></div>
 <map name="aclassdb__connection__pro_a3d3836a87cbf24b68401580918558a66_cgraph" id="aclassdb__connection__pro_a3d3836a87cbf24b68401580918558a66_cgraph">
 <area shape="rect" title="根据oid更新单个域(字符型)" alt="" coords="5,5,144,46"/>
-<area shape="rect" href="classdb__connection__pro.html#a7f2bdcff0e93b03da638662ab31aef7f" title="查询域对象元数据" alt="" coords="192,5,331,46"/>
+<area shape="rect" href="classdb__connection__pro.html#a270b730f2b30eac3361dd3093ff1942a" title="查询域对象元数据" alt="" coords="192,5,331,46"/>
 </map>
 </div>
 
@@ -1169,13 +1187,10 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<hr/>该类的文档由以下文件生成:<ul>
-<li>D:/project/Aux2022/vobs/include/app/scada/dsp/<a class="el" href="db__connection__pro_8h_source.html">db_connection_pro.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 3日 星期二 17:04:52 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
