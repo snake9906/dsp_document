@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: trivial &amp; POD</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">trivial &amp; POD </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>目录</h3>
+<ul><li class="level1"><a href="#subp1s1">trivial type</a></li>
+<li class="level1"><a href="#subp1s2">POD type</a></li>
+</ul>
+</div>
+<div class="textblock"><p >介绍一下 trivial type 和 POD type </p>
+<h1><a class="anchor" id="subp1s1"></a>
+trivial type</h1>
+<p >trivial类型在内存中连续存放，trivial类型对象可以拷贝到一个char数组，然后再安全地拷贝生成另一个trivial类型对象。(需要注意的是， 由于字节对齐需要，对象里的成员之间可能会存在padding bytes) <br  />
+ trivial类型必须包含<b>默认</b> 构造函数、<b>默认</b> 拷贝构造函数、<b>默认</b> 拷贝赋值函数、<b>默认</b> 析构函数，另外还需要满足：</p><ul>
+<li>没有虚函数</li>
+<li>如果有基类，基类必须是trivial类型</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>Foo {</div>
+<div class="line"> </div>
+<div class="line">Foo() = <span class="keywordflow">default</span>;<span class="comment">// -&gt; trivially constructible</span></div>
+<div class="line"> </div>
+<div class="line">~Foo() = <span class="keywordflow">default</span>; <span class="comment">// -&gt; trivially destructible</span></div>
+<div class="line"> </div>
+<div class="line">Foo(Foo <span class="keyword">const</span> &amp;) = <span class="keywordflow">default</span>;<span class="comment">// -&gt; trivially copy constructible</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> operator=(Foo <span class="keyword">const</span> &amp;) -&gt; Foo &amp; = <span class="keywordflow">default</span>; <span class="comment">// -&gt; trivially copy assignable</span></div>
+<div class="line"> </div>
+<div class="line">Foo(Foo&amp;&amp;) = <span class="keywordflow">default</span>; <span class="comment">// -&gt; trivially move constructible</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> operator=(Foo&amp;&amp;) -&gt; Foo&amp; = <span class="keywordflow">default</span>; <span class="comment">// -&gt; trivially move assignable</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><h1><a class="anchor" id="subp1s2"></a>
+POD type</h1>
+<p >POD(Plain Old Data)类型要求比trivial类型更严格，简单来说就是去除一切C++功能，纯C类型就对了。<br  />
+ POD数据显然也是内存连续存放的。 </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

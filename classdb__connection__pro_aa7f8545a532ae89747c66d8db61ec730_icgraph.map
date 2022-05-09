@@ -1,4 +1,0 @@
-<map id="db_connection_pro::get_all_objects" name="db_connection_pro::get_all_objects">
-<area shape="rect" id="node1" title="获取单表全数据。由于单表数据量有可能较多，接口内部可能多次调用底层接口，接口会根据指定的最大字节数自行判断" alt="" coords="176,5,315,46"/>
-<area shape="rect" id="node3" href="$classdb__obj__visitor.html#a368e164e1e658fb96736270c57f707b3" title="单表对象访问器" alt="" coords="5,5,128,46"/>
-</map>

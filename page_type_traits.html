@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: type traits</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">type traits </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>目录</h3>
+<ul><ul><li class="level2"><a href="#page1section5subsection1">enable_if</a></li>
+<li class="level2"><a href="#page1section5subsection2">conditional</a></li>
+<li class="level2"><a href="#page1section5subsection3">void_t</a></li>
+</ul>
+<li class="level1"><a href="#page1section6">应用实例</a><ul><li class="level2"><a href="#page1section6subsection1">大小端转换</a></li>
+<li class="level2"><a href="#page1section6subsection2">成员函数traits</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p >通过类型萃取可以实现在编译器的计算、查询、判断、转换和选择，增强了泛型编程的能力。</p>
+<h1><a class="anchor" id="page1section1"></a>
+基本概念</h1>
+<p >C++11引入了模板类型std::integral_constant，它是一个指定类型的静态常量封装，C++的类型萃取均由该定义派生而来。定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T v&gt;</div>
+<div class="line"><span class="keyword">struct </span>integral_constant {</div>
+<div class="line"> <span class="keyword">using</span> value_type = T;</div>
+<div class="line"> <span class="keyword">using</span> type = integral_constant;</div>
+<div class="line"> <span class="keyword">static</span> <span class="keyword">constexpr</span> T value = v;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> 由此派生出以下两个常用类型定义： </p><div class="fragment"><div class="line"><span class="keyword">using</span> true_type = std::integral_constant&lt;bool, true&gt;;</div>
+<div class="line"><span class="keyword">using</span> false_type = std::integral_constant&lt;bool, false&gt;;</div>
+</div><!-- fragment --><p> 其中true_type用于在meta-programming中代指true，false_type用于在meta-programming中指代false，其实也就是用类型来表示true/false。 从这两个类型继承出来的模板类即可以用于类型判断。 </p>
+<h1><a class="anchor" id="page1section2"></a>
+range函数</h1>
+<p >类型判断从std::integral_constant派生，用于检查模板类型是否为某种特定类型。 下表是c++11提供的常用类型判断traits </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_void   </td><td class="markdownTableBodyNone">是否为void类型    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_arithmetic   </td><td class="markdownTableBodyNone">是否为整型或浮点型    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_floating_point   </td><td class="markdownTableBodyNone">是否为浮点型    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_enum   </td><td class="markdownTableBodyNone">是否为枚举类型    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_fundamental   </td><td class="markdownTableBodyNone">is_arithmetic、is_void或nullptr_t类型 <span style="color:red">必须要输入nullptr才能被识别为nullptr_t，0或者NULL是不行的</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_array   </td><td class="markdownTableBodyNone">是否为数组类型 <span style="color:red">注意是C风格数组，不是std::array</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_class   </td><td class="markdownTableBodyNone">是否为非union的class类型    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_function   </td><td class="markdownTableBodyNone">是否为函数类型    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_pointer   </td><td class="markdownTableBodyNone">是否为指针类型 <span style="color:red">包括函数指针，但不包括成员函数指针</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_member_pointer   </td><td class="markdownTableBodyNone">是否为类的成员函数指针    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_reference   </td><td class="markdownTableBodyNone">是否为引用类型    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_const   </td><td class="markdownTableBodyNone">是否为const类型   </td></tr>
+</table>
+<p >dsp扩充了一些实用的类型判断traits </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_char_array   </td><td class="markdownTableBodyNone">是否为char数组    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_char_pointer   </td><td class="markdownTableBodyNone">是否为char*或const char*    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_iterable   </td><td class="markdownTableBodyNone">是否可迭代 <span style="color:red">检查类型是否实现了begin()及end()函数</span>   </td></tr>
+</table>
+<h1><a class="anchor" id="page1section3"></a>
+常用range adaptor说明</h1>
+<p >同样的，类型关系判断对象也是从std::integral_constant派生，用于检查类型之间是否满足特定关系。 下表是c++11提供的常用类型关系判断traits </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_same   </td><td class="markdownTableBodyNone">判断两个类型是否相同    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">is_base_of   </td><td class="markdownTableBodyNone">判断前一个类型是否为后一个类型的基类 <span style="color:red">注意，is_base_of&lt;A, A&gt;::value是true</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">is_convertible   </td><td class="markdownTableBodyNone">判断前一个类型是否能转换为后一个类型   </td></tr>
+</table>
+<h1><a class="anchor" id="page1section4"></a>
+管道及惰性求值</h1>
+<p >类型修改是指在原类型基础上增加或删除某些类型限定符，如const, reference, volatile等。 常用的类型修改traits如下： </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">remove_cv   </td><td class="markdownTableBodyNone">删除const和volatile限定符    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">remove_const   </td><td class="markdownTableBodyNone">删除const限定符    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">remove_reference   </td><td class="markdownTableBodyNone">删除引用指定    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">add_cv   </td><td class="markdownTableBodyNone">增加const和volatile限定符    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">add_const   </td><td class="markdownTableBodyNone">增加const限定符    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">add_lvalue_reference   </td><td class="markdownTableBodyNone">增加左值引用指定    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">add_rvalue_reference   </td><td class="markdownTableBodyNone">增加右值引用指定    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">remove_pointer   </td><td class="markdownTableBodyNone">删除指针指定    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">add_pointer   </td><td class="markdownTableBodyNone">增加指针指定    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">remove_extent   </td><td class="markdownTableBodyNone">删除一层数组指定    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">remove_all_extent   </td><td class="markdownTableBodyNone">删除所有数组指定   </td></tr>
+</table>
+<h1><a class="anchor" id="page1section5"></a>
+如何使用view</h1>
+<p >以下介绍几个最为常用的类型转换： </p>
+<h2><a class="anchor" id="page1section5subsection1"></a>
+enable_if</h2>
+<p >enable_if的定义如下: </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">class</span> T = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><span class="keyword">struct </span>enable_if;</div>
+</div><!-- fragment --><p> 如果B为<code>true，enable_if将会有一个public</code> member typedef(type)，且value(static constexpr bool )为true; 否则不会有member typedef且value(static constexpr bool)为false。 C++11一般用此类型来实现SFINAE。顺便一提，C++17是用constexpr if实现SFINAE，C++20是用concept来实现SFINAE。<br  />
+ enable_if可以用来：</p><ul>
+<li>作为函数入参(除了操作符重载)</li>
+<li>作为类模板或函数模板的类型参数</li>
+<li>作为函数返回类型(除了构造及析构函数)</li>
+</ul>
+<div class="fragment"><div class="line"> <span class="comment">// 作为函数入参实现SFINAE</span></div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"> <span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t, <span class="keyword">typename</span> std::enable_if&lt;std::is_floating_point&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>) {</div>
+<div class="line">     printf(<span class="stringliteral">&quot;input is %f \n&quot;</span>, t);</div>
+<div class="line"> }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"> <span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t, <span class="keyword">typename</span> std::enable_if&lt;dsp::is_char_pointer&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>) {</div>
+<div class="line">     printf(<span class="stringliteral">&quot;input is %s \n&quot;</span>, t);</div>
+<div class="line"> }</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 作为模板类型参数实现SFINAE</span></div>
+<div class="line">template&lt;typename T, typename std::enable_if&lt;std::is_floating_point&lt;T&gt;::value, <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t) {</div>
+<div class="line">   printf(<span class="stringliteral">&quot;input is %f \n&quot;</span>, t);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">template&lt;typename T, typename std::enable_if&lt;dsp::is_char_pointer&lt;T&gt;::value, <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t) {</div>
+<div class="line">  printf(<span class="stringliteral">&quot;input is %s \n&quot;</span>, t);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section5subsection2"></a>
+conditional</h2>
+<p >conditional的定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">class</span> T, <span class="keyword">class</span> F&gt;</div>
+<div class="line"><span class="keyword">struct </span>conditional;</div>
+</div><!-- fragment --><p >当B为<code>true时返回类型T，否则返回类型F。</code> </p>
+<h2><a class="anchor" id="page1section5subsection3"></a>
+void_t</h2>
+<p >void_t是C++17引入的，dsp实现了自己void_t，定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span>...&gt;</div>
+<div class="line"><span class="keyword">using</span> void_t = void;</div>
+</div><!-- fragment --><p> void_t的作用是把任意一组类型转换为void类型。 void_t的用法比较绕，下面直接用例子来说明，利用void_t来检测类型T是否含有member typedef type： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span>, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><span class="keyword">struct </span>has_type_member : std::false_type{};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><span class="keyword">struct </span>has_type_member&lt;T, dsp::void_t&lt;typename T::type&gt;&gt; : std::true_type{};</div>
+</div><!-- fragment --><p >当类型T含有type定义时，模板类偏特化成功，has_type_member继承自true_type；否则has_type_member继承自false_type。</p>
+<h1><a class="anchor" id="page1section6"></a>
+应用实例</h1>
+<h2><a class="anchor" id="page1section6subsection1"></a>
+大小端转换</h2>
+<p >下面使用type traits来实现数据的大小端转换 </p><div class="fragment"><div class="line"><span class="keyword">struct </span>sizeOk{};</div>
+<div class="line"><span class="keyword">struct </span>sizeNotOk {};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 判断类型T数据的字节数是否为2, 4, 8</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">using</span> isSizeOk = <span class="keyword">typename</span> dsp::conditional_t&lt;<span class="keyword">sizeof</span>(T) % 2 == 0 &amp;&amp; <span class="keyword">sizeof</span>(T) &lt;= 8, sizeOk, sizeNotOk&gt;;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 只接受数值型</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__utility.html#gaed475d038174de7d0df129f6bebcd763">swap_endian</a>(T &amp;val, <span class="keyword">typename</span> dsp::enable_if_t&lt;std::is_arithmetic&lt;T&gt;::value, <span class="keywordtype">int</span>&gt; = 0) {</div>
+<div class="line">    swap_endian_impl(val, sizeTypeTraits&lt;T&gt;());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 无需操作</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> swap_endian_impl(T &amp;val, sizeNotOk) {</div>
+<div class="line">   <span class="comment">// do nothing</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// swap data</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N = sizeof(T)&gt;</div>
+<div class="line"><span class="keywordtype">void</span> swap_endian_impl(T &amp;val, sizeOk) {</div>
+<div class="line">    <span class="keyword">union </span>bytesN {</div>
+<div class="line">        T val;</div>
+<div class="line">        uint8_t arr[N];</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    bytesN tmp;</div>
+<div class="line">    tmp.val = val;</div>
+<div class="line">    <span class="keywordtype">size_t</span> n = 0;</div>
+<div class="line">    <span class="keywordflow">while</span> (n &lt; N / 2) {</div>
+<div class="line">        std::swap(tmp.arr[n], tmp.arr[N - n - 1]);</div>
+<div class="line">        n += 1;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    val = tmp.val;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__utility_html_gaed475d038174de7d0df129f6bebcd763"><div class="ttname"><a href="group__utility.html#gaed475d038174de7d0df129f6bebcd763">dsp::functional::detail::swap_endian</a></div><div class="ttdeci">void swap_endian(T &amp;val, typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, int &gt;=0)</div><div class="ttdoc">处理数据大小端转换</div><div class="ttdef"><b>Definition:</b> functional.hpp:174</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section6subsection2"></a>
+成员函数traits</h2>
+<p >下面使用type traits来检测类型是否包含成员函数 begin(), end() </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><span class="keyword">struct </span>is_iterable : std::false_type {};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 偏特化条件 std::declval&lt;T&gt;().begin()类型及std::declval&lt;T&gt;().end()类型必须存在</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">struct </span>is_iterable&lt;T, dsp::void_t&lt;decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end())&gt;&gt;</div>
+<div class="line"> : std::true_type {};</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

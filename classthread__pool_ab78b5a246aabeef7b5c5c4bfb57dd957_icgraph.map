@@ -1,0 +1,5 @@
+<map id="thread_pool::size" name="thread_pool::size">
+<area shape="rect" id="node1" title="获取线程总数" alt="" coords="398,5,519,32"/>
+<area shape="rect" id="node3" href="$classthread__pool.html#ade34ba3a643a31ae549c3258de4f19ed" title="关闭线程池" alt="" coords="227,5,349,32"/>
+<area shape="rect" id="node5" href="$classthread__pool.html#ac9d8f108fa2419441aba432f8ca98eae" title="析构函数。执行完所有任务再退出" alt="" coords="6,5,178,32"/>
+</map>

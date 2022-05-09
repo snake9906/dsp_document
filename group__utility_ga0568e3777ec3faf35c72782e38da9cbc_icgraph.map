@@ -1,0 +1,4 @@
+<map id="dsp::functional::func_elapsed" name="dsp::functional::func_elapsed">
+<area shape="rect" id="node1" title="记录函数的执行时间" alt="" coords="192,5,331,46"/>
+<area shape="rect" id="node3" href="$group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1" title="记录函数的平均执行时间" alt="" coords="5,5,144,46"/>
+</map>

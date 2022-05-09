@@ -1,3 +1,0 @@
-<map id="memory_io" name="memory_io">
-<area shape="rect" id="node1" title="简单的数据序列化/反序列化类。常用于构造内部网络报文的data。可以使用pop/push函数或者使用&gt;&gt;/&lt;&lt;操作符来进行数据存取，数据先进先出 且连续存放，可以通过data() 获取数据首地址，通过s..." alt="" coords="5,5,181,347"/>
-</map>

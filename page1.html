@@ -173,7 +173,7 @@ enable_if</h2>
 <div class="line"> }</div>
 <div class="line"> </div>
 <div class="line"> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"> <span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t, <span class="keyword">typename</span> std::enable_if&lt;<a class="code hl_struct" href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::is_char_pointer&lt;T&gt;::value</a>&gt;::type* = <span class="keyword">nullptr</span>) {</div>
+<div class="line"> <span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t, <span class="keyword">typename</span> std::enable_if&lt;dsp::is_char_pointer&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>) {</div>
 <div class="line">     printf(<span class="stringliteral">&quot;input is %s \n&quot;</span>, t);</div>
 <div class="line"> }</div>
 <div class="line"> </div>
@@ -187,7 +187,6 @@ enable_if</h2>
 <div class="line"><span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t) {</div>
 <div class="line">  printf(<span class="stringliteral">&quot;input is %s \n&quot;</span>, t);</div>
 <div class="line">}</div>
-<div class="ttc" id="astructdsp_1_1type__traits_1_1is__char__pointer_html"><div class="ttname"><a href="structdsp_1_1type__traits_1_1is__char__pointer.html">dsp::type_traits::is_char_pointer</a></div><div class="ttdoc">入参是否为char*</div><div class="ttdef"><b>Definition:</b> type_traits.h:204</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="page1section5subsection2"></a>
 conditional</h2>
 <p >conditional的定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">class</span> T, <span class="keyword">class</span> F&gt;</div>
@@ -196,13 +195,12 @@ conditional</h2>
 <h2><a class="anchor" id="page1section5subsection3"></a>
 void_t</h2>
 <p >void_t是C++17引入的，dsp实现了自己void_t，定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span>...&gt;</div>
-<div class="line"><span class="keyword">using</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">void_t</a> = void;</div>
-<div class="ttc" id="anamespacedsp_1_1type__traits_html_afecffe64f4344490cc0e71cef5447e94"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">dsp::type_traits::void_t</a></div><div class="ttdeci">typename make_void&lt; Ts... &gt;::type void_t</div><div class="ttdoc">void类型定义, since C++ 17</div><div class="ttdef"><b>Definition:</b> type_traits.h:137</div></div>
+<div class="line"><span class="keyword">using</span> void_t = void;</div>
 </div><!-- fragment --><p> void_t的作用是把任意一组类型转换为void类型。 void_t的用法比较绕，下面直接用例子来说明，利用void_t来检测类型T是否含有member typedef type： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span>, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><span class="keyword">struct </span>has_type_member : std::false_type{};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><span class="keyword">struct </span>has_type_member&lt;T, dsp::<a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">void_t</a>&lt;typename T::type&gt;&gt; : std::true_type{};</div>
+<div class="line"><span class="keyword">struct </span>has_type_member&lt;T, dsp::void_t&lt;typename T::type&gt;&gt; : std::true_type{};</div>
 </div><!-- fragment --><p >当类型T含有type定义时，模板类偏特化成功，has_type_member继承自true_type；否则has_type_member继承自false_type。</p>
 <h1><a class="anchor" id="page1section6"></a>
 应用实例</h1>
@@ -213,11 +211,11 @@ void_t</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 判断类型T数据的字节数是否为2, 4, 8</span></div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><span class="keyword">using</span> isSizeOk = <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">dsp::conditional_t</a>&lt;<span class="keyword">sizeof</span>(T) % 2 == 0 &amp;&amp; <span class="keyword">sizeof</span>(T) &lt;= 8, sizeOk, sizeNotOk&gt;;</div>
+<div class="line"><span class="keyword">using</span> isSizeOk = <span class="keyword">typename</span> dsp::conditional_t&lt;<span class="keyword">sizeof</span>(T) % 2 == 0 &amp;&amp; <span class="keyword">sizeof</span>(T) &lt;= 8, sizeOk, sizeNotOk&gt;;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 只接受数值型</span></div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><span class="keywordtype">void</span> swap_endian(T &amp;val, <span class="keyword">typename</span> <a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt;std::is_arithmetic&lt;T&gt;::value, <span class="keywordtype">int</span>&gt; = 0) {</div>
+<div class="line"><span class="keywordtype">void</span> swap_endian(T &amp;val, <span class="keyword">typename</span> dsp::enable_if_t&lt;std::is_arithmetic&lt;T&gt;::value, <span class="keywordtype">int</span>&gt; = 0) {</div>
 <div class="line">    swap_endian_impl(val, sizeTypeTraits&lt;T&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -245,8 +243,6 @@ void_t</h2>
 <div class="line"> </div>
 <div class="line">    val = tmp.val;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacedsp_1_1type__traits_html_a86ad18cece0fff0566986db86a74623a"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a86ad18cece0fff0566986db86a74623a">dsp::type_traits::conditional_t</a></div><div class="ttdeci">typename std::conditional&lt; B, T, F &gt;::type conditional_t</div><div class="ttdoc">std::conditional&lt;B, T, F&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:74</div></div>
-<div class="ttc" id="anamespacedsp_1_1type__traits_html_a94444abd4b0829bf423af5defe918cdc"><div class="ttname"><a href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::type_traits::enable_if_t</a></div><div class="ttdeci">typename std::enable_if&lt; B, T &gt;::type enable_if_t</div><div class="ttdoc">std::enable_if&lt;B, T&gt;::type, since C++ 14</div><div class="ttdef"><b>Definition:</b> type_traits.h:32</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="page1section6subsection2"></a>
 成员函数traits</h2>
 <p >下面使用type traits来检测类型是否包含成员函数 begin(), end() </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
@@ -254,13 +250,13 @@ void_t</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 偏特化条件 std::declval&lt;T&gt;().begin()类型及std::declval&lt;T&gt;().end()类型必须存在</span></div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><span class="keyword">struct </span>is_iterable&lt;T, dsp::<a class="code hl_typedef" href="namespacedsp_1_1type__traits.html#afecffe64f4344490cc0e71cef5447e94">void_t</a>&lt;decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end())&gt;&gt;</div>
+<div class="line"><span class="keyword">struct </span>is_iterable&lt;T, dsp::void_t&lt;decltype(std::declval&lt;T&gt;().begin()), decltype(std::declval&lt;T&gt;().end())&gt;&gt;</div>
 <div class="line"> : std::true_type {};</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 7日 星期六 14:00:20 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

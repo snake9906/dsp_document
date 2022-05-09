@@ -50,7 +50,7 @@ $(function() {
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="#pub-static-attribs">静态 Public 属性</a> &#124;
 <a href="classdsp_1_1basic__string__view-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">dsp::basic_string_view&lt; charT, traits &gt; 模板类 参考</div></div>
+  <div class="headertitle"><div class="title">dsp::basic_string_view&lt; charT, traits &gt; 模板类 参考<div class="ingroups"><a class="el" href="group__string.html">字符串模块</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -167,7 +167,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> () noexcept
 <tr class="memdesc:aedbc5598c1475e6477177b07555380dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">将视图(从起始位置开始)拷贝(指定长度)至指定字符串  <a href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">更多...</a><br /></td></tr>
 <tr class="separator:aedbc5598c1475e6477177b07555380dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39078fd9a0862925b5fdad7f3367939d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a39078fd9a0862925b5fdad7f3367939d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1basic__string__view.html#a39078fd9a0862925b5fdad7f3367939d">copy</a> (T &amp;s, size_type pos=0, bool use_end=false, typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; is_charT_array&lt; T &gt;::value &gt; *=nullptr) const -&gt; size_type</td></tr>
+<tr class="memitem:a39078fd9a0862925b5fdad7f3367939d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1basic__string__view.html#a39078fd9a0862925b5fdad7f3367939d">copy</a> (T &amp;s, size_type pos=0, bool use_end=false, typename dsp::enable_if_t&lt; is_charT_array&lt; T &gt;::value &gt; *=nullptr) const -&gt; size_type</td></tr>
 <tr class="memdesc:a39078fd9a0862925b5fdad7f3367939d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将视图(从起始位置开始)拷贝(指定长度)至指定字符数组(C-Style风格)  <a href="classdsp_1_1basic__string__view.html#a39078fd9a0862925b5fdad7f3367939d">更多...</a><br /></td></tr>
 <tr class="separator:a39078fd9a0862925b5fdad7f3367939d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a577fd78e36e0c082aab9cc4d76e65e4e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1basic__string__view.html#a577fd78e36e0c082aab9cc4d76e65e4e">substr</a> (size_type pos, size_type n=<a class="el" href="classdsp_1_1basic__string__view.html#aeeb6d271fc931c6d0806bbce61029d95">npos</a>) const -&gt; <a class="el" href="classdsp_1_1basic__string__view.html">basic_string_view</a></td></tr>
@@ -1190,8 +1190,8 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="line"><a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>{<span class="stringliteral">&quot;less than 20&quot;</span>}.<a class="code hl_function" href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">copy</a>(cstr, 19);</div>
 <div class="line">std::cout &lt;&lt; cstr &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: less than 20</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html"><div class="ttname"><a href="classdsp_1_1basic__string__view.html">dsp::basic_string_view</a></div><div class="ttdoc">字符串视图类。</div><div class="ttdef"><b>Definition:</b> string_view.h:47</div></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aedbc5598c1475e6477177b07555380dc"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">dsp::basic_string_view::copy</a></div><div class="ttdeci">auto copy(charT *s, size_type n, size_type pos=0) const -&gt; size_type</div><div class="ttdoc">将视图(从起始位置开始)拷贝(指定长度)至指定字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:304</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html"><div class="ttname"><a href="classdsp_1_1basic__string__view.html">dsp::basic_string_view</a></div><div class="ttdoc">字符串视图类。</div><div class="ttdef"><b>Definition:</b> string_view.hpp:50</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aedbc5598c1475e6477177b07555380dc"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aedbc5598c1475e6477177b07555380dc">dsp::basic_string_view::copy</a></div><div class="ttdeci">auto copy(charT *s, size_type n, size_type pos=0) const -&gt; size_type</div><div class="ttdoc">将视图(从起始位置开始)拷贝(指定长度)至指定字符串</div><div class="ttdef"><b>Definition:</b> string_view.hpp:308</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>字符串 </td></tr>
@@ -1254,7 +1254,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename <a class="el" href="namespacedsp_1_1type__traits.html#a94444abd4b0829bf423af5defe918cdc">dsp::enable_if_t</a>&lt; is_charT_array&lt; T &gt;::value &gt; *&#160;</td>
+          <td class="paramtype">typename dsp::enable_if_t&lt; is_charT_array&lt; T &gt;::value &gt; *&#160;</td>
           <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -2038,7 +2038,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="fragment"><div class="line">vector&lt;string&gt; strings{<span class="stringliteral">&quot;this&quot;</span>,<span class="stringliteral">&quot;is&quot;</span>,<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;test&quot;</span>,<span class="stringliteral">&quot;string.&quot;</span>};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334">join</a>(strings, <span class="stringliteral">&quot; &quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: this is a test string</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad32efd036311d736b0138a0930604334"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334">dsp::basic_string_view::join</a></div><div class="ttdeci">static auto join(const std::vector&lt; basic_string_view &gt; &amp;string_views, const std::basic_string&lt; charT, traits &gt; &amp;sep=&quot;&quot;) -&gt; std::basic_string&lt; charT, traits &gt;</div><div class="ttdoc">将视图数组以指定连接字符串拼接成新字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:556</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad32efd036311d736b0138a0930604334"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad32efd036311d736b0138a0930604334">dsp::basic_string_view::join</a></div><div class="ttdeci">static auto join(const std::vector&lt; basic_string_view &gt; &amp;string_views, const std::basic_string&lt; charT, traits &gt; &amp;sep=&quot;&quot;) -&gt; std::basic_string&lt; charT, traits &gt;</div><div class="ttdoc">将视图数组以指定连接字符串拼接成新字符串</div><div class="ttdef"><b>Definition:</b> string_view.hpp:560</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">strings</td><td>待拼接的字符串数组 </td></tr>
@@ -2315,7 +2315,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <p>生成字符串，删除本视图中的str子视图 </p>
 <div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>(<span class="stringliteral">&quot;abcd&quot;</span>).<a class="code hl_function" href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569">remove</a>(<span class="stringliteral">&quot;abc&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: d</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_adf114aca631a5a83ccff624d604d3569"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569">dsp::basic_string_view::remove</a></div><div class="ttdeci">static auto remove(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view bsv) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">删除str中的所有bsv子字符串</div><div class="ttdef"><b>Definition:</b> string_view.h:642</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_adf114aca631a5a83ccff624d604d3569"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#adf114aca631a5a83ccff624d604d3569">dsp::basic_string_view::remove</a></div><div class="ttdeci">static auto remove(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view bsv) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">删除str中的所有bsv子字符串</div><div class="ttdef"><b>Definition:</b> string_view.hpp:646</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>子视图 </td></tr>
@@ -2555,7 +2555,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <p>返回当前视图重复num次的字符串。num为0时返回空字符串。 </p>
 <div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>(<span class="stringliteral">&quot;1234&quot;</span>).<a class="code hl_function" href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577">repeat</a>(4) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: 1234123412341234</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad1d0ee2c4789bf41b8c9e649a5564577"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577">dsp::basic_string_view::repeat</a></div><div class="ttdeci">auto repeat(uint32_t num) -&gt; std::string</div><div class="ttdoc">返回当前视图重复num次的字符串。num为0时返回空字符串。</div><div class="ttdef"><b>Definition:</b> string_view.h:667</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_ad1d0ee2c4789bf41b8c9e649a5564577"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#ad1d0ee2c4789bf41b8c9e649a5564577">dsp::basic_string_view::repeat</a></div><div class="ttdeci">auto repeat(uint32_t num) -&gt; std::string</div><div class="ttdoc">返回当前视图重复num次的字符串。num为0时返回空字符串。</div><div class="ttdef"><b>Definition:</b> string_view.hpp:671</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">num</td><td>重复次数 </td></tr>
@@ -2688,7 +2688,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="fragment"><div class="line">std::string str{<span class="stringliteral">&quot;hello world&quot;</span>};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547">replace</a>(str, <span class="stringliteral">&quot;l&quot;</span>, <span class="stringliteral">&quot;a&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: heaao worad</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_abaf0ed6706d1f29497b3b64cedcb6547"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547">dsp::basic_string_view::replace</a></div><div class="ttdeci">static auto replace(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view before, basic_string_view after) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">将str 对象中的 before 替换为 after</div><div class="ttdef"><b>Definition:</b> string_view.h:614</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_abaf0ed6706d1f29497b3b64cedcb6547"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#abaf0ed6706d1f29497b3b64cedcb6547">dsp::basic_string_view::replace</a></div><div class="ttdeci">static auto replace(std::basic_string&lt; charT, traits &gt; &amp;str, basic_string_view before, basic_string_view after) -&gt; std::basic_string&lt; charT, traits &gt; &amp;</div><div class="ttdoc">将str 对象中的 before 替换为 after</div><div class="ttdef"><b>Definition:</b> string_view.hpp:618</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>给定的字符串 </td></tr>
@@ -3165,7 +3165,7 @@ template&lt;typename charT , typename traits &gt; </div>
 <div class="line"> </div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_class" href="classdsp_1_1basic__string__view.html">dsp::string_view</a>{<span class="stringliteral">&quot;abcd&quot;</span>}.<a class="code hl_function" href="classdsp_1_1basic__string__view.html#aa2fca51591fb970efb8e7d10cc9f9790">to_double</a>(&amp;ok) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ok &lt;&lt; std::endl;</div>
 <div class="line"><span class="comment">// Output: 0 true</span></div>
-<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aa2fca51591fb970efb8e7d10cc9f9790"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aa2fca51591fb970efb8e7d10cc9f9790">dsp::basic_string_view::to_double</a></div><div class="ttdeci">auto to_double(bool *ok=nullptr) const noexcept -&gt; double</div><div class="ttdoc">将视图转换为double类型</div><div class="ttdef"><b>Definition:</b> string_view.h:693</div></div>
+<div class="ttc" id="aclassdsp_1_1basic__string__view_html_aa2fca51591fb970efb8e7d10cc9f9790"><div class="ttname"><a href="classdsp_1_1basic__string__view.html#aa2fca51591fb970efb8e7d10cc9f9790">dsp::basic_string_view::to_double</a></div><div class="ttdeci">auto to_double(bool *ok=nullptr) const noexcept -&gt; double</div><div class="ttdoc">将视图转换为double类型</div><div class="ttdef"><b>Definition:</b> string_view.hpp:697</div></div>
 </div><!-- fragment --> <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">ok</td><td>当ok不为空指针且转换double失败时，ok将置为false </td></tr>
@@ -3492,7 +3492,7 @@ template&lt;typename charT , typename traits &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 5日 星期四 17:55:44 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

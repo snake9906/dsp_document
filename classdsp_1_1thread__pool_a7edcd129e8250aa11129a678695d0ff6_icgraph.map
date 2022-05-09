@@ -1,0 +1,5 @@
+<map id="dsp::thread_pool::size" name="dsp::thread_pool::size">
+<area shape="rect" id="node1" title="获取线程总数" alt="" coords="382,12,533,39"/>
+<area shape="rect" id="node3" href="$classdsp_1_1thread__pool.html#a612e3f7a19ed987b66c9cb3f90dfc4cd" title="关闭线程池" alt="" coords="182,12,333,39"/>
+<area shape="rect" id="node5" href="$classdsp_1_1thread__pool.html#a46340c701300c69903e206767fd09bb3" title="析构函数。执行完所有任务再退出" alt="" coords="6,5,133,46"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="dsp::acquire_unique_lock" name="dsp::acquire_unique_lock">
+<area shape="rect" id="node1" title="获取独占锁(用于写入数据)" alt="" coords="459,56,629,83"/>
+<area shape="rect" id="node3" href="$classdsp_1_1thread__pool.html#a48f93cc9879a77f38fd58b10f0d1f4fc" title="建立任务" alt="" coords="252,5,407,32"/>
+<area shape="rect" id="node5" href="$classdsp_1_1thread__pool.html#a679298b16179173b5087573be91dddf3" title="可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行" alt="" coords="249,56,410,83"/>
+<area shape="rect" id="node9" href="$classdsp_1_1thread__pool.html#a612e3f7a19ed987b66c9cb3f90dfc4cd" title="关闭线程池" alt="" coords="254,108,405,135"/>
+<area shape="rect" id="node7" href="$classdsp_1_1thread__pool.html#a920d5000c8e3353f1e2de856814529a6" title="默认构造函数，按当前硬件支持的最大并发线程数来启动线程" alt="" coords="6,53,199,80"/>
+<area shape="rect" id="node11" href="$classdsp_1_1thread__pool.html#a46340c701300c69903e206767fd09bb3" title="析构函数。执行完所有任务再退出" alt="" coords="39,105,166,146"/>
+</map>

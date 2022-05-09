@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: range</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">range </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>目录</h3>
+<ul><li class="level1"><a href="#page1section1">基本概念</a><ul><li class="level2"><a href="#page1section1subsection1">range</a></li>
+<li class="level2"><a href="#page1section1subsection2">view</a></li>
+<li class="level2"><a href="#page1section1subsection3">action</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#page1section2">range函数</a></li>
+<li class="level1"><a href="#page1section3">常用range adaptor说明</a><ul><li class="level2"><a href="#page1section3section1">transform</a></li>
+<li class="level2"><a href="#page1section3section2">filter</a></li>
+<li class="level2"><a href="#page1section3section3">reverse</a></li>
+<li class="level2"><a href="#page1section3section4">keys values</a></li>
+<li class="level2"><a href="#page1section3section5">join</a></li>
+<li class="level2"><a href="#page1section3section6">take</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#page1section4">管道及惰性求值</a><ul><li class="level2"><a href="#page1section4subsection1">管道操作</a></li>
+<li class="level2"><a href="#page1section4subsection2">惰性求值</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#page1section5">如何使用view</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="page1section1"></a>
+基本概念</h1>
+<h2><a class="anchor" id="page1section1subsection1"></a>
+range</h2>
+<p >简单来说，可以用begin()、end()函数获取迭代器并进行遍历的一切对象，都可以视为range。是的，容器基本上都是range，但range不仅仅限于容器，数组也可以通过 使用range库提供的begin()、end()函数来进行迭代，也可以视为range。 <br  />
+</p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;dsp/range/range.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>dsp;</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3};</div>
+<div class="line"><span class="keyword">auto</span> rng = range::make_iterator_range(range::begin(a), range::end(a)); <span class="comment">// 生成vector的view</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> b[5]{1, 2, 3, 4, 5};</div>
+<div class="line"><span class="keyword">auto</span> rng2 = range::make_iterator_range(range::begin(b), range::end(b));  <span class="comment">// 生成数组的完整view</span></div>
+<div class="line"><span class="keyword">auto</span> rng3 = range::make_iterator_range(range::begin(b), range::begin(b) + 2); <span class="comment">//生成数组的部分view</span></div>
+</div><!-- fragment --><p> range库里还有三个很重要的概念：view(视图)、action(操作)和algorithms(算法)。其中和algorithms与STL中提供的算法类似，但是提供了支持range的重载。<br  />
+ </p>
+<h2><a class="anchor" id="page1section1subsection2"></a>
+view</h2>
+<p >view是一种特殊的range，从名称上能看出来，它是数据的视图而不持有数据。view的特征包括：</p><ul>
+<li>移动构造有<code>O(1)</code> 时间复杂度</li>
+<li>移动赋值有<code>O(1)</code> 时间复杂度</li>
+<li>析构有 <code>O(1)</code> 时间复杂度</li>
+<li>不允许复制构造，或者复制构造有<code>O(1)</code> 时间复杂度</li>
+<li>不允许复制赋值，或者复制赋值有<code>O(1)</code> 时间复杂度</li>
+</ul>
+<p >最简单的view就是两个iterator的集合，上一节的例子就是通过指定首尾iterator来生成一个view。 <br  />
+range转换为view需要使用 <code>range</code> adaptor ，当然<code>range</code> adaptor 也可以将一个view转换为另一个view。<code>range</code> adaptor 由range库 提供，也可以自行扩展。 <br  />
+view需要重载operator|，所以view可以类似unix管道一样通过|串联起来，提高代码可读性。 <br  />
+需要注意的是，view对数据的遍历是<b>惰性求值</b> 的，后面会通过例子来进行说明。</p>
+<h2><a class="anchor" id="page1section1subsection3"></a>
+action</h2>
+<p >前面已经提到，view是原始数据的视图，但不会影响到原始数据。而action可以针对视图进行实际数据操作，例如保存，修改等等。通常range库只会提供 最常用的action，用户可以根据需求来实现自己的action。</p>
+<h1><a class="anchor" id="page1section2"></a>
+range函数</h1>
+<p >为了顺利地将对象转为range，dsp的range库提供了一系列辅助函数： </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">函数名   </th><th class="markdownTableHeadCenter">C++20range库中对应的函数名    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">size   </td><td class="markdownTableBodyCenter">size    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">begin   </td><td class="markdownTableBodyCenter">begin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">end   </td><td class="markdownTableBodyCenter">end    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">rbegin   </td><td class="markdownTableBodyCenter">rbegin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">rend   </td><td class="markdownTableBodyCenter">rend    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">const_begin   </td><td class="markdownTableBodyCenter">cbegin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">const_end   </td><td class="markdownTableBodyCenter">cend    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">const_rbegin   </td><td class="markdownTableBodyCenter">crbegin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">const_rend   </td><td class="markdownTableBodyCenter">crend   </td></tr>
+</table>
+<p>具体用法可参考： </p><div class="fragment"><div class="line">std::vector&lt;int&gt; a{1, 2, 3};</div>
+<div class="line"><span class="comment">// 正序可读写view</span></div>
+<div class="line"><span class="keyword">auto</span> rng = range::make_iterator_range(range::begin(b), range::end(b));</div>
+<div class="line"><span class="comment">// 反序可读写view</span></div>
+<div class="line">rng = range::make_iterator_range(range::rbegin(b), range::rend(b));</div>
+<div class="line"><span class="comment">// 正序只读view</span></div>
+<div class="line">rng = range::make_iterator_range(range::const_begin(b), range::const_end(b));</div>
+<div class="line"><span class="comment">// 反序只读view</span></div>
+<div class="line">rng = range::make_iterator_range(range::const_rbegin(b), range::const_rend(b));</div>
+</div><!-- fragment --><h1><a class="anchor" id="page1section3"></a>
+常用range adaptor说明</h1>
+<p >range库提供的常用adaptor对照表： </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">range adaptor   </th><th class="markdownTableHeadCenter">C++20   </th><th class="markdownTableHeadCenter">boost   </th><th class="markdownTableHeadCenter">dsp    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">transform   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">filter   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">reverse   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">keys   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">values   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">join   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">take   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">take_while   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">drop   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">drop_while   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">slice   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">index   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">replace   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">replace_if   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td></tr>
+</table>
+<h2><a class="anchor" id="page1section3section1"></a>
+transform</h2>
+<p >语法：<code>rng | view::transform(fun)</code> <br  />
+ 将<code>rng</code>的每个元素通过函数<code>fun</code>转换为<code>fun(x)</code>形成新的视图</p><ul>
+<li>Precondition: <code>rng</code>的<code>value_type</code>可以转换为<code>fun</code>的入参类型</li>
+<li>Postcondition: 返回的range的元素类型为 <code>fun(x)</code>，其中<code>x</code>为rng的元素</li>
+<li>Throws: fun的复制构造函数可能会抛出异常</li>
+<li>Range Category: Single Pass Range</li>
+<li>Range Return Type: <code>transformed_range&lt;decltype(rng)&gt;</code></li>
+<li>Returned Range Category: 与<code>rng</code>保持一致</li>
+</ul>
+<p ><b>example1</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> add_one(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">int</span> { <span class="keywordflow">return</span> x + 1; }</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3};</div>
+<div class="line">algorithm::copy(a | view::transform(add_one), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 2 3 4</span></div>
+</div><!-- fragment --><p ><b>example2</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> divide_two(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">float</span> { <span class="keywordflow">return</span> x / 2.; }</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3};</div>
+<div class="line"> </div>
+<div class="line">algorithm::copy(a | view::transform(divide_two), std::ostream_iterator&lt;float&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 0.5 1 1.5</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section3section2"></a>
+filter</h2>
+<p >语法：<code>rng | view::filter(pred)</code> <br  />
+ 将<code>rng</code>的中满足<code>pred(x)==true</code>的元素放入新视图</p><ul>
+<li>Precondition: <code>rng</code>的<code>value_type</code>可以转换为<code>pred</code>的入参类型</li>
+<li>Postcondition: 返回的range的中所有的元素都满足<code>pred(x)==true</code></li>
+<li>Throws: <code>pred</code>的复制构造函数可能会抛出异常</li>
+<li>Range Category: Single Pass Range</li>
+<li>Range Return Type: filtered_range&lt;decltype(rng)&gt;</li>
+<li>Returned Range Category: <code>rng</code>的category与Bidirectional Range之间较低的级别</li>
+</ul>
+<p ><b>example1</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> is_even(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> x % 2 == 0; }</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3};</div>
+<div class="line">algorithm::copy(a | view::filter(is_even), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 2</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section3section3"></a>
+reverse</h2>
+<p >语法：<code>rng | view::reverse</code> <br  />
+ 将<code>rng</code>反序后放入新视图</p><ul>
+<li>Range Category: Bidirectional Range</li>
+<li>Range Return Type: reversed_range&lt;decltype(rng)&gt;</li>
+<li>Returned Range Category: 与<code>rng</code>保持一致</li>
+</ul>
+<p >std::vector&lt;int&gt; a{1, 2, 3}; algorithm::copy(a | view::reverse, std::ostream_iterator&lt;int&gt;(std::cout, " "));</p>
+<p >// Output: 3 2 1</p>
+<h2><a class="anchor" id="page1section3section4"></a>
+keys values</h2>
+<p >语法：<code>rng | view::keys</code> <code>rng | view::values</code> <br  />
+ 将<code>rng</code>的中key/value取出后放入新视图</p><ul>
+<li>Precondition: <code>rng</code>的<code>value_type</code>是std::pair</li>
+<li>Postcondition: keys:新range的元素是x.first()，values:新range的元素是x.second()</li>
+<li>Range Category: Single Pass Range</li>
+<li>Range Return Type: select_first_range&lt;decltype(rng)&gt; select_second_range&lt;decltype(rng)&gt;</li>
+<li>Returned Range Category: 与<code>rng</code>的category保持一致</li>
+</ul>
+<p ><b>example1</b> </p><div class="fragment"><div class="line">std::map&lt;int,int&gt; a{{1,10}, {2,20}, {3,30}};</div>
+<div class="line"> </div>
+<div class="line">algorithm::copy(a | view::keys(a), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 1 2 3</span></div>
+<div class="line"> </div>
+<div class="line">algorithm::copy(a | view::keys(a), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 10 20 30</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section3section5"></a>
+join</h2>
+<p >语法：<code>rng | view::join</code> <br  />
+ 前提是<code>rng</code>的元素也是range，将<code>rng</code>的元素的元素依次取出后放入新视图</p><ul>
+<li>Precondition: <code>rng</code>的<code>value_type</code>是<code>range</code></li>
+<li>Postcondition: 新range的<code>value_type</code>是<code>decltype(decltype(rng)::value_type)::value_type</code></li>
+<li>Range Category: Single Pass Range</li>
+<li>Range Return Type: joined_range&lt;decltype(rng)&gt;</li>
+<li>Returned Range Category: 与<code>rng</code>的category保持一致</li>
+</ul>
+<p ><b>example1</b> </p><div class="fragment"><div class="line">std::vector&lt;std::vector&lt;int&gt;&gt; a{{1,10}, {2,20}, {3,30}};</div>
+<div class="line"> </div>
+<div class="line">algorithm::copy(a | view::join, std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 1 10 2 20 3 30</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section3section6"></a>
+take</h2>
+<p >语法：<code>rng | view::take(n)</code> <br  />
+ 将<code>rng</code>的前n个元素取出后放入新视图</p><ul>
+<li>Range Category: Single Pass Range</li>
+<li>Range Return Type: decltype(rng)</li>
+<li>Returned Range Category: 与<code>rng</code>的category保持一致</li>
+</ul>
+<p ><b>example1</b> </p><div class="fragment"><div class="line">std::vector&lt;int&gt; a{1, 2, 3};</div>
+<div class="line"> </div>
+<div class="line">algorithm::copy(a | view::take(2), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 1 2</span></div>
+</div><!-- fragment --><h1><a class="anchor" id="page1section4"></a>
+管道及惰性求值</h1>
+<h2><a class="anchor" id="page1section4subsection1"></a>
+管道操作</h2>
+<p >前面已经提到，view是可以通过多个view adaptor串起来的，下面会举例说明: <br  />
+<b>example1</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> is_even(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> x % 2 == 0; }</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3, 4, 5, 6};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//取偶数然后反序</span></div>
+<div class="line">algorithm::copy(a | view::filter(is_even) | view::reverse, std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 6 4 2</span></div>
+</div><!-- fragment --><p ><b>example2</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> repeat_twice(<span class="keywordtype">int</span> x) -&gt; std::vector&lt;int&gt; { <span class="keywordflow">return</span> std::vector&lt;int&gt;{x, x}; }</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3, 4, 5};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 转成vector&lt;vector&gt;然后flatten化</span></div>
+<div class="line">algorithm::copy(a | view::transform(repeat_twice) | view::join, std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 1 1 2 2 3 3 4 4 5 5</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="page1section4subsection2"></a>
+惰性求值</h2>
+<p >下面还是用例子来进行说明： </p><div class="fragment"><div class="line"><span class="keyword">auto</span> add_one(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">   std::cout &lt;&lt; <span class="stringliteral">&quot;x = &quot;</span> &lt;&lt; x &lt;&lt; std::endl;</div>
+<div class="line">   <span class="keywordflow">return</span> x + 1;</div>
+<div class="line">}</div>
+<div class="line">std::vector&lt;int&gt; a{1, 3, 5, 6};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 定义一个视图，反转a的元素顺序然后每个元素+1，add_one函数中有打印语句</span></div>
+<div class="line"><span class="keyword">auto</span> rng = a  | view::reverse | view::transform(add_one);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: ?</span></div>
+</div><!-- fragment --><p >实际上不会有任何语句被打印出来，因为add_one函数并没有被真正调用。 <code>view</code>本质上是一组视图转换函数的组合，在真正使用视图的时候函数才会调用。 <br  />
+ <b>注意！！！！！</b> 实际上有一个例外，凡是需要进行过滤的视图，在视图生成的时候就已经执行了过滤函数了。原因留给自己思考，也可以看<code>filter</code>的源代码 <span class="emoji">&#x1f60f;</span></p>
+<h1><a class="anchor" id="page1section5"></a>
+如何使用view</h1>
+<p >view形成之后有两种使用方法：</p><ul>
+<li>配合range::algorithm算法来使用</li>
+<li>配合range::action来使用</li>
+</ul>
+<p >这里的使用，是指真正修改原有数据，或者生成新的数据。 <br  />
+range::algorithm支持的常用算法如下：</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">算法   </th><th class="markdownTableHeadCenter">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>copy</code>   </td><td class="markdownTableBodyCenter">拷贝视图数据    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>replace</code>   </td><td class="markdownTableBodyCenter">以给定的数据替换视图的每个元素    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>for_each</code>   </td><td class="markdownTableBodyCenter">遍历视图数据执行某操作    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>count</code>   </td><td class="markdownTableBodyCenter">视图元素个数    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>remove_erase</code>   </td><td class="markdownTableBodyCenter">删除视图元素   </td></tr>
+</table>
+<p >range::algorithm的语法与std的algorithm基本一致，不再举例说明。 <br  />
+ 下面介绍一下支持的action操作： </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">action   </th><th class="markdownTableHeadCenter">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>to_vector</code>   </td><td class="markdownTableBodyCenter">将视图保存成vector    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>for_each</code>   </td><td class="markdownTableBodyCenter">遍历视图数据执行某操作    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>reduce</code>   </td><td class="markdownTableBodyCenter">类似accumulate算法   </td></tr>
+</table>
+<p ><b>example1</b> </p><div class="fragment"><div class="line">std::vector&lt;int&gt; a{1, 2, 3, 4, 5, 6};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> new_vector = a | view::filter(is_even) | action::to_vector;</div>
+</div><!-- fragment --><p ><b>example2</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> is_even(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> x%2==0; }</div>
+<div class="line"><span class="keywordtype">void</span> add_one(<span class="keywordtype">int</span>&amp; x) { x += 1;}</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;int&gt; a{1, 2, 3, 4, 5, 6};</div>
+<div class="line"> </div>
+<div class="line">a | view::filter(is_even) | action::for_each(add_one);</div>
+<div class="line"> </div>
+<div class="line">algorithm::copy(a, std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 1 3 3 5 5 7</span></div>
+</div><!-- fragment --><p ><b>example3</b> </p><div class="fragment"><div class="line">std::vector&lt;int&gt; a{1, 2, 3, 4};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> sum{0};</div>
+<div class="line">a | view::filter(is_even) | action::reduce(sum, [](<span class="keywordtype">int</span> &amp;tmp, <span class="keywordtype">int</span> i) { tmp += i; });</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; sum &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: 6</span></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

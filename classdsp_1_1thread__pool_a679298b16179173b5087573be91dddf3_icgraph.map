@@ -1,0 +1,4 @@
+<map id="dsp::thread_pool::resize" name="dsp::thread_pool::resize">
+<area shape="rect" id="node1" title="可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行" alt="" coords="249,5,410,32"/>
+<area shape="rect" id="node3" href="$classdsp_1_1thread__pool.html#a920d5000c8e3353f1e2de856814529a6" title="默认构造函数，按当前硬件支持的最大并发线程数来启动线程" alt="" coords="6,5,199,32"/>
+</map>

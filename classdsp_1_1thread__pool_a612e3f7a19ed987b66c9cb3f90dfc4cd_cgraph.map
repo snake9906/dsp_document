@@ -1,0 +1,6 @@
+<map id="dsp::thread_pool::stop" name="dsp::thread_pool::stop">
+<area shape="rect" id="node1" title="关闭线程池" alt="" coords="6,64,157,91"/>
+<area shape="rect" id="node3" href="$group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="206,5,375,32"/>
+<area shape="rect" id="node5" href="$classdsp_1_1thread__pool.html#a6624bec5c6cead10a07d8c5f5ede597b" title="清除所有待执行的任务" alt="" coords="213,57,368,98"/>
+<area shape="rect" id="node7" href="$classdsp_1_1thread__pool.html#a7edcd129e8250aa11129a678695d0ff6" title="获取线程总数" alt="" coords="215,123,366,149"/>
+</map>

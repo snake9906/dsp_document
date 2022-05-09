@@ -1,6 +1,0 @@
-<map id="db_connection_pro::get_attrs_info_by_id" name="db_connection_pro::get_attrs_info_by_id">
-<area shape="rect" id="node1" title="查询域对象元数据" alt="" coords="227,57,365,98"/>
-<area shape="rect" id="node3" href="$classdb_obj_visitor.html#ab2d4e190b9196adee7e57d6c826e028b" title="子对象访问器" alt="" coords="6,5,178,32"/>
-<area shape="rect" id="node5" href="$classdb__connection__pro.html#a32a897add4c333a2c6e86f05996039ac" title="获取对象的单个域(字符型)" alt="" coords="23,57,161,98"/>
-<area shape="rect" id="node7" href="$classdb__connection__pro.html#a3d3836a87cbf24b68401580918558a66" title="根据oid更新单个域(字符型)" alt="" coords="23,122,161,163"/>
-</map>

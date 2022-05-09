@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: dsp::thread_pool类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>dsp</b></li><li class="navelem"><a class="el" href="classdsp_1_1thread__pool.html">thread_pool</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classdsp_1_1thread__pool-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">dsp::thread_pool类 参考<div class="ingroups"><a class="el" href="group__concurrency.html">concurrency模块</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>线程池  
+ <a href="classdsp_1_1thread__pool.html#details">更多...</a></p>
+<div class="dynheader">
+dsp::thread_pool 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool__coll__graph.png" border="0" usemap="#adsp_1_1thread__pool_coll__map" alt="Collaboration graph"/></div>
+<map name="adsp_1_1thread__pool_coll__map" id="adsp_1_1thread__pool_coll__map">
+<area shape="rect" title="线程池" alt="" coords="5,6,165,157"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a920d5000c8e3353f1e2de856814529a6"><td class="memItemLeft" align="right" valign="top"><a id="a920d5000c8e3353f1e2de856814529a6" name="a920d5000c8e3353f1e2de856814529a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>thread_pool</b> ()</td></tr>
+<tr class="memdesc:a920d5000c8e3353f1e2de856814529a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数，按当前硬件支持的最大并发线程数来启动线程 <br /></td></tr>
+<tr class="separator:a920d5000c8e3353f1e2de856814529a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2666c11c054273dcb5f7ef6b4f1490dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#a2666c11c054273dcb5f7ef6b4f1490dd">thread_pool</a> (size_t n)</td></tr>
+<tr class="memdesc:a2666c11c054273dcb5f7ef6b4f1490dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，按给定的线程数来启动线程  <a href="classdsp_1_1thread__pool.html#a2666c11c054273dcb5f7ef6b4f1490dd">更多...</a><br /></td></tr>
+<tr class="separator:a2666c11c054273dcb5f7ef6b4f1490dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46340c701300c69903e206767fd09bb3"><td class="memItemLeft" align="right" valign="top"><a id="a46340c701300c69903e206767fd09bb3" name="a46340c701300c69903e206767fd09bb3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~thread_pool</b> ()</td></tr>
+<tr class="memdesc:a46340c701300c69903e206767fd09bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数。执行完所有任务再退出 <br /></td></tr>
+<tr class="separator:a46340c701300c69903e206767fd09bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edcd129e8250aa11129a678695d0ff6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#a7edcd129e8250aa11129a678695d0ff6">size</a> () -&gt; size_t</td></tr>
+<tr class="memdesc:a7edcd129e8250aa11129a678695d0ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程总数  <a href="classdsp_1_1thread__pool.html#a7edcd129e8250aa11129a678695d0ff6">更多...</a><br /></td></tr>
+<tr class="separator:a7edcd129e8250aa11129a678695d0ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e279d48a170599576b4e1f544770fe"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#ad6e279d48a170599576b4e1f544770fe">n_idle</a> () -&gt; size_t</td></tr>
+<tr class="memdesc:ad6e279d48a170599576b4e1f544770fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前空闲线程数  <a href="classdsp_1_1thread__pool.html#ad6e279d48a170599576b4e1f544770fe">更多...</a><br /></td></tr>
+<tr class="separator:ad6e279d48a170599576b4e1f544770fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3970c2d89638c5702e22745fe7ffff"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#a6d3970c2d89638c5702e22745fe7ffff">get_thread</a> (int i) -&gt; std::thread &amp;</td></tr>
+<tr class="memdesc:a6d3970c2d89638c5702e22745fe7ffff"><td class="mdescLeft">&#160;</td><td class="mdescRight">按下标获取线程对象  <a href="classdsp_1_1thread__pool.html#a6d3970c2d89638c5702e22745fe7ffff">更多...</a><br /></td></tr>
+<tr class="separator:a6d3970c2d89638c5702e22745fe7ffff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679298b16179173b5087573be91dddf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#a679298b16179173b5087573be91dddf3">resize</a> (size_t n)</td></tr>
+<tr class="memdesc:a679298b16179173b5087573be91dddf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行  <a href="classdsp_1_1thread__pool.html#a679298b16179173b5087573be91dddf3">更多...</a><br /></td></tr>
+<tr class="separator:a679298b16179173b5087573be91dddf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6624bec5c6cead10a07d8c5f5ede597b"><td class="memItemLeft" align="right" valign="top"><a id="a6624bec5c6cead10a07d8c5f5ede597b" name="a6624bec5c6cead10a07d8c5f5ede597b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_queue</b> ()</td></tr>
+<tr class="memdesc:a6624bec5c6cead10a07d8c5f5ede597b"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除所有待执行的任务 <br /></td></tr>
+<tr class="separator:a6624bec5c6cead10a07d8c5f5ede597b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdbcada8f3f6d1ec64f29b4c57e8fc76"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#afdbcada8f3f6d1ec64f29b4c57e8fc76">pop</a> () -&gt; job_type</td></tr>
+<tr class="memdesc:afdbcada8f3f6d1ec64f29b4c57e8fc76"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得一个任务  <a href="classdsp_1_1thread__pool.html#afdbcada8f3f6d1ec64f29b4c57e8fc76">更多...</a><br /></td></tr>
+<tr class="separator:afdbcada8f3f6d1ec64f29b4c57e8fc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612e3f7a19ed987b66c9cb3f90dfc4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#a612e3f7a19ed987b66c9cb3f90dfc4cd">stop</a> (bool is_wait=false)</td></tr>
+<tr class="memdesc:a612e3f7a19ed987b66c9cb3f90dfc4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭线程池  <a href="classdsp_1_1thread__pool.html#a612e3f7a19ed987b66c9cb3f90dfc4cd">更多...</a><br /></td></tr>
+<tr class="separator:a612e3f7a19ed987b66c9cb3f90dfc4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f93cc9879a77f38fd58b10f0d1f4fc"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args&gt; </td></tr>
+<tr class="memitem:a48f93cc9879a77f38fd58b10f0d1f4fc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#a48f93cc9879a77f38fd58b10f0d1f4fc">push</a> (F &amp;&amp;f, Args... args) -&gt; std::future&lt; decltype(f(args...))&gt;</td></tr>
+<tr class="memdesc:a48f93cc9879a77f38fd58b10f0d1f4fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">建立任务  <a href="classdsp_1_1thread__pool.html#a48f93cc9879a77f38fd58b10f0d1f4fc">更多...</a><br /></td></tr>
+<tr class="separator:a48f93cc9879a77f38fd58b10f0d1f4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbac0ae85f341c685e50e5c1252a891c"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:afbac0ae85f341c685e50e5c1252a891c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdsp_1_1thread__pool.html#afbac0ae85f341c685e50e5c1252a891c">push</a> (F &amp;&amp;f) -&gt; std::future&lt; decltype(f())&gt;</td></tr>
+<tr class="memdesc:afbac0ae85f341c685e50e5c1252a891c"><td class="mdescLeft">&#160;</td><td class="mdescRight">建立任务  <a href="classdsp_1_1thread__pool.html#afbac0ae85f341c685e50e5c1252a891c">更多...</a><br /></td></tr>
+<tr class="separator:afbac0ae85f341c685e50e5c1252a891c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >线程池 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a2666c11c054273dcb5f7ef6b4f1490dd" name="a2666c11c054273dcb5f7ef6b4f1490dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2666c11c054273dcb5f7ef6b4f1490dd">&#9670;&nbsp;</a></span>thread_pool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dsp::thread_pool::thread_pool </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，按给定的线程数来启动线程 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>线程数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a2666c11c054273dcb5f7ef6b4f1490dd_cgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a2666c11c054273dcb5f7ef6b4f1490dd_cgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a2666c11c054273dcb5f7ef6b4f1490dd_cgraph" id="aclassdsp_1_1thread__pool_a2666c11c054273dcb5f7ef6b4f1490dd_cgraph">
+<area shape="rect" title="构造函数，按给定的线程数来启动线程" alt="" coords="6,5,199,32"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a679298b16179173b5087573be91dddf3" title="可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行" alt="" coords="249,5,410,32"/>
+<area shape="rect" href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="459,5,629,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6d3970c2d89638c5702e22745fe7ffff" name="a6d3970c2d89638c5702e22745fe7ffff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3970c2d89638c5702e22745fe7ffff">&#9670;&nbsp;</a></span>get_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::thread_pool::get_thread </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> -&gt; std::thread &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>按下标获取线程对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>线程下标 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>对应的线程 </dd></dl>
+
+</div>
+</div>
+<a id="ad6e279d48a170599576b4e1f544770fe" name="ad6e279d48a170599576b4e1f544770fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e279d48a170599576b4e1f544770fe">&#9670;&nbsp;</a></span>n_idle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::thread_pool::n_idle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前空闲线程数 </p>
+<dl class="section return"><dt>返回</dt><dd>空闲线程数 </dd></dl>
+
+</div>
+</div>
+<a id="afdbcada8f3f6d1ec64f29b4c57e8fc76" name="afdbcada8f3f6d1ec64f29b4c57e8fc76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdbcada8f3f6d1ec64f29b4c57e8fc76">&#9670;&nbsp;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::thread_pool::pop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; job_type </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获得一个任务 </p>
+<dl class="section return"><dt>返回</dt><dd>任务 </dd></dl>
+
+</div>
+</div>
+<a id="afbac0ae85f341c685e50e5c1252a891c" name="afbac0ae85f341c685e50e5c1252a891c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbac0ae85f341c685e50e5c1252a891c">&#9670;&nbsp;</a></span>push() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::thread_pool::push </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> -&gt; std::future&lt;decltype(f())&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>建立任务 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>函数类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>函数指针、成员函数指针、lambda函数等各种形式的function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>future对象 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_afbac0ae85f341c685e50e5c1252a891c_cgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_afbac0ae85f341c685e50e5c1252a891c_cgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_afbac0ae85f341c685e50e5c1252a891c_cgraph" id="aclassdsp_1_1thread__pool_afbac0ae85f341c685e50e5c1252a891c_cgraph">
+<area shape="rect" title="建立任务" alt="" coords="5,5,160,32"/>
+<area shape="rect" href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="209,5,378,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a48f93cc9879a77f38fd58b10f0d1f4fc" name="a48f93cc9879a77f38fd58b10f0d1f4fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f93cc9879a77f38fd58b10f0d1f4fc">&#9670;&nbsp;</a></span>push() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::thread_pool::push </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::future&lt;decltype(f(args...))&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>建立任务 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>函数类型 </td></tr>
+    <tr><td class="paramname">Args</td><td>函数入参类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>函数指针、成员函数指针、lambda函数等各种形式的function </td></tr>
+    <tr><td class="paramname">args</td><td>入参 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>future对象 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a48f93cc9879a77f38fd58b10f0d1f4fc_cgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a48f93cc9879a77f38fd58b10f0d1f4fc_cgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a48f93cc9879a77f38fd58b10f0d1f4fc_cgraph" id="aclassdsp_1_1thread__pool_a48f93cc9879a77f38fd58b10f0d1f4fc_cgraph">
+<area shape="rect" title="建立任务" alt="" coords="5,5,160,32"/>
+<area shape="rect" href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="209,5,378,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a679298b16179173b5087573be91dddf3" name="a679298b16179173b5087573be91dddf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679298b16179173b5087573be91dddf3">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsp::thread_pool::resize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>新的线程数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_cgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_cgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_cgraph" id="aclassdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_cgraph">
+<area shape="rect" title="可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行" alt="" coords="6,5,167,32"/>
+<area shape="rect" href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="217,5,386,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_icgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_icgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_icgraph" id="aclassdsp_1_1thread__pool_a679298b16179173b5087573be91dddf3_icgraph">
+<area shape="rect" title="可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行" alt="" coords="249,5,410,32"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a920d5000c8e3353f1e2de856814529a6" title="默认构造函数，按当前硬件支持的最大并发线程数来启动线程" alt="" coords="6,5,199,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7edcd129e8250aa11129a678695d0ff6" name="a7edcd129e8250aa11129a678695d0ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7edcd129e8250aa11129a678695d0ff6">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::thread_pool::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取线程总数 </p>
+<dl class="section return"><dt>返回</dt><dd>线程数 </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a7edcd129e8250aa11129a678695d0ff6_icgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a7edcd129e8250aa11129a678695d0ff6_icgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a7edcd129e8250aa11129a678695d0ff6_icgraph" id="aclassdsp_1_1thread__pool_a7edcd129e8250aa11129a678695d0ff6_icgraph">
+<area shape="rect" title="获取线程总数" alt="" coords="382,12,533,39"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a612e3f7a19ed987b66c9cb3f90dfc4cd" title="关闭线程池" alt="" coords="182,12,333,39"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a46340c701300c69903e206767fd09bb3" title="析构函数。执行完所有任务再退出" alt="" coords="6,5,133,46"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a612e3f7a19ed987b66c9cb3f90dfc4cd" name="a612e3f7a19ed987b66c9cb3f90dfc4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612e3f7a19ed987b66c9cb3f90dfc4cd">&#9670;&nbsp;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsp::thread_pool::stop </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_wait</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭线程池 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is_wait</td><td>是否将所有任务执行完再关闭 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_cgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_cgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_cgraph" id="aclassdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_cgraph">
+<area shape="rect" title="关闭线程池" alt="" coords="6,64,157,91"/>
+<area shape="rect" href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="206,5,375,32"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a6624bec5c6cead10a07d8c5f5ede597b" title="清除所有待执行的任务" alt="" coords="213,57,368,98"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a7edcd129e8250aa11129a678695d0ff6" title="获取线程总数" alt="" coords="215,123,366,149"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_icgraph.png" border="0" usemap="#aclassdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_icgraph" alt=""/></div>
+<map name="aclassdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_icgraph" id="aclassdsp_1_1thread__pool_a612e3f7a19ed987b66c9cb3f90dfc4cd_icgraph">
+<area shape="rect" title="关闭线程池" alt="" coords="182,12,333,39"/>
+<area shape="rect" href="classdsp_1_1thread__pool.html#a46340c701300c69903e206767fd09bb3" title="析构函数。执行完所有任务再退出" alt="" coords="6,5,133,46"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,3 +1,0 @@
-<map id="dsp::make_empty_obj" name="dsp::make_empty_obj">
-<area shape="rect" id="node1" title="生成对象并初始化。用于数据库对象的声明，省略了手动memset为0的过程" alt="" coords="6,29,157,56"/>
-</map>

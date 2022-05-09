@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: utility</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">utility </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>目录</h3>
+<ul><li class="level1"><a href="#sec1">dsp::func_elapsed</a><ul><li class="level2"><a href="#普通函数">普通函数</a></li>
+<li class="level2"><a href="#成员函数">成员函数</a></li>
+<li class="level2"><a href="#lambda函数">lambda函数</a></li>
+<li class="level2"><a href="#std">std::function</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#sec2">dsp::func_avg_elapsed</a></li>
+<li class="level1"><a href="#sec3">dsp::sleep</a></li>
+</ul>
+</div>
+<div class="textblock"><p >基础函数说明页面</p>
+<h1><a class="anchor" id="sec1"></a>
+dsp::func_elapsed</h1>
+<p >提供函数执行计时功能，可用于自动化测试或者性能调优。支持任意函数形式和任意入参类型。 <br  />
+使用方法如下：<br  />
+</p>
+<h2><a class="anchor" id="普通函数"></a>
+普通函数</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> func(<span class="keywordtype">size_t</span> x) {</div>
+<div class="line">   <span class="keywordtype">size_t</span> sum{0};</div>
+<div class="line">   <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : irange(x)) {</div>
+<div class="line">        sum += i;</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;func elapsed &quot;</span> &lt;&lt; <a class="code hl_function" href="group__utility.html#ga0568e3777ec3faf35c72782e38da9cbc">dsp::func_elapsed</a>(&amp;func, 10000) &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="ttc" id="agroup__utility_html_ga0568e3777ec3faf35c72782e38da9cbc"><div class="ttname"><a href="group__utility.html#ga0568e3777ec3faf35c72782e38da9cbc">dsp::functional::func_elapsed</a></div><div class="ttdeci">auto func_elapsed(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; double</div><div class="ttdoc">记录函数的执行时间</div><div class="ttdef"><b>Definition:</b> functional.hpp:213</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="成员函数"></a>
+成员函数</h2>
+<div class="fragment"><div class="line"><span class="keyword">class </span>Foo {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> func(<span class="keywordtype">size_t</span> x) {<span class="comment">//...}</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">Foo f;</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;func elapsed &quot;</span> &lt;&lt; <a class="code hl_function" href="group__utility.html#ga0568e3777ec3faf35c72782e38da9cbc">dsp::func_elapsed</a>(&amp;Foo::func, f, 10000) &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span> &lt;&lt; std::endl;</div>
+</div><!-- fragment --><h2><a class="anchor" id="lambda函数"></a>
+lambda函数</h2>
+<div class="fragment"><div class="line">std::cout &lt;&lt; func elapsed <span class="stringliteral">&quot; &lt;&lt; dsp::func_elapsed([](int x){//...}, 10000) &lt;&lt; &quot;</span>ms<span class="stringliteral">&quot; &lt;&lt; std::endl;</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="std"></a>
+std::function</h2>
+<div class="fragment"><div class="line">std::function&lt;void(<span class="keywordtype">int</span>)&gt; func = [](<span class="keywordtype">int</span> x){<span class="comment">//...};</span></div>
+<div class="line">std::cout &lt;&lt; func elapsed <span class="stringliteral">&quot; &lt;&lt; dsp::func_elapsed(func, 10000) &lt;&lt; &quot;</span>ms<span class="stringliteral">&quot; &lt;&lt; std::endl;</span></div>
+</div><!-- fragment --><h1><a class="anchor" id="sec2"></a>
+dsp::func_avg_elapsed</h1>
+<p >多次执行求平均运行时间，比func_avg_elapsed 多一个执行次数参数，使用方法类似。</p>
+<h1><a class="anchor" id="sec3"></a>
+dsp::sleep</h1>
+<p ><code>sleep</code>函数，可选普通精度和高精度，其中普通精度的误差范围在10几毫秒左右，高精度的误差范围在几十微秒左右 <br  />
+当<code>sleep</code>超过1秒时，强制选择普通精度。</p>
+<div class="fragment"><div class="line"><span class="comment">// sleep 100ms 普通精度</span></div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;sleep for &quot;</span> &lt;&lt; <a class="code hl_function" href="group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1">dsp::func_avg_elapsed</a>(10, <a class="code hl_function" href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">dsp::sleep</a>, 100, <span class="keyword">false</span>) &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="comment">// Output: 111.416 ms</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// sleep 100ms 高精度</span></div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;sleep for &quot;</span> &lt;&lt; <a class="code hl_function" href="group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1">dsp::func_avg_elapsed</a>(10, <a class="code hl_function" href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">dsp::sleep</a>, 100, <span class="keyword">true</span>) &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="comment">// Output: 100.008 ms</span></div>
+<div class="ttc" id="agroup__utility_html_ga505129a860c69e8706ff1e5d79fb19f1"><div class="ttname"><a href="group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1">dsp::functional::func_avg_elapsed</a></div><div class="ttdeci">auto func_avg_elapsed(size_t n, F &amp;&amp;f, Args &amp;&amp;...args) -&gt; double</div><div class="ttdoc">记录函数的平均执行时间</div><div class="ttdef"><b>Definition:</b> functional.hpp:235</div></div>
+<div class="ttc" id="agroup__utility_html_gaea660747fd01734ce02cc026cf148cf4"><div class="ttname"><a href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">dsp::functional::sleep</a></div><div class="ttdeci">static void sleep(size_t ms, bool high_precise=false)</div><div class="ttdoc">sleep函数，支持普通精度(分辨率10毫秒左右)和高精度(分辨率20微秒左右)两种。如sleep时间超过1秒，强制使用普通精度。</div><div class="ttdef"><b>Definition:</b> functional.hpp:256</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

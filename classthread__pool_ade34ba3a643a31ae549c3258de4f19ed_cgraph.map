@@ -1,0 +1,6 @@
+<map id="thread_pool::stop" name="thread_pool::stop">
+<area shape="rect" id="node1" title="关闭线程池" alt="" coords="5,64,128,91"/>
+<area shape="rect" id="node3" href="$group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd" title="获取独占锁(用于写入数据)" alt="" coords="177,5,346,32"/>
+<area shape="rect" id="node5" href="$classthread__pool.html#abd6bcd443fcac3afc86615555708d8e0" title="清除所有待执行的任务" alt="" coords="199,57,324,98"/>
+<area shape="rect" id="node7" href="$classthread__pool.html#ab78b5a246aabeef7b5c5c4bfb57dd957" title="获取线程总数" alt="" coords="201,123,322,149"/>
+</map>

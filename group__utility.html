@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: utility模块</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">utility模块</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>提供一些基础函数  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gaed475d038174de7d0df129f6bebcd763"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaed475d038174de7d0df129f6bebcd763"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utility.html#gaed475d038174de7d0df129f6bebcd763">dsp::functional::detail::swap_endian</a> (T &amp;val, typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, int &gt;=0)</td></tr>
+<tr class="memdesc:gaed475d038174de7d0df129f6bebcd763"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理数据大小端转换  <a href="group__utility.html#gaed475d038174de7d0df129f6bebcd763">更多...</a><br /></td></tr>
+<tr class="separator:gaed475d038174de7d0df129f6bebcd763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0568e3777ec3faf35c72782e38da9cbc"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args&gt; </td></tr>
+<tr class="memitem:ga0568e3777ec3faf35c72782e38da9cbc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utility.html#ga0568e3777ec3faf35c72782e38da9cbc">dsp::functional::func_elapsed</a> (F &amp;&amp;f, Args &amp;&amp;...args) -&gt; double</td></tr>
+<tr class="memdesc:ga0568e3777ec3faf35c72782e38da9cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">记录函数的执行时间  <a href="group__utility.html#ga0568e3777ec3faf35c72782e38da9cbc">更多...</a><br /></td></tr>
+<tr class="separator:ga0568e3777ec3faf35c72782e38da9cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga505129a860c69e8706ff1e5d79fb19f1"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args&gt; </td></tr>
+<tr class="memitem:ga505129a860c69e8706ff1e5d79fb19f1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1">dsp::functional::func_avg_elapsed</a> (size_t n, F &amp;&amp;f, Args &amp;&amp;...args) -&gt; double</td></tr>
+<tr class="memdesc:ga505129a860c69e8706ff1e5d79fb19f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">记录函数的平均执行时间  <a href="group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1">更多...</a><br /></td></tr>
+<tr class="separator:ga505129a860c69e8706ff1e5d79fb19f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea660747fd01734ce02cc026cf148cf4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">dsp::functional::sleep</a> (size_t ms, bool high_precise=false)</td></tr>
+<tr class="memdesc:gaea660747fd01734ce02cc026cf148cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">sleep函数，支持普通精度(分辨率10毫秒左右)和高精度(分辨率20微秒左右)两种。如sleep时间超过1秒，强制使用普通精度。  <a href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">更多...</a><br /></td></tr>
+<tr class="separator:gaea660747fd01734ce02cc026cf148cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d5073ed91c536e4cb362f47135d7e9e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga6d5073ed91c536e4cb362f47135d7e9e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utility.html#ga6d5073ed91c536e4cb362f47135d7e9e">dsp::narrow</a> (U u) -&gt; T</td></tr>
+<tr class="memdesc:ga6d5073ed91c536e4cb362f47135d7e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">整型变量类型转换，检查转换过程中是否产生数据溢出  <a href="group__utility.html#ga6d5073ed91c536e4cb362f47135d7e9e">更多...</a><br /></td></tr>
+<tr class="separator:ga6d5073ed91c536e4cb362f47135d7e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p >提供一些基础函数 </p>
+<p >所有函数均已映射至dsp命名空间下。<br  />
+ 详细说明参见页面 <a class="el" href="page_utility.html">utility</a> </p>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga505129a860c69e8706ff1e5d79fb19f1" name="ga505129a860c69e8706ff1e5d79fb19f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga505129a860c69e8706ff1e5d79fb19f1">&#9670;&nbsp;</a></span>func_avg_elapsed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::functional::func_avg_elapsed </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; double </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>记录函数的平均执行时间 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>函数类型 </td></tr>
+    <tr><td class="paramname">Args</td><td>函数入参类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>函数执行次数 </td></tr>
+    <tr><td class="paramname">f</td><td>函数指针、成员函数指针、lambda函数、std::function等各种形式的函数 </td></tr>
+    <tr><td class="paramname">args</td><td>函数入参 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>函数平均单次执行时间(ms) </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__utility_ga505129a860c69e8706ff1e5d79fb19f1_cgraph.png" border="0" usemap="#agroup__utility_ga505129a860c69e8706ff1e5d79fb19f1_cgraph" alt=""/></div>
+<map name="agroup__utility_ga505129a860c69e8706ff1e5d79fb19f1_cgraph" id="agroup__utility_ga505129a860c69e8706ff1e5d79fb19f1_cgraph">
+<area shape="rect" title="记录函数的平均执行时间" alt="" coords="5,5,144,46"/>
+<area shape="rect" href="group__utility.html#ga0568e3777ec3faf35c72782e38da9cbc" title="记录函数的执行时间" alt="" coords="192,5,331,46"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga0568e3777ec3faf35c72782e38da9cbc" name="ga0568e3777ec3faf35c72782e38da9cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0568e3777ec3faf35c72782e38da9cbc">&#9670;&nbsp;</a></span>func_elapsed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::functional::func_elapsed </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; double </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>记录函数的执行时间 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>函数类型 </td></tr>
+    <tr><td class="paramname">Args</td><td>函数入参类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>函数指针、成员函数指针、lambda函数、std::function等各种形式的函数 </td></tr>
+    <tr><td class="paramname">args</td><td>函数入参 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>函数执行时间(ms) </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__utility_ga0568e3777ec3faf35c72782e38da9cbc_icgraph.png" border="0" usemap="#agroup__utility_ga0568e3777ec3faf35c72782e38da9cbc_icgraph" alt=""/></div>
+<map name="agroup__utility_ga0568e3777ec3faf35c72782e38da9cbc_icgraph" id="agroup__utility_ga0568e3777ec3faf35c72782e38da9cbc_icgraph">
+<area shape="rect" title="记录函数的执行时间" alt="" coords="192,5,331,46"/>
+<area shape="rect" href="group__utility.html#ga505129a860c69e8706ff1e5d79fb19f1" title="记录函数的平均执行时间" alt="" coords="5,5,144,46"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga6d5073ed91c536e4cb362f47135d7e9e" name="ga6d5073ed91c536e4cb362f47135d7e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d5073ed91c536e4cb362f47135d7e9e">&#9670;&nbsp;</a></span>narrow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U , typename std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto dsp::narrow </td>
+          <td>(</td>
+          <td class="paramtype">U&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td> -&gt; T </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>整型变量类型转换，检查转换过程中是否产生数据溢出 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>原类型 </td></tr>
+    <tr><td class="paramname">U</td><td>目标类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>待转换的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>转换失败时抛出异常 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>转换后的数据 </dd></dl>
+
+</div>
+</div>
+<a id="gaea660747fd01734ce02cc026cf148cf4" name="gaea660747fd01734ce02cc026cf148cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea660747fd01734ce02cc026cf148cf4">&#9670;&nbsp;</a></span>sleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void dsp::functional::sleep </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>high_precise</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sleep函数，支持普通精度(分辨率10毫秒左右)和高精度(分辨率20微秒左右)两种。如sleep时间超过1秒，强制使用普通精度。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ms</td><td>sleep时长，单位为毫秒 </td></tr>
+    <tr><td class="paramname">high_precise</td><td>是否高精度sleep </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaed475d038174de7d0df129f6bebcd763" name="gaed475d038174de7d0df129f6bebcd763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed475d038174de7d0df129f6bebcd763">&#9670;&nbsp;</a></span>swap_endian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsp::functional::detail::swap_endian </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, int &gt;&#160;</td>
+          <td class="paramname"> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>处理数据大小端转换 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

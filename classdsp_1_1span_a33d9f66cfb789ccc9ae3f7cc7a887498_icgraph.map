@@ -1,5 +1,0 @@
-<map id="dsp::span::size" name="dsp::span::size">
-<area shape="rect" id="node1" title="视图内数据个数" alt="" coords="366,5,477,32"/>
-<area shape="rect" id="node3" href="$classdb__obj__visitor.html#abc793e50cab77b3ebcd148035fb5d642" title="返回对象个数" alt="" coords="185,5,317,32"/>
-<area shape="rect" id="node5" href="$classdb__obj__visitor.html#aaa253ca184956cd31248034168b87825" title="获取最后一个对象之后数据的迭代器" alt="" coords="6,5,135,32"/>
-</map>
