@@ -45,19 +45,25 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>目录</h3>
-<ul><ul><li class="level2"><a href="#page1section5subsection1">enable_if</a></li>
-<li class="level2"><a href="#page1section5subsection2">conditional</a></li>
-<li class="level2"><a href="#page1section5subsection3">void_t</a></li>
+<ul><li class="level1"><a href="#page_type_traits_section1">常量定义</a></li>
+<li class="level1"><a href="#page_type_traits_section2">类型判断</a></li>
+<li class="level1"><a href="#page_type_traits_section3">类型关系判断</a></li>
+<li class="level1"><a href="#page_type_traits_section4">类型修改</a></li>
+<li class="level1"><a href="#page_type_traits_section5">类型转换</a><ul><li class="level2"><a href="#page_type_traits_section5subsection1">enable_if</a></li>
+<li class="level2"><a href="#page_type_traits_section5subsection2">conditional</a></li>
+<li class="level2"><a href="#page_type_traits_section5subsection3">void_t</a></li>
 </ul>
-<li class="level1"><a href="#page1section6">应用实例</a><ul><li class="level2"><a href="#page1section6subsection1">大小端转换</a></li>
-<li class="level2"><a href="#page1section6subsection2">成员函数traits</a></li>
+</li>
+<li class="level1"><a href="#page_type_traits_section6">应用实例</a><ul><li class="level2"><a href="#page_type_traits_section6subsection1">大小端转换</a></li>
+<li class="level2"><a href="#page_type_traits_section6subsection2">成员函数traits</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p >通过类型萃取可以实现在编译器的计算、查询、判断、转换和选择，增强了泛型编程的能力。</p>
-<h1><a class="anchor" id="page1section1"></a>
-基本概念</h1>
+<div class="textblock"><p >类型萃取说明页面</p>
+<p >通过类型萃取可以实现在编译器的计算、查询、判断、转换和选择，增强了泛型编程的能力。 </p>
+<h1><a class="anchor" id="page_type_traits_section1"></a>
+常量定义</h1>
 <p >C++11引入了模板类型std::integral_constant，它是一个指定类型的静态常量封装，C++的类型萃取均由该定义派生而来。定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T v&gt;</div>
 <div class="line"><span class="keyword">struct </span>integral_constant {</div>
 <div class="line"> <span class="keyword">using</span> value_type = T;</div>
@@ -67,8 +73,8 @@ $(function() {
 </div><!-- fragment --><p> 由此派生出以下两个常用类型定义： </p><div class="fragment"><div class="line"><span class="keyword">using</span> true_type = std::integral_constant&lt;bool, true&gt;;</div>
 <div class="line"><span class="keyword">using</span> false_type = std::integral_constant&lt;bool, false&gt;;</div>
 </div><!-- fragment --><p> 其中true_type用于在meta-programming中代指true，false_type用于在meta-programming中指代false，其实也就是用类型来表示true/false。 从这两个类型继承出来的模板类即可以用于类型判断。 </p>
-<h1><a class="anchor" id="page1section2"></a>
-range函数</h1>
+<h1><a class="anchor" id="page_type_traits_section2"></a>
+类型判断</h1>
 <p >类型判断从std::integral_constant派生，用于检查模板类型是否为某种特定类型。 下表是c++11提供的常用类型判断traits </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
@@ -107,8 +113,8 @@ range函数</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">is_iterable   </td><td class="markdownTableBodyNone">是否可迭代 <span style="color:red">检查类型是否实现了begin()及end()函数</span>   </td></tr>
 </table>
-<h1><a class="anchor" id="page1section3"></a>
-常用range adaptor说明</h1>
+<h1><a class="anchor" id="page_type_traits_section3"></a>
+类型关系判断</h1>
 <p >同样的，类型关系判断对象也是从std::integral_constant派生，用于检查类型之间是否满足特定关系。 下表是c++11提供的常用类型关系判断traits </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
@@ -119,8 +125,8 @@ range函数</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">is_convertible   </td><td class="markdownTableBodyNone">判断前一个类型是否能转换为后一个类型   </td></tr>
 </table>
-<h1><a class="anchor" id="page1section4"></a>
-管道及惰性求值</h1>
+<h1><a class="anchor" id="page_type_traits_section4"></a>
+类型修改</h1>
 <p >类型修改是指在原类型基础上增加或删除某些类型限定符，如const, reference, volatile等。 常用的类型修改traits如下： </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">类型   </th><th class="markdownTableHeadNone">说明    </th></tr>
@@ -147,10 +153,10 @@ range函数</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">remove_all_extent   </td><td class="markdownTableBodyNone">删除所有数组指定   </td></tr>
 </table>
-<h1><a class="anchor" id="page1section5"></a>
-如何使用view</h1>
+<h1><a class="anchor" id="page_type_traits_section5"></a>
+类型转换</h1>
 <p >以下介绍几个最为常用的类型转换： </p>
-<h2><a class="anchor" id="page1section5subsection1"></a>
+<h2><a class="anchor" id="page_type_traits_section5subsection1"></a>
 enable_if</h2>
 <p >enable_if的定义如下: </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">class</span> T = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><span class="keyword">struct </span>enable_if;</div>
@@ -182,12 +188,12 @@ enable_if</h2>
 <div class="line"><span class="keywordtype">void</span> print(<span class="keyword">const</span> T&amp; t) {</div>
 <div class="line">  printf(<span class="stringliteral">&quot;input is %s \n&quot;</span>, t);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section5subsection2"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_type_traits_section5subsection2"></a>
 conditional</h2>
 <p >conditional的定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B, <span class="keyword">class</span> T, <span class="keyword">class</span> F&gt;</div>
 <div class="line"><span class="keyword">struct </span>conditional;</div>
 </div><!-- fragment --><p >当B为<code>true时返回类型T，否则返回类型F。</code> </p>
-<h2><a class="anchor" id="page1section5subsection3"></a>
+<h2><a class="anchor" id="page_type_traits_section5subsection3"></a>
 void_t</h2>
 <p >void_t是C++17引入的，dsp实现了自己void_t，定义如下： </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span>...&gt;</div>
 <div class="line"><span class="keyword">using</span> void_t = void;</div>
@@ -197,9 +203,9 @@ void_t</h2>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><span class="keyword">struct </span>has_type_member&lt;T, dsp::void_t&lt;typename T::type&gt;&gt; : std::true_type{};</div>
 </div><!-- fragment --><p >当类型T含有type定义时，模板类偏特化成功，has_type_member继承自true_type；否则has_type_member继承自false_type。</p>
-<h1><a class="anchor" id="page1section6"></a>
+<h1><a class="anchor" id="page_type_traits_section6"></a>
 应用实例</h1>
-<h2><a class="anchor" id="page1section6subsection1"></a>
+<h2><a class="anchor" id="page_type_traits_section6subsection1"></a>
 大小端转换</h2>
 <p >下面使用type traits来实现数据的大小端转换 </p><div class="fragment"><div class="line"><span class="keyword">struct </span>sizeOk{};</div>
 <div class="line"><span class="keyword">struct </span>sizeNotOk {};</div>
@@ -238,8 +244,8 @@ void_t</h2>
 <div class="line"> </div>
 <div class="line">    val = tmp.val;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__utility_html_gaed475d038174de7d0df129f6bebcd763"><div class="ttname"><a href="group__utility.html#gaed475d038174de7d0df129f6bebcd763">dsp::functional::detail::swap_endian</a></div><div class="ttdeci">void swap_endian(T &amp;val, typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, int &gt;=0)</div><div class="ttdoc">处理数据大小端转换</div><div class="ttdef"><b>Definition:</b> functional.hpp:174</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section6subsection2"></a>
+<div class="ttc" id="agroup__utility_html_gaed475d038174de7d0df129f6bebcd763"><div class="ttname"><a href="group__utility.html#gaed475d038174de7d0df129f6bebcd763">dsp::functional::detail::swap_endian</a></div><div class="ttdeci">void swap_endian(T &amp;val, typename dsp::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, int &gt;=0)</div><div class="ttdoc">处理数据大小端转换</div><div class="ttdef"><b>Definition:</b> functional.hpp:175</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="page_type_traits_section6subsection2"></a>
 成员函数traits</h2>
 <p >下面使用type traits来检测类型是否包含成员函数 begin(), end() </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><span class="keyword">struct </span>is_iterable : std::false_type {};</div>
@@ -252,7 +258,7 @@ void_t</h2>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 18日 星期三 20:43:59 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

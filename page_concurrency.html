@@ -45,24 +45,25 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>目录</h3>
-<ul><li class="level1"><a href="#p1s1">Mutex</a><ul><li class="level2"><a href="#p1s1subs1">基本概念</a></li>
-<li class="level2"><a href="#p1s1subs2">配合lock使用</a></li>
+<ul><li class="level1"><a href="#page_concurrency_s1">Mutex</a><ul><li class="level2"><a href="#page_concurrency_s1subs1">基本概念</a></li>
+<li class="level2"><a href="#page_concurrency_s1subs2">配合lock使用</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#p1s2">atomic</a></li>
-<li class="level1"><a href="#p1s3">condition_variable</a></li>
-<li class="level1"><a href="#p1s4">lockfree</a></li>
-<li class="level1"><a href="#p1s5">thread_pool</a><ul><li class="level2"><a href="#p1s5s1">初始化</a></li>
-<li class="level2"><a href="#p1s5s2">增加任务</a></li>
-<li class="level2"><a href="#p1s5s3">停止线程池</a></li>
+<li class="level1"><a href="#page_concurrency_s2">atomic</a></li>
+<li class="level1"><a href="#page_concurrency_s3">condition_variable</a></li>
+<li class="level1"><a href="#page_concurrency_s4">lockfree</a></li>
+<li class="level1"><a href="#page_concurrency_s5">ThreadPool</a><ul><li class="level2"><a href="#page_concurrency_s5s1">初始化</a></li>
+<li class="level2"><a href="#page_concurrency_s5s2">增加任务</a></li>
+<li class="level2"><a href="#page_concurrency_s5s3">停止线程池</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p >本页面的说明默认使用std命名空间，如果使用了dsp命名空间会明确指出。</p>
-<h1><a class="anchor" id="p1s1"></a>
+<div class="textblock"><p >并行操作说明页面</p>
+<p >本页面的说明默认使用std命名空间，如果使用了dsp命名空间会明确指出。 </p>
+<h1><a class="anchor" id="page_concurrency_s1"></a>
 Mutex</h1>
-<h2><a class="anchor" id="p1s1subs1"></a>
+<h2><a class="anchor" id="page_concurrency_s1subs1"></a>
 基本概念</h2>
 <p >互斥锁(mutex)是一种用于多线程编程中，防止多条线程同时对某一公共资源进行读写的机制。线程在需要访问公共资源之前，需要申请获得互斥锁， 访问完毕后需要释放互斥锁。如例子所示： <br  />
 </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> accum{0};</div>
@@ -88,36 +89,36 @@ Mutex</h1>
 <div class="line">   accum *= accum;</div>
 <div class="line">   m.unlock();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="p1s1subs2"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_concurrency_s1subs2"></a>
 配合lock使用</h2>
 <p >为了简化mutex使用，利用C++的RAII特性实现mutex的lock和unlock操作。使用lock重写上面的例子： </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> accum{0};</div>
 <div class="line">mutex m;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> square(<span class="keywordtype">int</span> x) {</div>
 <div class="line">    <span class="keyword">auto</span> temp = x * x;</div>
-<div class="line">    std::unique_lock&lt;std::mutex&gt; lock{m};</div>
+<div class="line">    std::UniqueLock&lt;std::mutex&gt; lock{m};</div>
 <div class="line">    accum += temp;</div>
 <div class="line">}</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="keywordtype">int</span> accum{0};</div>
 <div class="line">dsp::shared_mutex m;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> read_data() {</div>
-<div class="line">   dsp::shared_lock lock{m};</div>
+<div class="line">   dsp::SharedLock lock{m};</div>
 <div class="line">   <span class="keyword">auto</span> x = accum;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> write_data() {</div>
-<div class="line">   std::unique_lock&lt;std::mutex&gt; lock{m};</div>
+<div class="line">   std::UniqueLock&lt;std::mutex&gt; lock{m};</div>
 <div class="line">   accum *= accum;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >dsp还提供了以下接口： </p><div class="fragment"><div class="line">dsp::shared_mutex m;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> lock = <a class="code hl_function" href="group__concurrency.html#gaec8c68ac51ae832623e85f2f939a7ad7">dsp::acquire_shared_lock</a>(m);   <span class="comment">// only read</span></div>
+<div class="line"><span class="keyword">auto</span> lock = <a class="code hl_function" href="group__concurrency.html#ga9e773dd1efeecd9eb0c2269c3102bc36">dsp::acquireSharedLock</a>(m);   <span class="comment">// read only</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> lock = <a class="code hl_function" href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd">dsp::acquire_unique_lock</a>(m);   <span class="comment">// read write</span></div>
-<div class="ttc" id="agroup__concurrency_html_gae6815c4f4f4f10fcef7504426d0fe9dd"><div class="ttname"><a href="group__concurrency.html#gae6815c4f4f4f10fcef7504426d0fe9dd">dsp::acquire_unique_lock</a></div><div class="ttdeci">auto acquire_unique_lock(Mutex &amp;m) -&gt; unique_lock&lt; Mutex &gt;</div><div class="ttdoc">获取独占锁(用于写入数据)</div><div class="ttdef"><b>Definition:</b> mutex.hpp:41</div></div>
-<div class="ttc" id="agroup__concurrency_html_gaec8c68ac51ae832623e85f2f939a7ad7"><div class="ttname"><a href="group__concurrency.html#gaec8c68ac51ae832623e85f2f939a7ad7">dsp::acquire_shared_lock</a></div><div class="ttdeci">static auto acquire_shared_lock(share_mutex &amp;m) -&gt; shared_lock</div><div class="ttdoc">获取共享锁(用于读取数据)</div><div class="ttdef"><b>Definition:</b> mutex.hpp:31</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="p1s2"></a>
+<div class="line"><span class="keyword">auto</span> lock = <a class="code hl_function" href="group__concurrency.html#gaebbdbd5864fd0c3cf2ecefb0c9e532c7">dsp::acquireUniqueLock</a>(m);   <span class="comment">// read write</span></div>
+<div class="ttc" id="agroup__concurrency_html_ga9e773dd1efeecd9eb0c2269c3102bc36"><div class="ttname"><a href="group__concurrency.html#ga9e773dd1efeecd9eb0c2269c3102bc36">dsp::acquireSharedLock</a></div><div class="ttdeci">static auto acquireSharedLock(SharedMutex &amp;m) -&gt; SharedLock</div><div class="ttdoc">获取共享锁(用于读取数据)</div><div class="ttdef"><b>Definition:</b> mutex.hpp:30</div></div>
+<div class="ttc" id="agroup__concurrency_html_gaebbdbd5864fd0c3cf2ecefb0c9e532c7"><div class="ttname"><a href="group__concurrency.html#gaebbdbd5864fd0c3cf2ecefb0c9e532c7">dsp::acquireUniqueLock</a></div><div class="ttdeci">auto acquireUniqueLock(Mutex &amp;m) -&gt; UniqueLock&lt; Mutex &gt;</div><div class="ttdoc">获取独占锁(用于写入数据)</div><div class="ttdef"><b>Definition:</b> mutex.hpp:40</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="page_concurrency_s2"></a>
 atomic</h1>
 <p >atomic是C++11引入的模板类， atomic的实例化定义一种原子类型，被这种类型修饰的变量读写时不需要加锁。 atomic提供的常用函数如下：</p><ul>
 <li>store: 修改atomic变量的值</li>
@@ -147,10 +148,10 @@ atomic</h1>
 <li><code>std::is_move_assignable&lt;T&gt;::value == true</code></li>
 </ul>
 <p >不明白第一个条件的可以参考页面 <a class="el" href="page_trivial_pod.html">trivial &amp; POD</a> 中的内容，后四个条件可以按英文字面意思理解。</p>
-<h1><a class="anchor" id="p1s3"></a>
+<h1><a class="anchor" id="page_concurrency_s3"></a>
 condition_variable</h1>
 <p >to be continued ...</p>
-<h1><a class="anchor" id="p1s4"></a>
+<h1><a class="anchor" id="page_concurrency_s4"></a>
 lockfree</h1>
 <p >无锁容器直接引入了boost的lockfree模块，包括：</p><ul>
 <li>dsp::lockfree::queue</li>
@@ -161,18 +162,18 @@ lockfree</h1>
  spsc_queue只支持单生产者+单消费者，wait-free。</p>
 <div class="fragment"><div class="line">dsp::lockfree::queue&lt;int&gt; queue(1000);  <span class="comment">// 最大容量1000</span></div>
 <div class="line">dsp::lockfree::stack&lt;bool&gt; stack(100);  <span class="comment">// 最大容量100</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="p1s5"></a>
-thread_pool</h1>
+</div><!-- fragment --><h1><a class="anchor" id="page_concurrency_s5"></a>
+ThreadPool</h1>
 <p >pool初始化时启动一定数量的<code>std::thread</code>，使用者可以调用<code>push</code>函数增加task，当有空闲的<code>thread</code>时会自动执行task。task使用了无锁queue来存放。<br  />
  pool被销毁时默认会执行完毕所有已缓存的task。task的形式及入参返回均不做限制，使用者可以通过<code>future</code>来获取task的返回值。 </p>
-<h2><a class="anchor" id="p1s5s1"></a>
+<h2><a class="anchor" id="page_concurrency_s5s1"></a>
 初始化</h2>
-<p >构造函数如果没有传入线程数，默认使用硬件支持的最大并发线程数。 </p><div class="fragment"><div class="line"><a class="code hl_class" href="classdsp_1_1thread__pool.html">dsp::thread_pool</a> pool{}; <span class="comment">// 使用硬件支持的最大并发线程数</span></div>
-<div class="line"><a class="code hl_class" href="classdsp_1_1thread__pool.html">dsp::thread_pool</a> pool{10}; <span class="comment">// 手动指定线程数</span></div>
-<div class="ttc" id="aclassdsp_1_1thread__pool_html"><div class="ttname"><a href="classdsp_1_1thread__pool.html">dsp::thread_pool</a></div><div class="ttdoc">线程池</div><div class="ttdef"><b>Definition:</b> thread_pool.hpp:32</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="p1s5s2"></a>
+<p >构造函数如果没有传入线程数，默认使用硬件支持的最大并发线程数。 </p><div class="fragment"><div class="line"><a class="code hl_class" href="classdsp_1_1_thread_pool.html">dsp::ThreadPool</a> pool{}; <span class="comment">// 使用硬件支持的最大并发线程数</span></div>
+<div class="line"><a class="code hl_class" href="classdsp_1_1_thread_pool.html">dsp::ThreadPool</a> pool{10}; <span class="comment">// 手动指定线程数</span></div>
+<div class="ttc" id="aclassdsp_1_1_thread_pool_html"><div class="ttname"><a href="classdsp_1_1_thread_pool.html">dsp::ThreadPool</a></div><div class="ttdoc">线程池</div><div class="ttdef"><b>Definition:</b> thread_pool.hpp:32</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="page_concurrency_s5s2"></a>
 增加任务</h2>
-<p >使用<code>thread_pool::push</code>函数来增加需要执行的任务，返回与该任务返回类型对应的<code>std::future</code>对象。 </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> add_one(<span class="keywordtype">int</span>&amp; x) { x += 1;}</div>
+<p >使用<code>ThreadPool::push</code>函数来增加需要执行的任务，返回与该任务返回类型对应的<code>std::future</code>对象。 </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> add_one(<span class="keywordtype">int</span>&amp; x) { x += 1;}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> reflection(<span class="keywordtype">int</span> x) { <span class="keywordflow">return</span> x; }</div>
 <div class="line"> </div>
@@ -192,15 +193,15 @@ thread_pool</h1>
 <div class="line"> </div>
 <div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;get all future elapsed &quot;</span> &lt;&lt; ms.count() &lt;&lt; <span class="stringliteral">&quot; ms \n&quot;</span>;</div>
 <div class="line"><span class="comment">// Output: get all future elapsed 3512.24 ms  task是并行执行的，这里等待的总时间与最耗时的task相关</span></div>
-<div class="ttc" id="agroup__utility_html_gaea660747fd01734ce02cc026cf148cf4"><div class="ttname"><a href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">dsp::functional::sleep</a></div><div class="ttdeci">static void sleep(size_t ms, bool high_precise=false)</div><div class="ttdoc">sleep函数，支持普通精度(分辨率10毫秒左右)和高精度(分辨率20微秒左右)两种。如sleep时间超过1秒，强制使用普通精度。</div><div class="ttdef"><b>Definition:</b> functional.hpp:256</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="p1s5s3"></a>
+<div class="ttc" id="agroup__utility_html_gaea660747fd01734ce02cc026cf148cf4"><div class="ttname"><a href="group__utility.html#gaea660747fd01734ce02cc026cf148cf4">dsp::functional::sleep</a></div><div class="ttdeci">static void sleep(size_t ms, bool high_precise=false)</div><div class="ttdoc">sleep函数，支持普通精度(分辨率10毫秒左右)和高精度(分辨率20微秒左右)两种。如sleep时间超过1秒，强制使用普通精度。</div><div class="ttdef"><b>Definition:</b> functional.hpp:257</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="page_concurrency_s5s3"></a>
 停止线程池</h2>
 <p >线程池析构时会自动停止所有线程，也可以手动调用<code>stop()</code>函数来停止。 </p><div class="fragment"><div class="line">pool.stop(<span class="keyword">true</span>);      <span class="comment">// 入参 是否将当前queue里的task都执行完毕再退出</span></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 18日 星期三 20:43:59 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

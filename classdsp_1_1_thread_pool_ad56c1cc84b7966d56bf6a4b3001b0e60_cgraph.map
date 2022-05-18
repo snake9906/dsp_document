@@ -1,0 +1,4 @@
+<map id="dsp::ThreadPool::resize" name="dsp::ThreadPool::resize">
+<area shape="rect" id="node1" title="可以在线程池建立完毕后改变线程池大小，已分配的任务会保证正确执行" alt="" coords="6,5,165,32"/>
+<area shape="rect" id="node3" href="$group__concurrency.html#gaebbdbd5864fd0c3cf2ecefb0c9e532c7" title="获取独占锁(用于写入数据)" alt="" coords="214,5,375,32"/>
+</map>

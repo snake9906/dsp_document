@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DSP接口文档: expression</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="head.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">DSP接口文档<span id="projectnumber">&#160;v0.1</span>
+   </div>
+   <div id="projectbrief">DSP基础库接口文档</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">expression </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>目录</h3>
+<ul><li class="level1"><a href="#page_expression_s1">公式表达式</a><ul><li class="level2"><a href="#page_expression_s1subs1">基本概念</a></li>
+<li class="level2"><a href="#page_expression_s1subs2">支持范围</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p >表达式说明页面</p>
+<h1><a class="anchor" id="page_expression_s1"></a>
+公式表达式</h1>
+<h2><a class="anchor" id="page_expression_s1subs1"></a>
+基本概念</h2>
+<p >公式表达式是对给定的字符串进行公式语法分析后得到的表达式对象。<br  />
+表达式由几种元素组成：</p><ul>
+<li>常数，统一解析为<code>double</code>类型，支持科学计数法形式的输入</li>
+<li>变量，必须以英文字母开头，由英文字母、数字和下划线组成</li>
+<li>操作符，分为一元操作符、二元操作符、函数操作符</li>
+</ul>
+<p >以“-sin(x + 1.)”为例说明，"-"解析为一元操作符，"sin"解析为函数操作符，“x”解析为变量， "+"解析为二元操作符，"1."解析为常数。</p>
+<p >使用方法如下: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;dsp/utility/formula_expression.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line">std::string str{“x * (x + y - 1)”};</div>
+<div class="line">dsp::expression::Formula f;</div>
+<div class="line"><span class="keyword">auto</span> ok = dsp::expression::parse(str, f);</div>
+<div class="line"><span class="keywordflow">if</span> (ok) {</div>
+<div class="line">   f.set(<span class="stringliteral">&quot;x&quot;</span>, 1.);</div>
+<div class="line">   f.set(<span class="stringliteral">&quot;y&quot;</span>, 0.5);</div>
+<div class="line">   std::cout &lt;&lt; <span class="stringliteral">&quot;Result: &quot;</span> &lt;&lt; dsp::expression::eval(f) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="page_expression_s1subs2"></a>
+支持范围</h2>
+<p >一元操作符支持范围如下表：</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">操作符   </th><th class="markdownTableHeadCenter">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>+</code>   </td><td class="markdownTableBodyCenter">正号    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>-</code>   </td><td class="markdownTableBodyCenter">负号    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>!</code>   </td><td class="markdownTableBodyCenter">取反    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>~</code>   </td><td class="markdownTableBodyCenter">按位取反   </td></tr>
+</table>
+<p >二元操作符支持范围如下表: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">操作符   </th><th class="markdownTableHeadCenter">分类   </th><th class="markdownTableHeadCenter">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>+</code>   </td><td class="markdownTableBodyCenter" rowspan="5">算数运算符   </td><td class="markdownTableBodyCenter">加法    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>-</code>   </td><td class="markdownTableBodyCenter">减法    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>*</code>   </td><td class="markdownTableBodyCenter">乘法    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>/</code>   </td><td class="markdownTableBodyCenter">除法    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>%</code>   </td><td class="markdownTableBodyCenter">取模    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>==</code>   </td><td class="markdownTableBodyCenter" rowspan="6">关系运算符   </td><td class="markdownTableBodyCenter">判断相等    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>!=</code>   </td><td class="markdownTableBodyCenter">判断不等    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>&gt;</code>   </td><td class="markdownTableBodyCenter">大于    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>&lt;</code>   </td><td class="markdownTableBodyCenter">小于    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>&gt;=</code>   </td><td class="markdownTableBodyCenter">大于等于    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>&lt;=</code>   </td><td class="markdownTableBodyCenter">小于等于    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>&amp;&amp;</code>   </td><td class="markdownTableBodyCenter" rowspan="2">逻辑运算符   </td><td class="markdownTableBodyCenter">与    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">&amp;#124; &amp;#124;   </td><td class="markdownTableBodyCenter">或   </td></tr>
+</table>
+<p>|<code>&amp;</code>|位运算符按位与| |&amp;#124;|^|按位或| |<code>^</code>|^|按位异或| |<code>&lt;&lt;</code>|^|左移| |<code>&gt;&gt;</code>|^|右移|</p>
+<p >函数操作符支持范围如下表: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">操作符   </th><th class="markdownTableHeadCenter">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>cond</code>   </td><td class="markdownTableBodyCenter">实现三目运算符(?:)的功能，输入3个参数    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>abs</code>   </td><td class="markdownTableBodyCenter">取绝对值    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>max</code>   </td><td class="markdownTableBodyCenter">取最大值，可输入任意数量的参数    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>min</code>   </td><td class="markdownTableBodyCenter">取最小值，可输入任意数量的参数    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>ceil</code>   </td><td class="markdownTableBodyCenter">向上取整    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>floor</code>   </td><td class="markdownTableBodyCenter">向下取整    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>sqrt</code>   </td><td class="markdownTableBodyCenter">求平方根    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>pow</code>   </td><td class="markdownTableBodyCenter">幂运算    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>sin</code>   </td><td class="markdownTableBodyCenter">正弦函数    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>cos</code>   </td><td class="markdownTableBodyCenter">余弦函数    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>tan</code>   </td><td class="markdownTableBodyCenter">正切函数   </td></tr>
+</table>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2022年 五月 18日 星期三 20:43:59 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

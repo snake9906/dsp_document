@@ -45,30 +45,31 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>目录</h3>
-<ul><li class="level1"><a href="#page1section1">基本概念</a><ul><li class="level2"><a href="#page1section1subsection1">range</a></li>
-<li class="level2"><a href="#page1section1subsection2">view</a></li>
-<li class="level2"><a href="#page1section1subsection3">action</a></li>
+<ul><li class="level1"><a href="#page_range_section1">基本概念</a><ul><li class="level2"><a href="#page_range_section1subsection1">range</a></li>
+<li class="level2"><a href="#page_range_section1subsection2">view</a></li>
+<li class="level2"><a href="#page_range_section1subsection3">action</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#page1section2">range函数</a></li>
-<li class="level1"><a href="#page1section3">常用range adaptor说明</a><ul><li class="level2"><a href="#page1section3section1">transform</a></li>
-<li class="level2"><a href="#page1section3section2">filter</a></li>
-<li class="level2"><a href="#page1section3section3">reverse</a></li>
-<li class="level2"><a href="#page1section3section4">keys values</a></li>
-<li class="level2"><a href="#page1section3section5">join</a></li>
-<li class="level2"><a href="#page1section3section6">take</a></li>
+<li class="level1"><a href="#page_range_section2">range函数</a></li>
+<li class="level1"><a href="#page_range_section3">常用range adaptor说明</a><ul><li class="level2"><a href="#page_range_section3section1">transform</a></li>
+<li class="level2"><a href="#page_range_section3section2">filter</a></li>
+<li class="level2"><a href="#page_range_section3section3">reverse</a></li>
+<li class="level2"><a href="#page_range_section3section4">keys values</a></li>
+<li class="level2"><a href="#page_range_section3section5">join</a></li>
+<li class="level2"><a href="#page_range_section3section6">take</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#page1section4">管道及惰性求值</a><ul><li class="level2"><a href="#page1section4subsection1">管道操作</a></li>
-<li class="level2"><a href="#page1section4subsection2">惰性求值</a></li>
+<li class="level1"><a href="#page_range_section4">管道及惰性求值</a><ul><li class="level2"><a href="#page_range_section4subsection1">管道操作</a></li>
+<li class="level2"><a href="#page_range_section4subsection2">惰性求值</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#page1section5">如何使用view</a></li>
+<li class="level1"><a href="#page_range_section5">如何使用view</a></li>
 </ul>
 </div>
-<div class="textblock"><h1><a class="anchor" id="page1section1"></a>
+<div class="textblock"><p >range说明页面</p>
+<h1><a class="anchor" id="page_range_section1"></a>
 基本概念</h1>
-<h2><a class="anchor" id="page1section1subsection1"></a>
+<h2><a class="anchor" id="page_range_section1subsection1"></a>
 range</h2>
 <p >简单来说，可以用begin()、end()函数获取迭代器并进行遍历的一切对象，都可以视为range。是的，容器基本上都是range，但range不仅仅限于容器，数组也可以通过 使用range库提供的begin()、end()函数来进行迭代，也可以视为range。 <br  />
 </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;dsp/range/range.hpp&gt;</span></div>
@@ -83,7 +84,7 @@ range</h2>
 <div class="line"><span class="keyword">auto</span> rng3 = range::make_iterator_range(range::begin(b), range::begin(b) + 2); <span class="comment">//生成数组的部分view</span></div>
 </div><!-- fragment --><p> range库里还有三个很重要的概念：view(视图)、action(操作)和algorithms(算法)。其中和algorithms与STL中提供的算法类似，但是提供了支持range的重载。<br  />
  </p>
-<h2><a class="anchor" id="page1section1subsection2"></a>
+<h2><a class="anchor" id="page_range_section1subsection2"></a>
 view</h2>
 <p >view是一种特殊的range，从名称上能看出来，它是数据的视图而不持有数据。view的特征包括：</p><ul>
 <li>移动构造有<code>O(1)</code> 时间复杂度</li>
@@ -96,10 +97,10 @@ view</h2>
 range转换为view需要使用 <code>range</code> adaptor ，当然<code>range</code> adaptor 也可以将一个view转换为另一个view。<code>range</code> adaptor 由range库 提供，也可以自行扩展。 <br  />
 view需要重载operator|，所以view可以类似unix管道一样通过|串联起来，提高代码可读性。 <br  />
 需要注意的是，view对数据的遍历是<b>惰性求值</b> 的，后面会通过例子来进行说明。</p>
-<h2><a class="anchor" id="page1section1subsection3"></a>
+<h2><a class="anchor" id="page_range_section1subsection3"></a>
 action</h2>
 <p >前面已经提到，view是原始数据的视图，但不会影响到原始数据。而action可以针对视图进行实际数据操作，例如保存，修改等等。通常range库只会提供 最常用的action，用户可以根据需求来实现自己的action。</p>
-<h1><a class="anchor" id="page1section2"></a>
+<h1><a class="anchor" id="page_range_section2"></a>
 range函数</h1>
 <p >为了顺利地将对象转为range，dsp的range库提供了一系列辅助函数： </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -132,7 +133,7 @@ range函数</h1>
 <div class="line">rng = range::make_iterator_range(range::const_begin(b), range::const_end(b));</div>
 <div class="line"><span class="comment">// 反序只读view</span></div>
 <div class="line">rng = range::make_iterator_range(range::const_rbegin(b), range::const_rend(b));</div>
-</div><!-- fragment --><h1><a class="anchor" id="page1section3"></a>
+</div><!-- fragment --><h1><a class="anchor" id="page_range_section3"></a>
 常用range adaptor说明</h1>
 <p >range库提供的常用adaptor对照表： </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -166,7 +167,7 @@ range函数</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">replace_if   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x274c;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td><td class="markdownTableBodyCenter"><span class="emoji">&#x2b55;</span>   </td></tr>
 </table>
-<h2><a class="anchor" id="page1section3section1"></a>
+<h2><a class="anchor" id="page_range_section3section1"></a>
 transform</h2>
 <p >语法：<code>rng | view::transform(fun)</code> <br  />
  将<code>rng</code>的每个元素通过函数<code>fun</code>转换为<code>fun(x)</code>形成新的视图</p><ul>
@@ -190,7 +191,7 @@ transform</h2>
 <div class="line">algorithm::copy(a | view::transform(divide_two), std::ostream_iterator&lt;float&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: 0.5 1 1.5</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section3section2"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_range_section3section2"></a>
 filter</h2>
 <p >语法：<code>rng | view::filter(pred)</code> <br  />
  将<code>rng</code>的中满足<code>pred(x)==true</code>的元素放入新视图</p><ul>
@@ -207,7 +208,7 @@ filter</h2>
 <div class="line">algorithm::copy(a | view::filter(is_even), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: 2</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section3section3"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_range_section3section3"></a>
 reverse</h2>
 <p >语法：<code>rng | view::reverse</code> <br  />
  将<code>rng</code>反序后放入新视图</p><ul>
@@ -217,7 +218,7 @@ reverse</h2>
 </ul>
 <p >std::vector&lt;int&gt; a{1, 2, 3}; algorithm::copy(a | view::reverse, std::ostream_iterator&lt;int&gt;(std::cout, " "));</p>
 <p >// Output: 3 2 1</p>
-<h2><a class="anchor" id="page1section3section4"></a>
+<h2><a class="anchor" id="page_range_section3section4"></a>
 keys values</h2>
 <p >语法：<code>rng | view::keys</code> <code>rng | view::values</code> <br  />
  将<code>rng</code>的中key/value取出后放入新视图</p><ul>
@@ -236,7 +237,7 @@ keys values</h2>
 <div class="line">algorithm::copy(a | view::keys(a), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: 10 20 30</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section3section5"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_range_section3section5"></a>
 join</h2>
 <p >语法：<code>rng | view::join</code> <br  />
  前提是<code>rng</code>的元素也是range，将<code>rng</code>的元素的元素依次取出后放入新视图</p><ul>
@@ -251,7 +252,7 @@ join</h2>
 <div class="line">algorithm::copy(a | view::join, std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: 1 10 2 20 3 30</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section3section6"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_range_section3section6"></a>
 take</h2>
 <p >语法：<code>rng | view::take(n)</code> <br  />
  将<code>rng</code>的前n个元素取出后放入新视图</p><ul>
@@ -264,9 +265,9 @@ take</h2>
 <div class="line">algorithm::copy(a | view::take(2), std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: 1 2</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="page1section4"></a>
+</div><!-- fragment --><h1><a class="anchor" id="page_range_section4"></a>
 管道及惰性求值</h1>
-<h2><a class="anchor" id="page1section4subsection1"></a>
+<h2><a class="anchor" id="page_range_section4subsection1"></a>
 管道操作</h2>
 <p >前面已经提到，view是可以通过多个view adaptor串起来的，下面会举例说明: <br  />
 <b>example1</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> is_even(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> x % 2 == 0; }</div>
@@ -285,7 +286,7 @@ take</h2>
 <div class="line">algorithm::copy(a | view::transform(repeat_twice) | view::join, std::ostream_iterator&lt;int&gt;(std::cout, <span class="stringliteral">&quot; &quot;</span>));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: 1 1 2 2 3 3 4 4 5 5</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="page1section4subsection2"></a>
+</div><!-- fragment --><h2><a class="anchor" id="page_range_section4subsection2"></a>
 惰性求值</h2>
 <p >下面还是用例子来进行说明： </p><div class="fragment"><div class="line"><span class="keyword">auto</span> add_one(<span class="keywordtype">int</span> x) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">   std::cout &lt;&lt; <span class="stringliteral">&quot;x = &quot;</span> &lt;&lt; x &lt;&lt; std::endl;</div>
@@ -299,7 +300,7 @@ take</h2>
 <div class="line"><span class="comment">// Output: ?</span></div>
 </div><!-- fragment --><p >实际上不会有任何语句被打印出来，因为add_one函数并没有被真正调用。 <code>view</code>本质上是一组视图转换函数的组合，在真正使用视图的时候函数才会调用。 <br  />
  <b>注意！！！！！</b> 实际上有一个例外，凡是需要进行过滤的视图，在视图生成的时候就已经执行了过滤函数了。原因留给自己思考，也可以看<code>filter</code>的源代码 <span class="emoji">&#x1f60f;</span></p>
-<h1><a class="anchor" id="page1section5"></a>
+<h1><a class="anchor" id="page_range_section5"></a>
 如何使用view</h1>
 <p >view形成之后有两种使用方法：</p><ul>
 <li>配合range::algorithm算法来使用</li>
@@ -357,7 +358,7 @@ range::algorithm支持的常用算法如下：</p>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2022年 五月 9日 星期一 16:59:39 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+生成于 2022年 五月 18日 星期三 20:43:59 , 为 DSP接口文档使用 &#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

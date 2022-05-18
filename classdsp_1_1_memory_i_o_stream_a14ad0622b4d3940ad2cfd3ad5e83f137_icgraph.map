@@ -1,0 +1,4 @@
+<map id="dsp::MemoryIOStream::pop" name="dsp::MemoryIOStream::pop">
+<area shape="rect" id="node1" title="数值型pop函数。尝试取出T类型的数据" alt="" coords="209,12,391,39"/>
+<area shape="rect" id="node3" href="$classdsp_1_1_memory_i_o_stream.html#a800e70c64b7147f176070fe94ab94dce" title="重载&gt;&gt;操作符实现pop操作" alt="" coords="6,5,159,46"/>
+</map>

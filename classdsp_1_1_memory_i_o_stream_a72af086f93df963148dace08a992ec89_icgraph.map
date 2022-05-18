@@ -1,0 +1,4 @@
+<map id="dsp::MemoryIOStream::push" name="dsp::MemoryIOStream::push">
+<area shape="rect" id="node1" title="数值型push函数。尝试存入数值型数据。" alt="" coords="209,5,362,46"/>
+<area shape="rect" id="node3" href="$classdsp_1_1_memory_i_o_stream.html#a69c7b7e3368135e38ec6a69f6415e32e" title="重载&lt;&lt;操作符实现push操作" alt="" coords="6,5,159,46"/>
+</map>
